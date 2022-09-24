@@ -1,6 +1,8 @@
 @import '../../assets/styles/normalize';
 @import '../../assets/styles/typography';
 
+html{scroll-behavior:smooth}
+
 * {
   box-sizing: border-box;
 }
@@ -57,6 +59,7 @@
         background-position: 9px 24px;
         background-repeat: no-repeat;
       }
+
     }
 
     .current_link {
@@ -66,7 +69,7 @@
   }
 }
 
-a:hover {
+.navigation a:hover {
   opacity: 70%;
   transition: 0.3s;
 }
@@ -119,7 +122,7 @@ a:hover {
     }
   }
 
-  button {
+  #btn_watch_online {
     display: block;
     width: 298px;
     height: 54px;
@@ -137,20 +140,19 @@ a:hover {
     text-align: center;
     text-transform: uppercase;
     color: #FFFFFF;
-
   }
-
-  .btn_watch{
-    :hover {
+  #btn_watch_online:hover {
       cursor: pointer;
       background: #E47209;
       transition: 0.3s;
     }
-    :active {
+  #btn_watch_online:active {
       background: #4B9200;
     }
-  }
 }
+
+
+
 
 // --------------   The backstage styles
 
@@ -162,7 +164,7 @@ a:hover {
 .the_backstage {
   max-width: 1160px;
   margin: auto;
-  padding-bottom: 180px;
+  padding-bottom: 177px;
   padding-top: 140px;
   display: grid;
   grid-template-columns:1fr 1fr;
@@ -171,7 +173,7 @@ a:hover {
 
   img{
     display: block;
-    backdrop-filter: blur(2px); 
+    backdrop-filter: blur(2px);
   }
 
   h2 {
@@ -220,3 +222,188 @@ a:hover {
 
 
 }
+
+// --------------   Pets styles
+
+.pets_wrapper {
+  padding-bottom: 100px;
+  background: url(../../assets/images/palm_foto.jpg) no-repeat bottom left,
+              url(../../assets/images/strelitzia1.jpg) no-repeat bottom right;
+}
+
+.card1 { grid-area: card1; }
+.card2 { grid-area: card2; }
+.card3 { grid-area: card3; }
+.card4 { grid-area: card4; }
+.card5 { grid-area: card5; }
+.card6 { grid-area: card6; }
+.pets_btn_left { grid-area: pets_btn_left; }
+.pets_btn_right { grid-area: pets_btn_right; }
+
+.pets {
+  max-width: 1160px;
+  margin: auto;
+  margin-bottom: 80px;
+  display: grid;
+  grid-template-areas:
+  'card1 card2 card3'
+  'pets_btn_left . pets_btn_right'
+  'card4 card5 card6';
+
+  // grid-template-columns:1fr 1fr 1fr;
+
+  row-gap: 10px;
+  column-gap: 30px;
+
+  .pets_card {
+
+    width: 366px;
+    height: 426px;
+    border-radius: 5px;
+    overflow: hidden;
+    border: 1px solid rgba(250, 111, 50, 1);
+    position: relative;
+
+    img {
+      position: relative;
+      display: block;
+      width: 366px;
+      height: 366px;
+    }
+    .pets_card_caption{
+
+      padding: 9px 15px;
+
+      h2 {
+        margin: 0;
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        // line-height: 140%;
+        text-transform: uppercase;
+        color: #000000;
+      }
+
+      p {
+        margin: 0;
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 300;
+        font-size: 15px;
+        line-height: 120%;
+        color: #000000;
+      }
+
+      position: relative;
+
+      img {
+        display: block;
+        position: absolute;
+        height: 38px;
+        width: auto;
+        right: 10px;
+        top: 8px;
+      }
+
+    }
+
+  }
+
+  .pets_card:hover {
+    transition: 0.3s;
+    overflow: visible;
+
+    img:nth-child(1) {
+      z-index: 1;
+      width: 386px;
+      height: 386px;
+      transform: translate(-10px, -10px);
+      transition: 0.5s;
+    }
+    .pets_card_caption{
+      z-index: 2;
+      transform: translateY(-65px);
+      transition: 0.5s;
+      background: rgba(0, 0, 0, 0.5);
+      h2, p {
+        color: white;
+      }
+    }
+
+  }
+
+  position: relative;
+
+  .pets_btn_left, .pets_btn_right {
+    position: absolute;
+    display: block;
+    width: 62px;
+    height: 62px;
+    border: 0;
+    border-radius: 50%;
+    top: -33px;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  #pets_btn_left {
+    left: -82px;
+    background-image: url(../../assets/icons/arrow_left.svg), linear-gradient(113.96deg, #F9804B 1.49%, #FE9013 101.44%);
+  }
+  #pets_btn_left:hover {
+    cursor: pointer;
+    background-image: url(../../assets/icons/arrow_left.svg), linear-gradient(113.96deg, #E47209 1.49%, #E47209 101.44%);
+    transition: 0.9s;
+  }
+  #pets_btn_left:active {
+    background-image: url(../../assets/icons/arrow_left.svg), linear-gradient(113.96deg, #4B9200 1.49%, #4B9200 101.44%);
+  }
+
+  #pets_btn_right {
+    right: -80px;
+    background-image: url(../../assets/icons/arrow_right.svg), linear-gradient(113.96deg, #F9804B 1.49%, #FE9013 101.44%);
+  }
+  #pets_btn_right:hover {
+    cursor: pointer;
+    background-image: url(../../assets/icons/arrow_right.svg), linear-gradient(113.96deg, #E47209 1.49%, #E47209 101.44%);
+    transition: 0.9s;
+  }
+  #pets_btn_right:active {
+    background-image: url(../../assets/icons/arrow_right.svg), linear-gradient(113.96deg, #4B9200 1.49%, #4B9200 101.44%);
+  }
+
+}
+
+#pets_choose_btn {
+  display: block;
+  width: 298px;
+  height: 54px;
+  margin: auto;
+  padding-left: 10px;
+  background-color: #FE9013;
+  background-image: linear-gradient(113.96deg, #F9804B 1.49%, #FE9013 101.44%);
+  border: 0;
+  border-radius: 25px;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 140%;
+  text-align: center;
+  text-transform: uppercase;
+  color: #FFFFFF;
+}
+#pets_choose_btn:hover {
+    cursor: pointer;
+    background: #E47209;
+    transition: 0.3s;
+  }
+#pets_choose_btn:active {
+    background: #4B9200;
+  }
+
+
+
+
+
