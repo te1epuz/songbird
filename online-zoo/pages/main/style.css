@@ -416,9 +416,56 @@ a:hover {
   padding: 12px;
 }
 .watch_online .watch_circle {
-  margin: 0 96px auto auto;
+  margin: 0 96px 69px auto;
   width: 465px;
   height: 465px;
   border-radius: 50%;
   background: linear-gradient(113.96deg, #F9804B 1.49%, #FE9013 101.44%);
+}
+.watch_online .watch_circle h2 {
+  position: relative;
+  left: 73px;
+  top: 74px;
+  width: 500.31px;
+  height: 400px;
+  padding: 0;
+  margin: 0;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 106.496px;
+  line-height: 75%;
+  text-align: center;
+  text-transform: uppercase;
+  color: #FFFFFF;
+}
+.watch_online .watch_circle h2 span {
+  color: rgb(255, 238, 46);
+}
+.watch_online button {
+  display: block;
+  width: 298px;
+  height: 54px;
+  margin: 0 87px auto auto;
+  padding-left: 10px;
+  background-color: #FE9013;
+  background-image: linear-gradient(113.96deg, #F9804B 1.49%, #FE9013 101.44%);
+  border: 0;
+  border-radius: 25px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 140%;
+  text-align: center;
+  text-transform: uppercase;
+  color: #FFFFFF;
+}
+.watch_online .btn_watch :hover {
+  cursor: pointer;
+  background: #E47209;
+  transition: 0.3s;
+}
+.watch_online .btn_watch :active {
+  background: #4B9200;
 }/*# sourceMappingURL=style.css.map */
