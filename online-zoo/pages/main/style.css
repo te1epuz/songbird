@@ -446,7 +446,8 @@ html {
 .watch_online .watch_circle h2 span {
   color: rgb(255, 238, 46);
 }
-.watch_online #btn_watch_online {
+
+#btn_watch_online {
   display: block;
   width: 298px;
   height: 54px;
@@ -465,12 +466,14 @@ html {
   text-transform: uppercase;
   color: #FFFFFF;
 }
-.watch_online #btn_watch_online:hover {
+
+#btn_watch_online:hover {
   cursor: pointer;
   background: #E47209;
   transition: 0.3s;
 }
-.watch_online #btn_watch_online:active {
+
+#btn_watch_online:active {
   background: #4B9200;
 }
 
@@ -688,7 +691,6 @@ html {
   margin: auto;
   padding-left: 10px;
   background-color: #FE9013;
-  background-image: linear-gradient(113.96deg, #F9804B 1.49%, #FE9013 101.44%);
   border: 0;
   border-radius: 25px;
   font-family: "Roboto";
@@ -708,5 +710,154 @@ html {
 }
 
 #pets_choose_btn:active {
+  background: #4B9200;
+}
+
+.pick_and_feed_wrapper {
+  background: linear-gradient(315.75deg, rgba(254, 210, 144, 0.7) 30.06%, #FEBDAB 100.95%, rgba(254, 210, 144, 0.7) 106.36%), linear-gradient(315.75deg, rgba(254, 189, 171, 0.74) 30.06%, rgba(243, 169, 248, 0.66) 50.74%, #E0D8F0 80.49%, #EAF7FE 127.9%, #EAF7FE 149.54%), linear-gradient(315.75deg, rgba(254, 189, 171, 0.74) 30.06%, rgba(243, 169, 248, 0.66) 50.74%, #E0D8F0 80.49%, #EAF7FE 127.9%, #EAF7FE 149.54%);
+  opacity: 0.9;
+  padding-top: 69px;
+  padding-bottom: 100px;
+}
+
+.pick_and_feed {
+  max-width: 1160px;
+  margin: auto;
+  padding: 41px 98px 59px 100px;
+  background: rgba(253, 253, 255, 0.52);
+  -webkit-backdrop-filter: blur(2px);
+          backdrop-filter: blur(2px);
+  border-radius: 20px;
+}
+.pick_and_feed h2 {
+  margin: 0;
+  margin-bottom: 32px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 120%;
+  /* identical to box height, or 58px */
+  text-align: center;
+  color: #FE9013;
+}
+.pick_and_feed h4 {
+  margin: 0;
+  margin-bottom: 40px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 120%;
+  /* identical to box height, or 29px */
+  color: #333B41;
+}
+.pick_and_feed p:nth-child(3) {
+  margin: 0;
+  margin-bottom: 10px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 130%;
+  color: #333B41;
+  white-space: nowrap;
+}
+.pick_and_feed p:nth-child(4) {
+  margin: 0;
+  margin-bottom: 62px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 130%;
+  color: #333B41;
+}
+.pick_and_feed p:nth-child(4) a {
+  color: #333B41;
+  text-underline-offset: 6px;
+  -webkit-text-decoration-color: #E47209;
+          text-decoration-color: #E47209;
+}
+.pick_and_feed h3 {
+  margin: 0;
+  margin-right: 4px;
+  margin-bottom: 38px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 130%;
+  /* identical to box height, or 47px */
+  color: #333B41;
+  text-align: center;
+}
+.pick_and_feed .how_it_works {
+  max-width: -webkit-fit-content;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(5, -webkit-min-content);
+  grid-template-columns: repeat(5, min-content);
+  gap: 30px;
+}
+.pick_and_feed .how_it_works .how_it_works_card {
+  max-width: 168px;
+  margin-bottom: 60px;
+}
+.pick_and_feed .how_it_works .how_it_works_card div {
+  width: 168px;
+  height: 168px;
+  margin-bottom: 30px;
+  background: #FFFFFF;
+  border-radius: 5px;
+  border: 1px solid rgb(249, 128, 75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.pick_and_feed .how_it_works .how_it_works_card p {
+  margin: 0;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+  /* or 22px */
+  color: #333B41;
+}
+.pick_and_feed .how_it_works .how_it_works_arrow {
+  display: block;
+  margin-top: 61px;
+}
+
+#feed_btn {
+  display: block;
+  width: 298px;
+  height: 54px;
+  margin: auto;
+  padding-left: 10px;
+  background-color: #FE9013;
+  background-image: linear-gradient(113.96deg, #F9804B 1.49%, #FE9013 101.44%);
+  border: 0;
+  border-radius: 25px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 140%;
+  text-align: center;
+  text-transform: uppercase;
+  color: #FFFFFF;
+}
+
+#feed_btn:hover {
+  cursor: pointer;
+  background: #E47209;
+  transition: 0.3s;
+}
+
+#feed_btn:active {
   background: #4B9200;
 }/*# sourceMappingURL=style.css.map */
