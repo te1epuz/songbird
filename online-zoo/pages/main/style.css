@@ -468,4 +468,63 @@ a:hover {
 }
 .watch_online .btn_watch :active {
   background: #4B9200;
+}
+
+.the_backstage_wrapper {
+  background: url(../../assets/images/flower_foto1.jpg) no-repeat top 12px right;
+}
+
+.the_backstage {
+  max-width: 1160px;
+  margin: auto;
+  padding-bottom: 180px;
+  padding-top: 140px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 87px;
+}
+.the_backstage img {
+  display: block;
+  -webkit-backdrop-filter: blur(2px);
+          backdrop-filter: blur(2px);
+}
+.the_backstage h2 {
+  margin-top: 0;
+  margin-bottom: 22px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 120%;
+  color: #333B41;
+}
+.the_backstage h3 {
+  margin-top: 0;
+  margin-bottom: 32px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 120%;
+  color: #333B41;
+}
+.the_backstage .the_backstage_p1 {
+  margin-top: 0;
+  margin-bottom: 54px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 130%;
+  color: #333B41;
+}
+.the_backstage .the_backstage_p2 {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+  color: #333B41;
 }/*# sourceMappingURL=style.css.map */
