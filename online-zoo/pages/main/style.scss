@@ -844,16 +844,12 @@ opacity: 0.9;
     color: #BDBDBD;
     }
 
-
-
     #input_submit {
       width: 129px;
       height: 42px;
-
       background: #F1F3F2;
       border: 1px solid #333B41;
       border-radius: 5px;
-
       font-family: 'Roboto';
       font-style: normal;
       font-weight: 400;
@@ -861,6 +857,28 @@ opacity: 0.9;
       line-height: 140%;
       color: #000000;
     }
+
+    #input_submit:hover {
+      transform: scale(1.02);
+    }
+
+    #input_submit:active {
+      border: 1px solid #4B9200;
+      color: #4B9200;
+      transform: scale(1);
+    }
+
+    #input_email:invalid {
+      border: 1px solid #D31414;
+      color: #D31414;
+    }
+
+    #input_email:invalid ~ #input_submit {
+      border: 1px solid #D31414;
+      color: #D31414;
+    }
+
+
   }
 
   #donate_for_volunteers_btn {
@@ -893,28 +911,43 @@ opacity: 0.9;
 
   .footer_social {
     list-style: none;
-    margin-top: 40px;
+    margin-top: 35px;
     margin-bottom: 0;
     padding: 0;
     li {
-      margin-top: 4px;
+      margin-top: 9px;
       a {
+        text-decoration: none;
         font-family: 'Roboto';
         font-style: normal;
         font-weight: 400;
         font-size: 16px;
         line-height: 140%;
         color: #FFFFFF;
+        div {
+          width: 26px;
+          height: 26px;
+          border-radius: 50%;
+          background: rgba(196, 196, 196, 0.5);
+          display:inline-flex;
+          justify-content:center;
+          align-items:center;
+          margin-right: 12px;
+        }
       }
       :hover {
-        opacity: 70%;
+        color: #4B9200;
         transition: 0.3s;
+        div {
+          background: #4B9200;
+          transition: 1s;
+        }
       }
     }
   }
 
   .footer_navigation {
-    margin-bottom: 7px;
+    margin-bottom: -1px;
     margin-left: 85px;
     align-self: end;
     ul {
@@ -948,14 +981,18 @@ opacity: 0.9;
   }
 
   .designed_by {
-    margin-bottom: -6px;
+    margin-bottom: -1px;
     place-self: end end;
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 100;
     font-size: 16px;
-    line-height: 90%;
+    line-height: 130%;
     color: #bdbdbd;
+    p {
+      margin: 0;
+      margin-top: 10px;
+    }
   }
 
 }

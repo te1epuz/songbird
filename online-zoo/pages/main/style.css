@@ -1167,6 +1167,22 @@ html {
   line-height: 140%;
   color: #000000;
 }
+.footer .footer_subscribe #input_submit:hover {
+  transform: scale(1.02);
+}
+.footer .footer_subscribe #input_submit:active {
+  border: 1px solid #4B9200;
+  color: #4B9200;
+  transform: scale(1);
+}
+.footer .footer_subscribe #input_email:invalid {
+  border: 1px solid #D31414;
+  color: #D31414;
+}
+.footer .footer_subscribe #input_email:invalid ~ #input_submit {
+  border: 1px solid #D31414;
+  color: #D31414;
+}
 .footer #donate_for_volunteers_btn {
   margin-top: 35px;
   display: block;
@@ -1196,14 +1212,15 @@ html {
 }
 .footer .footer_social {
   list-style: none;
-  margin-top: 40px;
+  margin-top: 35px;
   margin-bottom: 0;
   padding: 0;
 }
 .footer .footer_social li {
-  margin-top: 4px;
+  margin-top: 9px;
 }
 .footer .footer_social li a {
+  text-decoration: none;
   font-family: "Roboto";
   font-style: normal;
   font-weight: 400;
@@ -1211,12 +1228,26 @@ html {
   line-height: 140%;
   color: #FFFFFF;
 }
+.footer .footer_social li a div {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: rgba(196, 196, 196, 0.5);
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 12px;
+}
 .footer .footer_social li :hover {
-  opacity: 70%;
+  color: #4B9200;
   transition: 0.3s;
 }
+.footer .footer_social li :hover div {
+  background: #4B9200;
+  transition: 1s;
+}
 .footer .footer_navigation {
-  margin-bottom: 7px;
+  margin-bottom: -1px;
   margin-left: 85px;
   align-self: end;
 }
@@ -1246,12 +1277,16 @@ html {
   transition: 0.3s;
 }
 .footer .designed_by {
-  margin-bottom: -6px;
+  margin-bottom: -1px;
   place-self: end end;
   font-family: "Roboto";
   font-style: normal;
   font-weight: 100;
   font-size: 16px;
-  line-height: 90%;
+  line-height: 130%;
   color: #bdbdbd;
+}
+.footer .designed_by p {
+  margin: 0;
+  margin-top: 10px;
 }/*# sourceMappingURL=style.css.map */
