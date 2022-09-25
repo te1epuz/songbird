@@ -672,6 +672,7 @@ html {
   max-width: 1160px;
   margin: auto;
   padding-top: 40px;
+  padding-bottom: 180px;
 }
 .main_donate h2 {
   margin: 0;
@@ -777,6 +778,8 @@ html {
   line-height: 140%;
   color: #333B41;
   text-align: center;
+  margin-left: 5px;
+  margin-bottom: 0;
 }
 
 .form_amount {
@@ -796,6 +799,7 @@ p.amount {
 
 .radio_block {
   height: 27px;
+  margin-bottom: 100px;
   padding: 0 30px 0 26px;
   background: #404950;
   border-radius: 2px;
@@ -806,6 +810,41 @@ p.amount {
 }
 .radio_block div {
   position: relative;
+}
+.radio_block div label {
+  z-index: 1;
+  display: block;
+  width: 65px;
+  height: 90px;
+  position: absolute;
+  top: -24px;
+  left: -27px;
+  padding-top: 55px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 26px;
+  line-height: 140%;
+  color: #333B41;
+}
+.radio_block div label span {
+  font-size: 22px;
+  font-weight: 800;
+}
+
+.radio_block:after {
+  content: "";
+  display: block;
+  width: 94%;
+  height: 2px;
+  background: #72828E;
+  top: 13px;
+  left: 2.9%;
+  position: absolute;
+}
+
+.radio_block div label:hover {
+  cursor: pointer;
 }
 
 input.radio_amount {
@@ -824,59 +863,103 @@ input.radio_amount {
 
 input.radio_amount::before {
   content: "";
-  width: 23px;
-  height: 23px;
+  width: 20px;
+  height: 19px;
   border-radius: 50%;
   transform: scale(0);
   transition: 120ms transform ease-in-out;
   border: 2px solid #FE9013;
   position: absolute;
-  top: -8px;
-  left: -8px;
+  top: -6px;
+  left: -7px;
 }
 
 input.radio_amount:checked::before {
   transform: scale(1);
 }
 
+input.radio_amount:checked ~ label {
+  color: #FE9013;
+}
+
 input.radio_amount:focus {
   outline: 2px solid #FE9013;
-  outline-offset: max(16px, 0.15em);
+  outline-offset: max(12px, 0.15em);
 }
 
 input.radio_amount:hover {
   background: #FE9013;
 }
 
-label {
+#another_amount {
   display: block;
-  width: 65px;
-  height: 90px;
-  position: absolute;
-  top: -24px;
-  left: -27px;
-  padding-top: 55px;
+  margin: auto;
+  margin-bottom: 23px;
+  width: 268px;
+  height: 54px;
+  background: #333B41;
+  border: 1px solid #FFEE2E;
+  border-radius: 2px;
+  padding-left: 9px;
   font-family: "Roboto";
   font-style: normal;
-  font-weight: 500;
-  font-size: 26px;
+  font-weight: 400;
+  font-size: 16px;
   line-height: 140%;
-  color: #333B41;
-}
-label span {
-  font-size: 22px;
-  font-weight: 800;
+  color: #FFFFFF;
 }
 
-.radio_block:after {
-  content: "";
-  display: block;
-  width: 94%;
-  height: 2px;
-  background: #72828E;
-  top: 13px;
-  left: 2.9%;
-  position: absolute;
+#another_amount::-moz-placeholder {
+  color: #FFFFFF;
+}
+
+#another_amount:-ms-input-placeholder {
+  color: #FFFFFF;
+}
+
+#another_amount::placeholder {
+  color: #FFFFFF;
+}
+
+.radio_period_select {
+  display: flex;
+  margin: auto;
+  padding-right: 15px;
+  margin-bottom: 30px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  gap: 51px;
+}
+.radio_period_select label {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+  color: #333B41;
+  padding-left: 11px;
+}
+
+input.radio_period {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  position: relative;
+  top: 2px;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  border: 1px solid #FE9013;
+  z-index: 1;
+}
+
+input.radio_period:checked {
+  background: #FE9013;
+}
+
+input.radio_period:active {
+  background: #4B9200;
 }
 
 #feed_btn {
@@ -884,7 +967,8 @@ label span {
   width: 298px;
   height: 54px;
   margin: auto;
-  padding-left: 10px;
+  margin-bottom: 30px;
+  padding-left: 17px;
   background-color: #FE9013;
   background-image: linear-gradient(113.96deg, #F9804B 1.49%, #FE9013 101.44%);
   border: 0;
