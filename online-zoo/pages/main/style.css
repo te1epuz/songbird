@@ -629,6 +629,7 @@ html {
   top: 8px;
 }
 .pets .pets_card:hover {
+  cursor: pointer;
   transition: 0.3s;
   overflow: visible;
 }
@@ -859,5 +860,182 @@ html {
 }
 
 #feed_btn:active {
+  background: #4B9200;
+}
+
+.testimonials_wrapper {
+  background: url(../../assets/images/leav_foto.jpg) no-repeat bottom -133px right;
+}
+
+.testimonials {
+  max-width: 1160px;
+  margin: auto;
+  padding: 143px 0 180px 0;
+}
+.testimonials h2 {
+  margin: 0;
+  margin-bottom: 44px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 130%;
+  /* identical to box height, or 47px */
+  text-align: center;
+  color: #333B41;
+}
+
+.testimonial_cards_block {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 15px;
+}
+.testimonial_cards_block .testimonial_card_outer {
+  min-width: 267px;
+  height: 391px;
+  background: linear-gradient(315.75deg, rgba(254, 189, 171, 0.74) 30.06%, rgba(243, 169, 248, 0.66) 50.74%, #E0D8F0 80.49%, #EAF7FE 127.9%, #EAF7FE 149.54%);
+  border-radius: 20px;
+  padding: 2px;
+}
+.testimonial_cards_block .testimonial_card_outer .testimonial_card {
+  width: 100%;
+  height: 100%;
+  background: #F1F3F2;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 14px solid #F1F3F2;
+  border-bottom: 18px solid #F1F3F2;
+}
+.testimonial_cards_block .testimonial_card_outer .testimonial_card .testimonial_card_header {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 11px;
+}
+.testimonial_cards_block .testimonial_card_outer .testimonial_card .testimonial_card_header .testimonial_card_caption {
+  flex-grow: 1;
+}
+.testimonial_cards_block .testimonial_card_outer .testimonial_card .testimonial_card_header .testimonial_card_caption .testimonial_card_name {
+  margin: 0;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 120%;
+  color: #000000;
+}
+.testimonial_cards_block .testimonial_card_outer .testimonial_card .testimonial_card_header .testimonial_card_caption span {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 120%;
+  color: #BDBDBD;
+}
+.testimonial_cards_block .testimonial_card_outer .testimonial_card .testimonial_card_text {
+  margin: 0;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 120%;
+  color: #767474;
+}
+
+.testimonial_slider_block {
+  margin: auto;
+  margin-bottom: 28px;
+  width: 600px;
+}
+
+#testimonial_slider {
+  width: 100%;
+  z-index: 100;
+  background: transparent;
+  -webkit-appearance: none;
+}
+
+#testimonial_slider:focus {
+  outline: none;
+}
+
+#testimonial_slider::-ms-track {
+  cursor: pointer;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+
+#testimonial_slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 19.2%;
+  height: 5px;
+  border-radius: 5px;
+  background-color: #FE9013;
+  cursor: pointer;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+#testimonial_slider::-moz-range-thumb {
+  width: 19.2%;
+  height: 7px;
+  border-radius: 5px;
+  background-color: #FE9013;
+  cursor: pointer;
+  -moz-transition: 0.2s;
+  transition: 0.2s;
+}
+
+#testimonial_slider::-webkit-slider-thumb:hover {
+  transform: scale(1.06);
+  transform: translateY(-1px);
+  height: 7px;
+}
+
+#testimonial_slider::-webkit-slider-runnable-track {
+  width: 52%;
+  height: 7px;
+  cursor: pointer;
+  background: linear-gradient(#F1F3F2, #F1F3F2) padding-box, linear-gradient(0deg, rgba(254, 189, 171, 0.74) 30.06%, rgba(243, 169, 248, 0.66) 50.74%, #E0D8F0 80.49%, #EAF7FE 127.9%, #EAF7FE 149.54%) border-box;
+  border: 1px solid transparent;
+  border-radius: 5px;
+}
+
+#testimonial_slider::-moz-range-track {
+  width: 52%;
+  height: 7px;
+  cursor: pointer;
+  border-radius: 5px;
+  background: linear-gradient(#F1F3F2, #F1F3F2) padding-box, linear-gradient(0deg, rgba(254, 189, 171, 0.74) 30.06%, rgba(243, 169, 248, 0.66) 50.74%, #E0D8F0 80.49%, #EAF7FE 127.9%, #EAF7FE 149.54%) border-box;
+  border: 1px solid transparent;
+  border-radius: 5px;
+}
+
+#leave_feedback_btn {
+  display: block;
+  width: 298px;
+  height: 54px;
+  padding-left: 6px;
+  background-color: #FE9013;
+  background-image: linear-gradient(113.96deg, #F9804B 1.49%, #FE9013 101.44%);
+  border: 0;
+  border-radius: 5px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 140%;
+  text-align: center;
+  text-transform: uppercase;
+  color: #FFFFFF;
+}
+
+#leave_feedback_btn:hover {
+  cursor: pointer;
+  background: #E47209;
+  transition: 0.3s;
+}
+
+#leave_feedback_btn:active {
   background: #4B9200;
 }/*# sourceMappingURL=style.css.map */
