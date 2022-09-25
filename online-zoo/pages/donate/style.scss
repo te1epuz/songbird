@@ -1,0 +1,303 @@
+@import '../../assets/styles/normalize';
+@import '../../assets/styles/typography';
+
+@import '../../assets/styles/header';
+@import '../../assets/styles/footer';
+
+// --------------   MAIN DONATE styles
+
+.panda_header {
+  height: 386px;
+  background-image: url(../../assets/images/donate_panda_bg.jpg);
+  background-position: center bottom;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.main_donate_wrapper {
+  background: linear-gradient(315.75deg, rgba(254, 210, 144, 0.7) 30.06%, #FEBDAB 100.95%, rgba(254, 210, 144, 0.7) 106.36%), linear-gradient(315.75deg, rgba(254, 189, 171, 0.74) 30.06%, rgba(243, 169, 248, 0.66) 50.74%, #E0D8F0 80.49%, #EAF7FE 127.9%, #EAF7FE 149.54%), linear-gradient(315.75deg, rgba(254, 189, 171, 0.74) 30.06%, rgba(243, 169, 248, 0.66) 50.74%, #E0D8F0 80.49%, #EAF7FE 127.9%, #EAF7FE 149.54%);
+}
+
+.main_donate {
+  max-width: 1160px;
+  margin: auto;
+  padding-top: 40px;
+
+  h2 {
+    margin: 0;
+    margin-right: 4px;
+    margin-bottom: 10px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 130%;
+    color: #FFFFFF;
+    text-align: center;
+  }
+
+  p {
+    margin: 0;
+    margin-bottom: 47px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 140%;
+    color: #FFFFFF;
+  }
+
+  h3 {
+    margin-bottom: 58px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 130%;
+    color: #FE9013;
+  }
+
+  .pick_and_feed {
+    background: rgba(255, 255, 255, 0.52);
+    backdrop-filter: blur(2px);
+    border-radius: 20px;
+    padding: 40px 92px 62px 92px;
+
+    h2 {
+      font-family: 'Roboto';
+      margin-right: 12px;
+      margin-bottom: 21px;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 48px;
+      line-height: 120%;
+      text-align: center;
+      color: #FE9013;
+    }
+
+    h3 {
+      margin: 0;
+      margin-bottom: 59px;
+      font-family: 'Roboto';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 24px;
+      line-height: 120%;
+      color: #333B41;
+    }
+
+    .food_per_animal {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 48px;
+
+      div{
+
+        margin-top: 58px;
+        margin-right: 11px;
+
+        h2 {
+          margin: 0;
+          margin-bottom: 11px;
+          font-family: 'Roboto';
+          font-style: normal;
+          font-weight: 500;
+          font-size: 72px;
+          line-height: 80%;
+          text-transform: uppercase;
+          color: #000000;
+        }
+
+        p {
+          margin: 0;
+          font-family: 'Roboto';
+          font-style: normal;
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 140%;
+          color: #333B41;
+        }
+      }
+
+      img:nth-child(2) {
+        margin-right: 64px;
+        margin-top: 30px;
+      }
+
+      img:nth-child(3) {
+        margin-right: 14px;
+      }
+    }
+
+    p.share {
+      font-family: 'Roboto';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 140%;
+      color: #333B41;
+      text-align: center;
+    }
+  }
+}
+
+//----------------------- form start
+
+.form_amount {
+  position: relative;
+}
+
+p.amount {
+  margin-left: 4px;
+  margin-bottom: 17px;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+  color: #000000;
+}
+
+.radio_block {
+  height: 27px;
+  padding: 0 30px 0 26px;
+  background: #404950;
+  border-radius: 2px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+
+  div{
+    position: relative;
+
+  }
+}
+
+input.radio_amount {
+  appearance: none;
+  position: relative;
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #FFEE2E;
+  z-index: 1;
+  display: grid;
+}
+
+input.radio_amount::before {
+  content: "";
+  width: 23px;
+  height: 23px;
+  border-radius: 50%;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  border: 2px solid #FE9013;
+  position: absolute;
+  top: -8px;
+  left: -8px;
+}
+
+input.radio_amount:checked::before {
+  transform: scale(1);
+}
+
+input.radio_amount:focus {
+  outline: max(2px, 2px) solid #FE9013;
+  outline-offset: max(16px, 0.15em);
+}
+
+input.radio_amount:hover {
+  background: #FE9013;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+label {
+  display: block;
+  width: 65px;
+  height: 90px;
+  position: absolute;
+  top: -24px;
+  left: -27px;
+  padding-top: 55px;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 26px;
+  line-height: 140%;
+  color: #333B41;
+  span {
+    font-size: 22px;
+    font-weight: 800;
+  }
+}
+
+
+
+
+.radio_block:after {
+  content: "";
+  display: block;
+  width: 94%;
+  height: 2px;
+  background: #72828E;
+  top: 13px;
+  left: 2.9%;
+  position: absolute;
+}
+
+
+
+
+
+
+#feed_btn {
+  display: block;
+  width: 298px;
+  height: 54px;
+  margin: auto;
+  padding-left: 10px;
+  background-color: #FE9013;
+  background-image: linear-gradient(113.96deg, #F9804B 1.49%, #FE9013 101.44%);
+  border: 0;
+  border-radius: 25px;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 140%;
+  text-align: center;
+  text-transform: uppercase;
+  color: #FFFFFF;
+}
+
+#feed_btn:hover {
+    cursor: pointer;
+    background: #E47209;
+    transition: 0.3s;
+  }
+
+#feed_btn:active {
+  background: #4B9200;
+}
