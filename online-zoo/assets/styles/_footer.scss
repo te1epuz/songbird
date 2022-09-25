@@ -1,0 +1,250 @@
+.footer_wrapper {
+  background: #111115;
+  height: 443px;
+}
+
+.footer_petstory_online { grid-area: footer_petstory_online; }
+.footer_subscribe { grid-area: footer_subscribe; }
+#donate_for_volunteers_btn { grid-area: donate_for_volunteers_btn; }
+.footer_social { grid-area: footer_social; }
+.footer_navigation { grid-area: footer_navigation; }
+.designed_by { grid-area: designed_by; }
+
+.footer {
+  margin: auto;
+  max-width: 1160px;
+  padding-top: 23px;
+  height: max-content;
+
+  display: grid;
+  grid-template-areas:
+  'footer_petstory_online . footer_subscribe'
+  'donate_for_volunteers_btn . .'
+  'footer_social footer_navigation designed_by';
+
+  a.footer_petstory_online {
+    text-decoration: none;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 140%;
+    color: #FFFFFF;
+
+    p {
+      font-family: 'Roboto';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 19.0145px;
+      line-height: 120%;
+      /* or 23px */
+      text-align: center;
+      width: 82px;
+      height: 52px;
+      border: 1px solid #FFFFFF;
+      border-radius: 2px;
+      background-image: url(../../assets/icons/bamboo.svg);
+      background-position: 9px 20px;
+      background-repeat: no-repeat;
+    }
+
+    :hover {
+      opacity: 70%;
+      transition: 0.3s;
+    }
+  }
+
+  .footer_subscribe {
+    margin-top: 18px;
+    justify-self: end;
+
+    p {
+      margin: 0;
+      margin-bottom: 13px;
+      font-family: 'Roboto';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 24px;
+      line-height: 120%;
+      color: #FFFFFF;
+    }
+
+    #input_email {
+      width: 228px;
+      height: 42px;
+      padding: 10px;
+      margin-right: 6px;
+      background-color: #111115;
+      border: 1px solid rgba(249, 128, 75, 1);
+      border-radius: 2px;
+
+      font-family: 'Roboto';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 140%;
+      color: #BDBDBD;
+    }
+
+    #input_email::placeholder {
+    color: #BDBDBD;
+    }
+
+    #input_submit {
+      width: 129px;
+      height: 42px;
+      background: #F1F3F2;
+      border: 1px solid #333B41;
+      border-radius: 5px;
+      font-family: 'Roboto';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 140%;
+      color: #000000;
+    }
+
+    #input_submit:hover {
+      transform: scale(1.02);
+    }
+
+    #input_submit:active {
+      border: 1px solid #4B9200;
+      color: #4B9200;
+      transform: scale(1);
+    }
+
+    #input_email:invalid {
+      border: 1px solid #D31414;
+      color: #D31414;
+    }
+
+    #input_email:invalid ~ #input_submit {
+      border: 1px solid #D31414;
+      color: #D31414;
+    }
+  }
+
+  #donate_for_volunteers_btn {
+    margin-top: 35px;
+    display: block;
+    width: 298px;
+    height: 54px;
+    padding-left: 6px;
+    background-color: #FE9013;
+    background-image: linear-gradient(113.96deg, #F9804B 1.49%, #FE9013 101.44%);
+    border: 0;
+    border-radius: 5px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 140%;
+    text-align: center;
+    text-transform: uppercase;
+    color: #FFFFFF;
+  }
+
+  #donate_for_volunteers_btn:hover {
+      cursor: pointer;
+      background: #E47209;
+      transition: 0.3s;
+    }
+
+    #donate_for_volunteers_btn:active {
+      background: #4B9200;
+  }
+
+  .footer_social {
+    list-style: none;
+    margin-top: 35px;
+    margin-bottom: 0;
+    padding: 0;
+
+    li {
+      margin-top: 9px;
+
+      a {
+        text-decoration: none;
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 140%;
+        color: #FFFFFF;
+
+        div {
+          width: 26px;
+          height: 26px;
+          border-radius: 50%;
+          background: rgba(196, 196, 196, 0.5);
+          display:inline-flex;
+          justify-content:center;
+          align-items:center;
+          margin-right: 12px;
+        }
+      }
+
+      :hover {
+        color: #4B9200;
+        transition: 0.3s;
+
+        div {
+          background: #4B9200;
+          transition: 1s;
+        }
+      }
+    }
+  }
+
+  .footer_navigation {
+    margin-bottom: -1px;
+    margin-left: 85px;
+    align-self: end;
+
+    ul {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      gap: 58px;
+      list-style: none;
+
+      a {
+        text-decoration: none;
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 140%;
+        color: #FFFFFF;
+      }
+
+      .current_link {
+        color: #FE9013;
+        pointer-events: none;
+      }
+    }
+  }
+
+  .footer_navigation a:hover {
+    opacity: 70%;
+    transition: 0.3s;
+  }
+
+  .designed_by {
+    margin-bottom: -1px;
+    place-self: end end;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 100;
+    font-size: 16px;
+    line-height: 130%;
+    color: #bdbdbd;
+
+    p {
+      margin: 0;
+      margin-top: 10px;
+    }
+  }
+}

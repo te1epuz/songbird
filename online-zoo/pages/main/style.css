@@ -394,7 +394,6 @@ html {
   line-height: 120%;
   padding-top: 4px;
   margin-right: 5px;
-  /* or 23px */
   text-align: center;
   width: 82px;
   height: 52px;
@@ -412,6 +411,249 @@ html {
 .navigation a:hover {
   opacity: 70%;
   transition: 0.3s;
+}
+
+.footer_wrapper {
+  background: #111115;
+  height: 443px;
+}
+
+.footer_petstory_online {
+  grid-area: footer_petstory_online;
+}
+
+.footer_subscribe {
+  grid-area: footer_subscribe;
+}
+
+#donate_for_volunteers_btn {
+  grid-area: donate_for_volunteers_btn;
+}
+
+.footer_social {
+  grid-area: footer_social;
+}
+
+.footer_navigation {
+  grid-area: footer_navigation;
+}
+
+.designed_by {
+  grid-area: designed_by;
+}
+
+.footer {
+  margin: auto;
+  max-width: 1160px;
+  padding-top: 23px;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  display: grid;
+  grid-template-areas: "footer_petstory_online . footer_subscribe" "donate_for_volunteers_btn . ." "footer_social footer_navigation designed_by";
+}
+.footer a.footer_petstory_online {
+  text-decoration: none;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 140%;
+  color: #FFFFFF;
+}
+.footer a.footer_petstory_online p {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 19.0145px;
+  line-height: 120%;
+  /* or 23px */
+  text-align: center;
+  width: 82px;
+  height: 52px;
+  border: 1px solid #FFFFFF;
+  border-radius: 2px;
+  background-image: url(../../assets/icons/bamboo.svg);
+  background-position: 9px 20px;
+  background-repeat: no-repeat;
+}
+.footer a.footer_petstory_online :hover {
+  opacity: 70%;
+  transition: 0.3s;
+}
+.footer .footer_subscribe {
+  margin-top: 18px;
+  justify-self: end;
+}
+.footer .footer_subscribe p {
+  margin: 0;
+  margin-bottom: 13px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 120%;
+  color: #FFFFFF;
+}
+.footer .footer_subscribe #input_email {
+  width: 228px;
+  height: 42px;
+  padding: 10px;
+  margin-right: 6px;
+  background-color: #111115;
+  border: 1px solid rgb(249, 128, 75);
+  border-radius: 2px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+  color: #BDBDBD;
+}
+.footer .footer_subscribe #input_email::-moz-placeholder {
+  color: #BDBDBD;
+}
+.footer .footer_subscribe #input_email:-ms-input-placeholder {
+  color: #BDBDBD;
+}
+.footer .footer_subscribe #input_email::placeholder {
+  color: #BDBDBD;
+}
+.footer .footer_subscribe #input_submit {
+  width: 129px;
+  height: 42px;
+  background: #F1F3F2;
+  border: 1px solid #333B41;
+  border-radius: 5px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+  color: #000000;
+}
+.footer .footer_subscribe #input_submit:hover {
+  transform: scale(1.02);
+}
+.footer .footer_subscribe #input_submit:active {
+  border: 1px solid #4B9200;
+  color: #4B9200;
+  transform: scale(1);
+}
+.footer .footer_subscribe #input_email:invalid {
+  border: 1px solid #D31414;
+  color: #D31414;
+}
+.footer .footer_subscribe #input_email:invalid ~ #input_submit {
+  border: 1px solid #D31414;
+  color: #D31414;
+}
+.footer #donate_for_volunteers_btn {
+  margin-top: 35px;
+  display: block;
+  width: 298px;
+  height: 54px;
+  padding-left: 6px;
+  background-color: #FE9013;
+  background-image: linear-gradient(113.96deg, #F9804B 1.49%, #FE9013 101.44%);
+  border: 0;
+  border-radius: 5px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 140%;
+  text-align: center;
+  text-transform: uppercase;
+  color: #FFFFFF;
+}
+.footer #donate_for_volunteers_btn:hover {
+  cursor: pointer;
+  background: #E47209;
+  transition: 0.3s;
+}
+.footer #donate_for_volunteers_btn:active {
+  background: #4B9200;
+}
+.footer .footer_social {
+  list-style: none;
+  margin-top: 35px;
+  margin-bottom: 0;
+  padding: 0;
+}
+.footer .footer_social li {
+  margin-top: 9px;
+}
+.footer .footer_social li a {
+  text-decoration: none;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+  color: #FFFFFF;
+}
+.footer .footer_social li a div {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: rgba(196, 196, 196, 0.5);
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 12px;
+}
+.footer .footer_social li :hover {
+  color: #4B9200;
+  transition: 0.3s;
+}
+.footer .footer_social li :hover div {
+  background: #4B9200;
+  transition: 1s;
+}
+.footer .footer_navigation {
+  margin-bottom: -1px;
+  margin-left: 85px;
+  align-self: end;
+}
+.footer .footer_navigation ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  gap: 58px;
+  list-style: none;
+}
+.footer .footer_navigation ul a {
+  text-decoration: none;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+  color: #FFFFFF;
+}
+.footer .footer_navigation ul .current_link {
+  color: #FE9013;
+  pointer-events: none;
+}
+.footer .footer_navigation a:hover {
+  opacity: 70%;
+  transition: 0.3s;
+}
+.footer .designed_by {
+  margin-bottom: -1px;
+  place-self: end end;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 100;
+  font-size: 16px;
+  line-height: 130%;
+  color: #bdbdbd;
+}
+.footer .designed_by p {
+  margin: 0;
+  margin-top: 10px;
 }
 
 .watch_online_wrapper {
@@ -746,7 +988,6 @@ html {
   font-weight: 400;
   font-size: 48px;
   line-height: 120%;
-  /* identical to box height, or 58px */
   text-align: center;
   color: #FE9013;
 }
@@ -758,7 +999,6 @@ html {
   font-weight: 400;
   font-size: 24px;
   line-height: 120%;
-  /* identical to box height, or 29px */
   color: #333B41;
 }
 .pick_and_feed p:nth-child(3) {
@@ -797,7 +1037,6 @@ html {
   font-weight: 400;
   font-size: 36px;
   line-height: 130%;
-  /* identical to box height, or 47px */
   color: #333B41;
   text-align: center;
 }
@@ -896,7 +1135,7 @@ html {
 .testimonial_cards_block {
   display: flex;
   gap: 30px;
-  margin-bottom: 15px;
+  margin-bottom: 17px;
 }
 .testimonial_cards_block .testimonial_card_outer {
   min-width: 267px;
@@ -951,7 +1190,7 @@ html {
 
 .testimonial_slider_block {
   margin: auto;
-  margin-bottom: 28px;
+  margin-bottom: 26px;
   width: 600px;
 }
 
@@ -976,7 +1215,7 @@ html {
 #testimonial_slider::-webkit-slider-thumb {
   -webkit-appearance: none;
   width: 19.2%;
-  height: 5px;
+  height: 7px;
   border-radius: 5px;
   background-color: #FE9013;
   cursor: pointer;
@@ -1002,7 +1241,7 @@ html {
 
 #testimonial_slider::-webkit-slider-runnable-track {
   width: 52%;
-  height: 7px;
+  height: 9px;
   cursor: pointer;
   background: linear-gradient(#F1F3F2, #F1F3F2) padding-box, linear-gradient(0deg, rgba(254, 189, 171, 0.74) 30.06%, rgba(243, 169, 248, 0.66) 50.74%, #E0D8F0 80.49%, #EAF7FE 127.9%, #EAF7FE 149.54%) border-box;
   border: 1px solid transparent;
@@ -1046,247 +1285,4 @@ html {
 
 #leave_feedback_btn:active {
   background: #4B9200;
-}
-
-.footer_wrapper {
-  background: #111115;
-  height: 443px;
-}
-
-.footer_petstory_online {
-  grid-area: footer_petstory_online;
-}
-
-.footer_subscribe {
-  grid-area: footer_subscribe;
-}
-
-#donate_for_volunteers_btn {
-  grid-area: donate_for_volunteers_btn;
-}
-
-.footer_social {
-  grid-area: footer_social;
-}
-
-.footer_navigation {
-  grid-area: footer_navigation;
-}
-
-.designed_by {
-  grid-area: designed_by;
-}
-
-.footer {
-  margin: auto;
-  max-width: 1160px;
-  padding-top: 23px;
-  height: -webkit-max-content;
-  height: -moz-max-content;
-  height: max-content;
-  display: grid;
-  grid-template-areas: "footer_petstory_online . footer_subscribe" "donate_for_volunteers_btn . ." "footer_social footer_navigation designed_by";
-}
-.footer a.footer_petstory_online {
-  text-decoration: none;
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 140%;
-  color: #FFFFFF;
-}
-.footer a.footer_petstory_online p {
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 19.0145px;
-  line-height: 120%;
-  /* or 23px */
-  text-align: center;
-  width: 82px;
-  height: 52px;
-  border: 1px solid #FFFFFF;
-  border-radius: 2px;
-  background-image: url(../../assets/icons/bamboo.svg);
-  background-position: 9px 20px;
-  background-repeat: no-repeat;
-}
-.footer a.footer_petstory_online :hover {
-  opacity: 70%;
-  transition: 0.3s;
-}
-.footer .footer_subscribe {
-  margin-top: 18px;
-  justify-self: end;
-}
-.footer .footer_subscribe p {
-  margin: 0;
-  margin-bottom: 13px;
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 24px;
-  line-height: 120%;
-  color: #FFFFFF;
-}
-.footer .footer_subscribe #input_email {
-  width: 228px;
-  height: 42px;
-  padding: 10px;
-  margin-right: 6px;
-  background-color: #111115;
-  border: 1px solid rgb(249, 128, 75);
-  border-radius: 2px;
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 140%;
-  color: #BDBDBD;
-}
-.footer .footer_subscribe #input_email::-moz-placeholder {
-  color: #BDBDBD;
-}
-.footer .footer_subscribe #input_email:-ms-input-placeholder {
-  color: #BDBDBD;
-}
-.footer .footer_subscribe #input_email::placeholder {
-  color: #BDBDBD;
-}
-.footer .footer_subscribe #input_submit {
-  width: 129px;
-  height: 42px;
-  background: #F1F3F2;
-  border: 1px solid #333B41;
-  border-radius: 5px;
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 140%;
-  color: #000000;
-}
-.footer .footer_subscribe #input_submit:hover {
-  transform: scale(1.02);
-}
-.footer .footer_subscribe #input_submit:active {
-  border: 1px solid #4B9200;
-  color: #4B9200;
-  transform: scale(1);
-}
-.footer .footer_subscribe #input_email:invalid {
-  border: 1px solid #D31414;
-  color: #D31414;
-}
-.footer .footer_subscribe #input_email:invalid ~ #input_submit {
-  border: 1px solid #D31414;
-  color: #D31414;
-}
-.footer #donate_for_volunteers_btn {
-  margin-top: 35px;
-  display: block;
-  width: 298px;
-  height: 54px;
-  padding-left: 6px;
-  background-color: #FE9013;
-  background-image: linear-gradient(113.96deg, #F9804B 1.49%, #FE9013 101.44%);
-  border: 0;
-  border-radius: 5px;
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 140%;
-  text-align: center;
-  text-transform: uppercase;
-  color: #FFFFFF;
-}
-.footer #donate_for_volunteers_btn:hover {
-  cursor: pointer;
-  background: #E47209;
-  transition: 0.3s;
-}
-.footer #donate_for_volunteers_btn:active {
-  background: #4B9200;
-}
-.footer .footer_social {
-  list-style: none;
-  margin-top: 35px;
-  margin-bottom: 0;
-  padding: 0;
-}
-.footer .footer_social li {
-  margin-top: 9px;
-}
-.footer .footer_social li a {
-  text-decoration: none;
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 140%;
-  color: #FFFFFF;
-}
-.footer .footer_social li a div {
-  width: 26px;
-  height: 26px;
-  border-radius: 50%;
-  background: rgba(196, 196, 196, 0.5);
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  margin-right: 12px;
-}
-.footer .footer_social li :hover {
-  color: #4B9200;
-  transition: 0.3s;
-}
-.footer .footer_social li :hover div {
-  background: #4B9200;
-  transition: 1s;
-}
-.footer .footer_navigation {
-  margin-bottom: -1px;
-  margin-left: 85px;
-  align-self: end;
-}
-.footer .footer_navigation ul {
-  margin: 0;
-  padding: 0;
-  display: flex;
-  align-items: center;
-  gap: 58px;
-  list-style: none;
-}
-.footer .footer_navigation ul a {
-  text-decoration: none;
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 140%;
-  color: #FFFFFF;
-}
-.footer .footer_navigation ul .current_link {
-  color: #FE9013;
-  pointer-events: none;
-}
-.footer .footer_navigation a:hover {
-  opacity: 70%;
-  transition: 0.3s;
-}
-.footer .designed_by {
-  margin-bottom: -1px;
-  place-self: end end;
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 100;
-  font-size: 16px;
-  line-height: 130%;
-  color: #bdbdbd;
-}
-.footer .designed_by p {
-  margin: 0;
-  margin-top: 10px;
 }/*# sourceMappingURL=style.css.map */

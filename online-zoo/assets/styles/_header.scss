@@ -1,0 +1,70 @@
+html {
+  scroll-behavior:smooth
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.header_wrapper {
+  background-color: #000000;
+}
+
+.header {
+  max-width: 1160px;
+  height: 80px;
+  margin: auto;
+}
+
+.navigation {
+  ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    gap: 58px;
+    list-style: none;
+
+    :last-child {
+      margin-left: auto;
+    }
+
+    a {
+      text-decoration: none;
+      font-family: 'Roboto';
+      font-style: normal;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 140%;
+      color: #FFFFFF;
+
+      h1 {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 19.0145px;
+        line-height: 120%;
+        padding-top: 4px;
+        margin-right: 5px;
+        text-align: center;
+        width: 82px;
+        height: 52px;
+        border: 1px solid #FFFFFF;
+        border-radius: 2px;
+        background-image: url(../../assets/icons/bamboo.svg);
+        background-position: 9px 24px;
+        background-repeat: no-repeat;
+      }
+    }
+
+    .current_link {
+      color: #FE9013;
+      pointer-events: none;
+    }
+  }
+}
+
+.navigation a:hover {
+  opacity: 70%;
+  transition: 0.3s;
+}
