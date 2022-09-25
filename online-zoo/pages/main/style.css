@@ -308,6 +308,14 @@ template {
   display: none;
 }
 
+/* roboto-100 - latin_cyrillic */
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 100;
+  src: url("../../assets/fonts/roboto-v30-latin_cyrillic-100.eot"); /* IE9 Compat Modes */
+  src: local(""), url("../../assets/fonts/roboto-v30-latin_cyrillic-100.eot?#iefix") format("embedded-opentype"), url("../../assets/fonts/roboto-v30-latin_cyrillic-100.woff2") format("woff2"), url("../../assets/fonts/roboto-v30-latin_cyrillic-100.woff") format("woff"), url("../../assets/fonts/roboto-v30-latin_cyrillic-100.ttf") format("truetype"), url("../../assets/fonts/roboto-v30-latin_cyrillic-100.svg#Roboto") format("svg"); /* Legacy iOS */
+}
 /* roboto-300 - latin_cyrillic */
 @font-face {
   font-family: "Roboto";
@@ -1038,4 +1046,212 @@ html {
 
 #leave_feedback_btn:active {
   background: #4B9200;
+}
+
+.footer_wrapper {
+  background: #111115;
+  height: 443px;
+}
+
+.footer_petstory_online {
+  grid-area: footer_petstory_online;
+}
+
+.footer_subscribe {
+  grid-area: footer_subscribe;
+}
+
+#donate_for_volunteers_btn {
+  grid-area: donate_for_volunteers_btn;
+}
+
+.footer_social {
+  grid-area: footer_social;
+}
+
+.footer_navigation {
+  grid-area: footer_navigation;
+}
+
+.designed_by {
+  grid-area: designed_by;
+}
+
+.footer {
+  margin: auto;
+  max-width: 1160px;
+  padding-top: 23px;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  display: grid;
+  grid-template-areas: "footer_petstory_online . footer_subscribe" "donate_for_volunteers_btn . ." "footer_social footer_navigation designed_by";
+}
+.footer a.footer_petstory_online {
+  text-decoration: none;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 140%;
+  color: #FFFFFF;
+}
+.footer a.footer_petstory_online p {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 19.0145px;
+  line-height: 120%;
+  /* or 23px */
+  text-align: center;
+  width: 82px;
+  height: 52px;
+  border: 1px solid #FFFFFF;
+  border-radius: 2px;
+  background-image: url(../../assets/icons/bamboo.svg);
+  background-position: 9px 20px;
+  background-repeat: no-repeat;
+}
+.footer a.footer_petstory_online :hover {
+  opacity: 70%;
+  transition: 0.3s;
+}
+.footer .footer_subscribe {
+  margin-top: 18px;
+  justify-self: end;
+}
+.footer .footer_subscribe p {
+  margin: 0;
+  margin-bottom: 13px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 120%;
+  color: #FFFFFF;
+}
+.footer .footer_subscribe #input_email {
+  width: 228px;
+  height: 42px;
+  padding: 10px;
+  margin-right: 6px;
+  background-color: #111115;
+  border: 1px solid rgb(249, 128, 75);
+  border-radius: 2px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+  color: #BDBDBD;
+}
+.footer .footer_subscribe #input_email::-moz-placeholder {
+  color: #BDBDBD;
+}
+.footer .footer_subscribe #input_email:-ms-input-placeholder {
+  color: #BDBDBD;
+}
+.footer .footer_subscribe #input_email::placeholder {
+  color: #BDBDBD;
+}
+.footer .footer_subscribe #input_submit {
+  width: 129px;
+  height: 42px;
+  background: #F1F3F2;
+  border: 1px solid #333B41;
+  border-radius: 5px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+  color: #000000;
+}
+.footer #donate_for_volunteers_btn {
+  margin-top: 35px;
+  display: block;
+  width: 298px;
+  height: 54px;
+  padding-left: 6px;
+  background-color: #FE9013;
+  background-image: linear-gradient(113.96deg, #F9804B 1.49%, #FE9013 101.44%);
+  border: 0;
+  border-radius: 5px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 140%;
+  text-align: center;
+  text-transform: uppercase;
+  color: #FFFFFF;
+}
+.footer #donate_for_volunteers_btn:hover {
+  cursor: pointer;
+  background: #E47209;
+  transition: 0.3s;
+}
+.footer #donate_for_volunteers_btn:active {
+  background: #4B9200;
+}
+.footer .footer_social {
+  list-style: none;
+  margin-top: 40px;
+  margin-bottom: 0;
+  padding: 0;
+}
+.footer .footer_social li {
+  margin-top: 4px;
+}
+.footer .footer_social li a {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+  color: #FFFFFF;
+}
+.footer .footer_social li :hover {
+  opacity: 70%;
+  transition: 0.3s;
+}
+.footer .footer_navigation {
+  margin-bottom: 7px;
+  margin-left: 85px;
+  align-self: end;
+}
+.footer .footer_navigation ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  gap: 58px;
+  list-style: none;
+}
+.footer .footer_navigation ul a {
+  text-decoration: none;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+  color: #FFFFFF;
+}
+.footer .footer_navigation ul .current_link {
+  color: #FE9013;
+  pointer-events: none;
+}
+.footer .footer_navigation a:hover {
+  opacity: 70%;
+  transition: 0.3s;
+}
+.footer .designed_by {
+  margin-bottom: -6px;
+  place-self: end end;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 100;
+  font-size: 16px;
+  line-height: 90%;
+  color: #bdbdbd;
 }/*# sourceMappingURL=style.css.map */
