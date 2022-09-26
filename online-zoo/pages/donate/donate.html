@@ -5,8 +5,8 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="style.css">
-  <link rel="icon" href="../../assets/icons/bamboo.svg">
-	<title>Online-zoo</title>
+  <link rel="icon" href="../../assets/icons/panda_icon.svg">
+	<title>Online-zoo donate</title>
 </head>
 <body>
   <div class="header_wrapper">
@@ -19,7 +19,7 @@
           <li><a href="#">Zoos</a></li>
           <li><a class="current_link" href="../../pages/donate/donate.html">Donate</a></li>
           <li><a href="#">Contact us</a></li>
-          <li><a href="https://www.figma.com/file/jfEFwkXVj1WRq7sUHDr8os/PetStory-online">Designed by ©</a></li>
+          <li><a href="https://www.figma.com/file/ypzT9idgAILaSRVRmDAJxn/online-zoo-3-weeks?node-id=0%3A1">Designed by ©</a></li>
         </ul>
       </nav>
     </header>
@@ -54,18 +54,17 @@
               <div><input class="radio_amount" type="radio" id="choice7" name="radio_amount" value="50"><label for="choice7"><span>$</span>50</label></div>
               <div><input class="radio_amount" type="radio" id="choice8" name="radio_amount" value="25"><label for="choice8"><span>$</span>25</label></div>
             </div>
-            <input type="number" name="another_amount" id="another_amount" max="9999" placeholder="Another amount">
-            <div id="dollar_sign">$</div>
-            <div class="radio_period_select">
-              <div><input class="radio_period" type="radio" name="radio_period" id="choice_monthly"><label for="choice_monthly">Monthly</label></div>
-              <div><input class="radio_period" type="radio" name="radio_period" id="choice_once" checked><label for="choice_once">Once</label></div>
+            <div class="payment_block">
+              <input type="number" name="another_amount" id="another_amount" max="9999" placeholder="Another amount">
+              <div id="dollar_sign">$</div>
+              <div class="radio_period_select">
+                <div><input class="radio_period" type="radio" name="radio_period" id="choice_monthly"><label for="choice_monthly">Monthly</label></div>
+                <div><input class="radio_period" type="radio" name="radio_period" id="choice_once" checked><label for="choice_once">Once</label></div>
+              </div>
+              <button id="feed_btn" onclick="location.href='../../pages/donate/donate.html'">Feed a friend now</button>
+              <p class="share">Share with your friends on social networks</p>
             </div>
           </form>
-
-
-
-          <button id="feed_btn" onclick="location.href='../../pages/donate/donate.html'">Feed a friend now</button>
-          <p class="share">Share with your friends on social networks</p>
         </div>
       </div>
     </div>

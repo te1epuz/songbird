@@ -509,6 +509,7 @@ html {
   font-size: 16px;
   line-height: 140%;
   color: #BDBDBD;
+  outline: none;
 }
 .footer .footer_subscribe #input_email::-moz-placeholder {
   color: #BDBDBD;
@@ -517,6 +518,10 @@ html {
   color: #BDBDBD;
 }
 .footer .footer_subscribe #input_email::placeholder {
+  color: #BDBDBD;
+}
+.footer .footer_subscribe #input_email:-webkit-autofill {
+  background-color: #111115;
   color: #BDBDBD;
 }
 .footer .footer_subscribe #input_submit {
@@ -603,12 +608,20 @@ html {
   align-items: center;
   margin-right: 12px;
 }
-.footer .footer_social li :hover {
+.footer .footer_social li :active {
   color: #4B9200;
   transition: 0.3s;
 }
-.footer .footer_social li :hover div {
+.footer .footer_social li :active div {
   background: #4B9200;
+  transition: 1s;
+}
+.footer .footer_social li :hover {
+  opacity: 0.7;
+  transition: 0.3s;
+}
+.footer .footer_social li :hover div {
+  opacity: 0.7;
   transition: 1s;
 }
 .footer .footer_navigation {

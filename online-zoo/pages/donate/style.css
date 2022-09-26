@@ -509,6 +509,7 @@ html {
   font-size: 16px;
   line-height: 140%;
   color: #BDBDBD;
+  outline: none;
 }
 .footer .footer_subscribe #input_email::-moz-placeholder {
   color: #BDBDBD;
@@ -517,6 +518,10 @@ html {
   color: #BDBDBD;
 }
 .footer .footer_subscribe #input_email::placeholder {
+  color: #BDBDBD;
+}
+.footer .footer_subscribe #input_email:-webkit-autofill {
+  background-color: #111115;
   color: #BDBDBD;
 }
 .footer .footer_subscribe #input_submit {
@@ -603,12 +608,20 @@ html {
   align-items: center;
   margin-right: 12px;
 }
-.footer .footer_social li :hover {
+.footer .footer_social li :active {
   color: #4B9200;
   transition: 0.3s;
 }
-.footer .footer_social li :hover div {
+.footer .footer_social li :active div {
   background: #4B9200;
+  transition: 1s;
+}
+.footer .footer_social li :hover {
+  opacity: 0.7;
+  transition: 0.3s;
+}
+.footer .footer_social li :hover div {
+  opacity: 0.7;
   transition: 1s;
 }
 .footer .footer_navigation {
@@ -799,7 +812,7 @@ p.amount {
 
 .radio_block {
   height: 27px;
-  margin-bottom: 100px;
+  margin-bottom: 98px;
   padding: 0 30px 0 26px;
   background: #404950;
   border-radius: 2px;
@@ -891,49 +904,85 @@ input.radio_amount:hover {
   background: #FE9013;
 }
 
+.payment_block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: auto;
+  position: relative;
+}
+
 #another_amount {
   display: block;
   margin: auto;
-  margin-bottom: 23px;
+  margin-bottom: 25px;
   width: 268px;
   height: 54px;
-  background: #333B41;
-  border: 1px solid #FFEE2E;
+  background: transparent;
+  border: 1px solid #929699;
   border-radius: 2px;
-  padding-left: 9px;
+  padding-left: 8px;
   font-family: "Roboto";
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
   line-height: 140%;
-  color: #FFFFFF;
+  color: #929699;
   text-align: center;
   position: relative;
+  outline: none;
 }
 
 #another_amount::-moz-placeholder {
   text-align: left;
-  color: #FFFFFF;
+  color: #929699;
 }
 
 #another_amount:-ms-input-placeholder {
   text-align: left;
-  color: #FFFFFF;
+  color: #929699;
 }
 
 #another_amount::placeholder {
   text-align: left;
-  color: #FFFFFF;
+  color: #929699;
+}
+
+#another_amount:focus {
+  color: #4B9200;
+  border: 1px solid #4B9200;
+  outline: none;
+}
+
+#another_amount:focus ~ div {
+  color: #4B9200;
+}
+
+#another_amount:invalid {
+  color: #D31414;
+  border: 1px solid #D31414;
+  outline: none;
+}
+
+#another_amount:invalid ~ div {
+  color: #D31414;
 }
 
 #dollar_sign {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
   margin: auto;
   position: absolute;
-  left: 600px;
-  top: 182px;
-  color: #FFFFFF;
+  left: 265px;
+  top: 15px;
+  color: #929699;
   font-family: "Roboto";
-  font-size: 20px;
+  font-weight: 800;
+  font-size: 22px;
 }
 
 #another_amountt::-webkit-outer-spin-button,
@@ -991,9 +1040,9 @@ input.radio_period:active {
   display: block;
   width: 298px;
   height: 54px;
-  margin: auto;
   margin-bottom: 30px;
-  padding-left: 17px;
+  margin-left: 6px;
+  padding-left: 10px;
   background-color: #FE9013;
   background-image: linear-gradient(113.96deg, #F9804B 1.49%, #FE9013 101.44%);
   border: 0;

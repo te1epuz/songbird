@@ -84,11 +84,17 @@
       font-size: 16px;
       line-height: 140%;
       color: #BDBDBD;
+      outline: none;
     }
 
     #input_email::placeholder {
     color: #BDBDBD;
     }
+
+    #input_email:-webkit-autofill {
+      background-color: #111115;
+      color: #BDBDBD;
+  }
 
     #input_submit {
       width: 129px;
@@ -185,12 +191,22 @@
         }
       }
 
-      :hover {
+      :active {
         color: #4B9200;
         transition: 0.3s;
 
         div {
           background: #4B9200;
+          transition: 1s;
+        }
+      }
+
+      :hover {
+        opacity: 0.7;
+        transition: 0.3s;
+
+        div {
+          opacity: 0.7;
           transition: 1s;
         }
       }

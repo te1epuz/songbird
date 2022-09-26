@@ -164,7 +164,7 @@ p.amount {
 
 .radio_block {
   height: 27px;
-  margin-bottom: 100px;
+  margin-bottom: 98px;
   padding: 0 30px 0 26px;
   background: #404950;
   border-radius: 2px;
@@ -256,39 +256,71 @@ input.radio_amount:hover {
   background: #FE9013;
 }
 
+.payment_block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: fit-content;
+  margin: auto;
+  position: relative;
+}
+
 #another_amount {
   display: block;
   margin: auto;
-  margin-bottom: 23px;
+  margin-bottom: 25px;
   width: 268px;
   height: 54px;
-  background: #333B41;
-  border: 1px solid #FFEE2E;
+  background: transparent;
+  border: 1px solid #929699;
   border-radius: 2px;
-  padding-left: 9px;
+  padding-left: 8px;
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
   line-height: 140%;
-  color: #FFFFFF;
+  color: #929699;
   text-align: center;
   position: relative;
+  outline: none;
 }
 
 #another_amount::placeholder {
   text-align: left;
-  color: #FFFFFF;
+  color: #929699;
+}
+
+#another_amount:focus {
+  color: #4B9200;
+  border: 1px solid #4B9200;
+  outline: none;
+}
+
+#another_amount:focus ~ div {
+  color: #4B9200;
+}
+
+#another_amount:invalid {
+  color: #D31414;
+  border: 1px solid #D31414;
+  outline: none;
+}
+
+#another_amount:invalid ~ div {
+  color: #D31414;
 }
 
 #dollar_sign {
+  width: fit-content;
   margin: auto;
   position: absolute;
-  left: 600px;
-  top: 182px;
-  color: #FFFFFF;
+  left: 265px;
+  top: 15px;
+  color: #929699;
   font-family: 'Roboto';
-  font-size: 20px;
+  font-weight: 800;
+  font-size: 22px;
 }
 
 #another_amountt::-webkit-outer-spin-button,
@@ -301,7 +333,6 @@ input.radio_amount:hover {
   -moz-appearance: textfield;
 }
 
-
 .radio_period_select {
   display: flex;
   margin: auto;
@@ -309,7 +340,6 @@ input.radio_amount:hover {
   margin-bottom: 30px;
   width: fit-content;
   gap: 51px;
-
 
   label {
     font-family: 'Roboto';
@@ -337,26 +367,17 @@ input.radio_period:checked {
   background: #FE9013;
 }
 
-// input.radio_period:focus {
-//   outline: max(2px, 2px) solid #FE9013;
-//   outline-offset: max(12px, 0.15em);
-// }
-
 input.radio_period:active {
   background: #4B9200;
 }
-
-
-
-
 
 #feed_btn {
   display: block;
   width: 298px;
   height: 54px;
-  margin: auto;
   margin-bottom: 30px;
-  padding-left: 17px;
+  margin-left: 6px;
+  padding-left: 10px;
   background-color: #FE9013;
   background-image: linear-gradient(113.96deg, #F9804B 1.49%, #FE9013 101.44%);
   border: 0;
