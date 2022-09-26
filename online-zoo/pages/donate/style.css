@@ -832,7 +832,7 @@ p.amount {
   font-weight: 800;
 }
 
-.radio_block:after {
+.radio_block::after {
   content: "";
   display: block;
   width: 94%;
@@ -863,7 +863,7 @@ input.radio_amount {
 
 input.radio_amount::before {
   content: "";
-  width: 20px;
+  width: 19px;
   height: 19px;
   border-radius: 50%;
   transform: scale(0);
@@ -871,7 +871,7 @@ input.radio_amount::before {
   border: 2px solid #FE9013;
   position: absolute;
   top: -6px;
-  left: -7px;
+  left: -6px;
 }
 
 input.radio_amount:checked::before {
@@ -907,18 +907,43 @@ input.radio_amount:hover {
   font-size: 16px;
   line-height: 140%;
   color: #FFFFFF;
+  text-align: center;
+  position: relative;
 }
 
 #another_amount::-moz-placeholder {
+  text-align: left;
   color: #FFFFFF;
 }
 
 #another_amount:-ms-input-placeholder {
+  text-align: left;
   color: #FFFFFF;
 }
 
 #another_amount::placeholder {
+  text-align: left;
   color: #FFFFFF;
+}
+
+#dollar_sign {
+  margin: auto;
+  position: absolute;
+  left: 600px;
+  top: 182px;
+  color: #FFFFFF;
+  font-family: "Roboto";
+  font-size: 20px;
+}
+
+#another_amountt::-webkit-outer-spin-button,
+#another_amount::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+#another_amount {
+  -moz-appearance: textfield;
 }
 
 .radio_period_select {
