@@ -6,20 +6,20 @@
 
 // --------------   Watch your favorite animal online styles
 
-.watch_online_wrapper {
+.watch_online {
   background-image: url(../../assets/images/Giant_Panda.jpg);
   background-position: center bottom;
   background-size: cover;
   background-repeat: no-repeat;
 }
 
-.watch_online {
+.watch_online__wrapper {
   height: 700px;
   max-width: 1160px;
   margin: auto;
   padding: 12px;
 
-  .watch_circle {
+  .watch_online__circle {
     margin: 0 96px 69px auto;
     width: 465px;
     height: 465px;
@@ -49,7 +49,7 @@
   }
 }
 
-#btn_watch_online {
+#watch_online__button {
   display: block;
   width: 298px;
   height: 54px;
@@ -69,23 +69,23 @@
   color: #FFFFFF;
 }
 
-#btn_watch_online:hover {
-    cursor: pointer;
-    background: #E47209;
-    transition: 0.3s;
-  }
+#watch_online__button:hover {
+   cursor: pointer;
+   background: #E47209;
+   transition: 0.3s;
+ }
 
-  #btn_watch_online:active {
-    background: #4B9200;
-  }
+#watch_online__button:active {
+   background: #4B9200;
+ }
 
 // --------------   The backstage styles
 
-.the_backstage_wrapper {
+.the_backstage {
   background: url(../../assets/images/flower_foto1.jpg) no-repeat top 12px right;
 }
 
-.the_backstage {
+.the_backstage__wrapper {
   max-width: 1160px;
   margin: auto;
   padding-bottom: 177px;
@@ -93,6 +93,7 @@
   display: grid;
   grid-template-columns:1fr 1fr;
   gap: 87px;
+
   img{
     display: block;
     backdrop-filter: blur(2px);
@@ -120,7 +121,7 @@
     color: #333B41;
   }
 
-  .the_backstage_p1 {
+  .the_backstage__p1 {
     margin-top: 0;
     margin-bottom: 54px;
     font-family: 'Roboto';
@@ -131,7 +132,7 @@
     color: #333B41;
   }
 
-  .the_backstage_p2 {
+  .the_backstage__p2 {
     margin-top: 0;
     margin-bottom: 0;
     font-family: 'Roboto';
@@ -145,7 +146,7 @@
 
 // --------------   Pets styles
 
-.pets_wrapper {
+.pets {
   padding-bottom: 100px;
   background: url(../../assets/images/palm_foto.jpg) no-repeat bottom left,
               url(../../assets/images/strelitzia1.jpg) no-repeat bottom right;
@@ -157,22 +158,22 @@
 .card4 { grid-area: card4; }
 .card5 { grid-area: card5; }
 .card6 { grid-area: card6; }
-.pets_btn_left { grid-area: pets_btn_left; }
-.pets_btn_right { grid-area: pets_btn_right; }
+.pets__btn_left { grid-area: pets__btn_left; }
+.pets__btn_right { grid-area: pets__btn_right; }
 
-.pets {
+.pets__wrapper {
   max-width: 1160px;
   margin: auto;
   margin-bottom: 80px;
   display: grid;
   grid-template-areas:
   'card1 card2 card3'
-  'pets_btn_left . pets_btn_right'
+  'pets__btn_left . pets__btn_right'
   'card4 card5 card6';
   row-gap: 10px;
   column-gap: 30px;
 
-  .pets_card {
+  .pets__card {
     width: 366px;
     height: 426px;
     border-radius: 5px;
@@ -187,7 +188,7 @@
       height: 366px;
     }
 
-    .pets_card_caption{
+    .pets__card_caption{
       padding: 9px 15px;
 
       h2 {
@@ -224,10 +225,9 @@
     }
   }
 
-  .pets_card:hover {
+  .pets__card:hover {
     cursor: pointer;
     transition: 0.3s;
-    overflow: visible;
 
     img:nth-child(1) {
       z-index: 1;
@@ -237,7 +237,7 @@
       transition: 0.5s;
     }
 
-    .pets_card_caption{
+    .pets__card_caption{
       z-index: 2;
       transform: translateY(-65px);
       transition: 0.5s;
@@ -251,7 +251,7 @@
 
   position: relative;
 
-  .pets_btn_left, .pets_btn_right {
+  .pets__btn_left, .pets__btn_right {
     position: absolute;
     display: block;
     width: 62px;
@@ -263,34 +263,34 @@
     background-repeat: no-repeat;
   }
 
-  #pets_btn_left {
+  #pets__btn_left {
     left: -82px;
     background-image: url(../../assets/icons/arrow_left.svg), linear-gradient(113.96deg, #F9804B 1.49%, #FE9013 101.44%);
   }
-  #pets_btn_left:hover {
+  #pets__btn_left:hover {
     cursor: pointer;
     background-image: url(../../assets/icons/arrow_left.svg), linear-gradient(113.96deg, #E47209 1.49%, #E47209 101.44%);
     transition: 0.9s;
   }
-  #pets_btn_left:active {
+  #pets__btn_left:active {
     background-image: url(../../assets/icons/arrow_left.svg), linear-gradient(113.96deg, #4B9200 1.49%, #4B9200 101.44%);
   }
 
-  #pets_btn_right {
+  #pets__btn_right {
     right: -80px;
     background-image: url(../../assets/icons/arrow_right.svg), linear-gradient(113.96deg, #F9804B 1.49%, #FE9013 101.44%);
   }
-  #pets_btn_right:hover {
+  #pets__btn_right:hover {
     cursor: pointer;
     background-image: url(../../assets/icons/arrow_right.svg), linear-gradient(113.96deg, #E47209 1.49%, #E47209 101.44%);
     transition: 0.9s;
   }
-  #pets_btn_right:active {
+  #pets__btn_right:active {
     background-image: url(../../assets/icons/arrow_right.svg), linear-gradient(113.96deg, #4B9200 1.49%, #4B9200 101.44%);
   }
 }
 
-#pets_choose_btn {
+#pets__choose_btn {
   display: block;
   width: 298px;
   height: 54px;
@@ -309,26 +309,26 @@
   color: #FFFFFF;
 }
 
-#pets_choose_btn:hover {
+#pets__choose_btn:hover {
     cursor: pointer;
     background: #E47209;
     transition: 0.3s;
   }
 
-#pets_choose_btn:active {
+#pets__choose_btn:active {
     background: #4B9200;
   }
 
 // -------------- Pick and feed a friend styles
 
-.pick_and_feed_wrapper {
+.pick_and_feed {
   background: linear-gradient(315.75deg, rgba(254, 210, 144, 0.7) 30.06%, #FEBDAB 100.95%, rgba(254, 210, 144, 0.7) 106.36%), linear-gradient(315.75deg, rgba(254, 189, 171, 0.74) 30.06%, rgba(243, 169, 248, 0.66) 50.74%, #E0D8F0 80.49%, #EAF7FE 127.9%, #EAF7FE 149.54%), linear-gradient(315.75deg, rgba(254, 189, 171, 0.74) 30.06%, rgba(243, 169, 248, 0.66) 50.74%, #E0D8F0 80.49%, #EAF7FE 127.9%, #EAF7FE 149.54%);
 opacity: 0.9;
   padding-top: 69px;
   padding-bottom: 100px;
 }
 
-.pick_and_feed {
+.pick_and_feed__wrapper {
   max-width: 1160px;
   margin: auto;
   padding: 41px 98px 59px 100px;
@@ -443,7 +443,7 @@ opacity: 0.9;
   }
 }
 
-#feed_btn {
+#pick_and_feed__button {
   display: block;
   width: 298px;
   height: 54px;
@@ -463,23 +463,23 @@ opacity: 0.9;
   color: #FFFFFF;
 }
 
-#feed_btn:hover {
+#pick_and_feed__button:hover {
     cursor: pointer;
     background: #E47209;
     transition: 0.3s;
   }
 
-  #feed_btn:active {
-    background: #4B9200;
+#pick_and_feed__button:active {
+  background: #4B9200;
 }
 
 // ------------------------------- Testimonials styles
 
-.testimonials_wrapper {
+.testimonials {
   background: url(../../assets/images/leav_foto.jpg) no-repeat bottom -133px right;
 }
 
-.testimonials {
+.testimonials__wrapper {
   max-width: 1160px;
   margin: auto;
   padding: 143px 0 180px 0;

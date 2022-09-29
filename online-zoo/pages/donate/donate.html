@@ -9,11 +9,11 @@
 	<title>Online-zoo donate</title>
 </head>
 <body>
-  <div class="header_wrapper">
-    <header class="header">
-      <nav class="navigation">
+  <header class="header">
+    <div class="header__wrapper">
+      <nav class="header__navigation">
+        <a class="logo" href="../../pages/main/index.html"><h1>PetStory online</h1></a>
         <ul>
-          <li><a href="../../pages/main/index.html"><h1>PetStory online</h1></a></li>
           <li><a href="../../pages/main/index.html">About</a></li>
           <li><a id="map_link" href="#">Map</a></li>
           <li><a href="#">Zoos</a></li>
@@ -22,8 +22,8 @@
           <li><a href="https://www.figma.com/file/ypzT9idgAILaSRVRmDAJxn/online-zoo-3-weeks?node-id=0%3A1">Designed by ©</a></li>
         </ul>
       </nav>
-    </header>
-  </div>
+    </div>
+  </header>
   <main>
     <div class="panda_header"></div>
     <div class="main_donate_wrapper">
@@ -68,29 +68,28 @@
         </div>
       </div>
     </div>
-
   </main>
-  <div class="footer_wrapper">
-    <footer class="footer">
-      <a class="footer_petstory_online" href="index.html"><p>PetStory online</p></a>
-      <div class="footer_subscribe">
+  <footer class="footer">
+    <div class="footer__wrapper">
+      <a class="footer__petstory_online" href="index.html"><p>PetStory online</p></a>
+      <div class="footer__subscribe">
         <p>Subscribe to our news</p>
-        <form action="">
+        <form action="#">
           <input id="input_email" type="email" name="email" placeholder="Enter your email" required>
           <input id="input_submit" type="submit" value="Submit">
         </form>
       </div>
       <button id="donate_for_volunteers_btn" onclick="location.href='../../pages/donate/donate.html'">Donate for volunteers</button>
-      <ul class="footer_social">
+      <ul class="footer__social">
         <li><a href="https://www.facebook.com"><div><img src="../../assets/icons/facebook.svg" alt="Facebook"></div>Facebook</a></li>
         <li><a href="https://www.twitter.com"><div><img src="../../assets/icons/twitter.svg" alt="Twitter"></div>Twitter</a></li>
         <li><a href="https://www.instagram.com"><div><img src="../../assets/icons/instagram.svg" alt="Instagram"></div>Instagram</a></li>
         <li><a href="https://www.youtube.com"><div><img src="../../assets/icons/youtube.svg" alt="YouTube"></div>YouTube</a></li>
       </ul>
-      <nav class="footer_navigation">
+      <nav class="footer__navigation">
         <ul>
-          <li><a class="current_link" href="">About</a></li>
-          <li><a id="map_link" href="#">Map</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Map</a></li>
           <li><a href="#">Zoos</a></li>
           <li><a href="#">Contact us</a></li>
         </ul>
@@ -99,7 +98,7 @@
         <p>Designed by Alisa Samborskaya</p>
         <p>©RSSchool & ©Yem Digital 2021</p>
       </div>
-    </footer>
-  </div>
+    </div>
+  </footer>
 </body>
 </html>

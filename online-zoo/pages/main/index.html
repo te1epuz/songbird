@@ -9,11 +9,11 @@
 	<title>Online-zoo</title>
 </head>
 <body>
-  <div class="header_wrapper">
-    <header class="header">
-      <nav class="navigation">
+  <header class="header">
+    <div class="header__wrapper">
+      <nav class="header__navigation">
+        <a class="logo" href="../../pages/main/index.html"><h1>PetStory online</h1></a>
         <ul>
-          <li><a href="../../pages/main/index.html"><h1>PetStory online</h1></a></li>
           <li><a class="current_link" href="../../pages/main/index.html">About</a></li>
           <li><a id="map_link" href="#">Map</a></li>
           <li><a href="#">Zoos</a></li>
@@ -22,85 +22,85 @@
           <li><a href="https://www.figma.com/file/ypzT9idgAILaSRVRmDAJxn/online-zoo-3-weeks?node-id=0%3A1">Designed by ©</a></li>
         </ul>
       </nav>
-    </header>
-  </div>
+    </div>
+  </header>
   <main>
-    <div class="watch_online_wrapper">
-      <div class="watch_online">
-        <div class="watch_circle">
+    <section class="watch_online">
+      <div class="watch_online__wrapper">
+        <div class="watch_online__circle">
           <h2>Watch your <span>favorite</span> animal online</h2>
         </div>
-        <button id="btn_watch_online" onclick="location.href='http://cam_panda_online'">Watch online</button>
+        <button id="watch_online__button" onclick="location.href='http://cam_panda_online'">Watch online</button>
       </div>
-    </div>
-    <div class="the_backstage_wrapper">
-      <div class="the_backstage">
+    </section>
+    <section class="the_backstage">
+      <div class="the_backstage__wrapper">
         <img src="../../assets/images/bamboo-cap.jpg" alt="bamboo-cap">
         <div>
           <h2>The Backstage of the Wilderness World.</h2>
-          <p class="the_backstage_p1">The site was founded on the basis of a volunteer movement to protect and care for animals.</p>
+          <p class="the_backstage__p1">The site was founded on the basis of a volunteer movement to protect and care for animals.</p>
           <h3>How it works </h3>
-          <p class="the_backstage_p2">The main goal is to help the animals, as well as the nature reserves and zoos where they are kept. We are currently working on video projects targeting pandas in China, eagles on an island near Los Angeles, alligators in Florida and gorillas in the Congo. These have a total of more than 1,500 mammals and reptiles.</p>
+          <p class="the_backstage__p2">The main goal is to help the animals, as well as the nature reserves and zoos where they are kept. We are currently working on video projects targeting pandas in China, eagles on an island near Los Angeles, alligators in Florida and gorillas in the Congo. These have a total of more than 1,500 mammals and reptiles.</p>
         </div>
       </div>
-    </div>
-    <div class="pets_wrapper">
-      <div class="pets">
-        <div class="pets_card card1">
+    </section>
+    <section class="pets">
+      <div class="pets__wrapper">
+        <div class="pets__card card1">
           <img src="../../assets/images/Rectangle1.jpg" alt="pet photo">
-          <div class="pets_card_caption">
+          <div class="pets__card_caption">
             <h2>Giant pandas</h2>
             <p>Native to Southwest China</p>
             <img src="../../assets/icons/banana-bamboo_icon.svg" alt="banana bamboo">
           </div>
         </div>
-        <div class="pets_card card2">
+        <div class="pets__card card2">
           <img src="../../assets/images/Rectangle2.jpg" alt="pet photo">
-          <div class="pets_card_caption">
+          <div class="pets__card_caption">
             <h2>Eagles</h2>
             <p>Native to South America</p>
             <img src="../../assets/icons/meet-fish_icon.svg" alt="banana bamboo">
           </div>
         </div>
-        <div class="pets_card card3">
+        <div class="pets__card card3">
           <img src="../../assets/images/Rectangle3.jpg" alt="pet photo">
-          <div class="pets_card_caption">
+          <div class="pets__card_caption">
             <h2>Gorillas</h2>
             <p>Native to Congo</p>
             <img src="../../assets/icons/banana-bamboo_icon.svg" alt="banana bamboo">
           </div>
         </div>
-        <div class="pets_card card4">
+        <div class="pets__card card4">
           <img src="../../assets/images/Rectangle4.jpg" alt="pet photo">
-          <div class="pets_card_caption">
+          <div class="pets__card_caption">
             <h2>Two-toed Sloth</h2>
             <p>Mesoamerica, South America</p>
             <img src="../../assets/icons/banana-bamboo_icon.svg" alt="banana bamboo">
           </div>
         </div>
-        <div class="pets_card card5">
+        <div class="pets__card card5">
           <img src="../../assets/images/Rectangle5.jpg" alt="pet photo">
-          <div class="pets_card_caption">
+          <div class="pets__card_caption">
             <h2>Cheetahs</h2>
             <p>Native to Africa</p>
             <img src="../../assets/icons/meet-fish_icon.svg" alt="banana bamboo">
           </div>
         </div>
-        <div class="pets_card card6">
+        <div class="pets__card card6">
           <img src="../../assets/images/Rectangle6.jpg" alt="pet photo">
-          <div class="pets_card_caption">
+          <div class="pets__card_caption">
             <h2>Penguins</h2>
             <p>Native to Antarctica</p>
             <img src="../../assets/icons/meet-fish_icon.svg" alt="banana bamboo">
           </div>
         </div>
-        <button class="pets_btn_left" id="pets_btn_left"></button>
-        <button class="pets_btn_right" id="pets_btn_right"></button>
+        <button class="pets__btn_left" id="pets__btn_left"></button>
+        <button class="pets__btn_right" id="pets__btn_right"></button>
       </div>
-      <button id="pets_choose_btn" onclick="location.href='#map_link'">Choose your favorite</button>
-    </div>
-    <div class="pick_and_feed_wrapper">
-      <div class="pick_and_feed">
+      <button id="pets__choose_btn" onclick="location.href='#map_link'">Choose your favorite</button>
+    </section>
+    <section class="pick_and_feed">
+      <div class="pick_and_feed__wrapper">
         <h2>Pick and feed a friend</h2>
         <h4>We know the animals bring you joy, and in these extraordinary times, we’re glad.</h4>
         <p>During a time when the COVID-19 epidemic is touching all of our lives, we’re proud
@@ -134,11 +134,11 @@
             <p>Your favourite animal gets delicious dish</p>
           </div>
         </div>
-        <button id="feed_btn" onclick="location.href='../../pages/donate/donate.html'">Feed a friend now</button>
+        <button id="pick_and_feed__button" onclick="location.href='../../pages/donate/donate.html'">Feed a friend now</button>
       </div>
-    </div>
-    <div class="testimonials_wrapper">
-      <div class="testimonials">
+    </section>
+    <section class="testimonials">
+      <div class="testimonials__wrapper">
         <h2>Testimonials</h2>
           <div class="testimonial_cards_block">
             <div class="testimonial_card_outer">
@@ -201,33 +201,33 @@
             </div>
           </div>
           <div class="testimonial_slider_block">
-            <input type="range" name="" min="1" max="100" value="20" id="testimonial_slider">
+            <input type="range" name="testimonial_slider" min="1" max="100" value="20" id="testimonial_slider">
           </div>
           <button id="leave_feedback_btn" onclick="location.href='#map_link'">Leave feedback</button>
       </div>
-    </div>
+    </section>
   </main>
-  <div class="footer_wrapper">
-    <footer class="footer">
-      <a class="footer_petstory_online" href="index.html"><p>PetStory online</p></a>
-      <div class="footer_subscribe">
+  <footer class="footer">
+    <div class="footer__wrapper">
+      <a class="footer__petstory_online" href="index.html"><p>PetStory online</p></a>
+      <div class="footer__subscribe">
         <p>Subscribe to our news</p>
-        <form action="">
+        <form action="#">
           <input id="input_email" type="email" name="email" placeholder="Enter your email" required>
           <input id="input_submit" type="submit" value="Submit">
         </form>
       </div>
       <button id="donate_for_volunteers_btn" onclick="location.href='../../pages/donate/donate.html'">Donate for volunteers</button>
-      <ul class="footer_social">
+      <ul class="footer__social">
         <li><a href="https://www.facebook.com"><div><img src="../../assets/icons/facebook.svg" alt="Facebook"></div>Facebook</a></li>
         <li><a href="https://www.twitter.com"><div><img src="../../assets/icons/twitter.svg" alt="Twitter"></div>Twitter</a></li>
         <li><a href="https://www.instagram.com"><div><img src="../../assets/icons/instagram.svg" alt="Instagram"></div>Instagram</a></li>
         <li><a href="https://www.youtube.com"><div><img src="../../assets/icons/youtube.svg" alt="YouTube"></div>YouTube</a></li>
       </ul>
-      <nav class="footer_navigation">
+      <nav class="footer__navigation">
         <ul>
-          <li><a class="current_link" href="">About</a></li>
-          <li><a id="map_link" href="#">Map</a></li>
+          <li><a class="current_link" href="#">About</a></li>
+          <li><a href="#">Map</a></li>
           <li><a href="#">Zoos</a></li>
           <li><a href="#">Contact us</a></li>
         </ul>
@@ -236,7 +236,7 @@
         <p>Designed by Alisa Samborskaya</p>
         <p>©RSSchool & ©Yem Digital 2021</p>
       </div>
-    </footer>
-  </div>
+    </div>
+  </footer>
 </body>
 </html>

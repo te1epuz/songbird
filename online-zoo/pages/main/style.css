@@ -356,44 +356,31 @@ html {
   box-sizing: border-box;
 }
 
-.header_wrapper {
+.header {
   background-color: #000000;
 }
 
-.header {
+.header__wrapper {
   max-width: 1160px;
   height: 80px;
   margin: auto;
 }
 
-.navigation ul {
-  margin: 0;
-  padding: 0;
+.header__navigation {
   display: flex;
-  align-items: center;
-  gap: 58px;
-  list-style: none;
 }
-.navigation ul :last-child {
-  margin-left: auto;
-}
-.navigation ul a {
+.header__navigation .logo {
   text-decoration: none;
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 140%;
   color: #FFFFFF;
+  margin-right: 62px;
 }
-.navigation ul a h1 {
+.header__navigation .logo h1 {
   font-family: "Roboto";
   font-style: normal;
   font-weight: 400;
   font-size: 19.0145px;
   line-height: 120%;
   padding-top: 4px;
-  margin-right: 5px;
   text-align: center;
   width: 82px;
   height: 52px;
@@ -403,56 +390,20 @@ html {
   background-position: 9px 24px;
   background-repeat: no-repeat;
 }
-.navigation ul .current_link {
-  color: #FE9013;
-  pointer-events: none;
+.header__navigation ul {
+  margin: 0;
+  margin-top: 3px;
+  padding: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 58px;
+  list-style: none;
 }
-
-.navigation a:hover {
-  opacity: 70%;
-  transition: 0.3s;
+.header__navigation ul :last-child {
+  margin-left: auto;
 }
-
-.footer_wrapper {
-  background: #111115;
-  height: 443px;
-}
-
-.footer_petstory_online {
-  grid-area: footer_petstory_online;
-}
-
-.footer_subscribe {
-  grid-area: footer_subscribe;
-}
-
-#donate_for_volunteers_btn {
-  grid-area: donate_for_volunteers_btn;
-}
-
-.footer_social {
-  grid-area: footer_social;
-}
-
-.footer_navigation {
-  grid-area: footer_navigation;
-}
-
-.designed_by {
-  grid-area: designed_by;
-}
-
-.footer {
-  margin: auto;
-  max-width: 1160px;
-  padding-top: 23px;
-  height: -webkit-max-content;
-  height: -moz-max-content;
-  height: max-content;
-  display: grid;
-  grid-template-areas: "footer_petstory_online . footer_subscribe" "donate_for_volunteers_btn . ." "footer_social footer_navigation designed_by";
-}
-.footer a.footer_petstory_online {
+.header__navigation ul a {
   text-decoration: none;
   font-family: "Roboto";
   font-style: normal;
@@ -461,7 +412,65 @@ html {
   line-height: 140%;
   color: #FFFFFF;
 }
-.footer a.footer_petstory_online p {
+.header__navigation ul .current_link {
+  color: #FE9013;
+  pointer-events: none;
+}
+
+.header__navigation a:hover {
+  opacity: 70%;
+  transition: 0.3s;
+}
+
+.footer {
+  background: #111115;
+  height: 443px;
+}
+
+.footer__petstory_online {
+  grid-area: footer__petstory_online;
+}
+
+.footer__subscribe {
+  grid-area: footer__subscribe;
+}
+
+#donate_for_volunteers_btn {
+  grid-area: donate_for_volunteers_btn;
+}
+
+.footer__social {
+  grid-area: footer__social;
+}
+
+.footer__navigation {
+  grid-area: footer__navigation;
+}
+
+.designed_by {
+  grid-area: designed_by;
+}
+
+.footer__wrapper {
+  margin: auto;
+  max-width: 1160px;
+  padding-top: 23px;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  display: grid;
+  grid-template-areas: "footer__petstory_online . footer__subscribe" "donate_for_volunteers_btn . ." "footer__social footer__navigation designed_by";
+}
+.footer__wrapper a.footer__petstory_online {
+  text-decoration: none;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 140%;
+  color: #FFFFFF;
+}
+.footer__wrapper a.footer__petstory_online p {
   font-family: "Roboto";
   font-style: normal;
   font-weight: 400;
@@ -477,15 +486,15 @@ html {
   background-position: 9px 20px;
   background-repeat: no-repeat;
 }
-.footer a.footer_petstory_online :hover {
+.footer__wrapper a.footer__petstory_online :hover {
   opacity: 70%;
   transition: 0.3s;
 }
-.footer .footer_subscribe {
+.footer__wrapper .footer__subscribe {
   margin-top: 18px;
   justify-self: end;
 }
-.footer .footer_subscribe p {
+.footer__wrapper .footer__subscribe p {
   margin: 0;
   margin-bottom: 13px;
   font-family: "Roboto";
@@ -495,7 +504,7 @@ html {
   line-height: 120%;
   color: #FFFFFF;
 }
-.footer .footer_subscribe #input_email {
+.footer__wrapper .footer__subscribe #input_email {
   width: 228px;
   height: 42px;
   padding: 10px;
@@ -511,20 +520,20 @@ html {
   color: #BDBDBD;
   outline: none;
 }
-.footer .footer_subscribe #input_email::-moz-placeholder {
+.footer__wrapper .footer__subscribe #input_email::-moz-placeholder {
   color: #BDBDBD;
 }
-.footer .footer_subscribe #input_email:-ms-input-placeholder {
+.footer__wrapper .footer__subscribe #input_email:-ms-input-placeholder {
   color: #BDBDBD;
 }
-.footer .footer_subscribe #input_email::placeholder {
+.footer__wrapper .footer__subscribe #input_email::placeholder {
   color: #BDBDBD;
 }
-.footer .footer_subscribe #input_email:-webkit-autofill {
+.footer__wrapper .footer__subscribe #input_email:-webkit-autofill {
   background-color: #111115;
   color: #BDBDBD;
 }
-.footer .footer_subscribe #input_submit {
+.footer__wrapper .footer__subscribe #input_submit {
   width: 129px;
   height: 42px;
   background: #F1F3F2;
@@ -537,23 +546,23 @@ html {
   line-height: 140%;
   color: #000000;
 }
-.footer .footer_subscribe #input_submit:hover {
+.footer__wrapper .footer__subscribe #input_submit:hover {
   transform: scale(1.02);
 }
-.footer .footer_subscribe #input_submit:active {
+.footer__wrapper .footer__subscribe #input_submit:active {
   border: 1px solid #4B9200;
   color: #4B9200;
   transform: scale(1);
 }
-.footer .footer_subscribe #input_email:invalid {
+.footer__wrapper .footer__subscribe #input_email:invalid {
   border: 1px solid #D31414;
   color: #D31414;
 }
-.footer .footer_subscribe #input_email:invalid ~ #input_submit {
+.footer__wrapper .footer__subscribe #input_email:invalid ~ #input_submit {
   border: 1px solid #D31414;
   color: #D31414;
 }
-.footer #donate_for_volunteers_btn {
+.footer__wrapper #donate_for_volunteers_btn {
   margin-top: 35px;
   display: block;
   width: 298px;
@@ -572,24 +581,24 @@ html {
   text-transform: uppercase;
   color: #FFFFFF;
 }
-.footer #donate_for_volunteers_btn:hover {
+.footer__wrapper #donate_for_volunteers_btn:hover {
   cursor: pointer;
   background: #E47209;
   transition: 0.3s;
 }
-.footer #donate_for_volunteers_btn:active {
+.footer__wrapper #donate_for_volunteers_btn:active {
   background: #4B9200;
 }
-.footer .footer_social {
+.footer__wrapper .footer__social {
   list-style: none;
   margin-top: 35px;
   margin-bottom: 0;
   padding: 0;
 }
-.footer .footer_social li {
+.footer__wrapper .footer__social li {
   margin-top: 9px;
 }
-.footer .footer_social li a {
+.footer__wrapper .footer__social li a {
   text-decoration: none;
   font-family: "Roboto";
   font-style: normal;
@@ -598,7 +607,7 @@ html {
   line-height: 140%;
   color: #FFFFFF;
 }
-.footer .footer_social li a div {
+.footer__wrapper .footer__social li a div {
   width: 26px;
   height: 26px;
   border-radius: 50%;
@@ -608,28 +617,28 @@ html {
   align-items: center;
   margin-right: 12px;
 }
-.footer .footer_social li :active {
+.footer__wrapper .footer__social li :active {
   color: #4B9200;
   transition: 0.3s;
 }
-.footer .footer_social li :active div {
+.footer__wrapper .footer__social li :active div {
   background: #4B9200;
   transition: 1s;
 }
-.footer .footer_social li :hover {
+.footer__wrapper .footer__social li :hover {
   opacity: 0.7;
   transition: 0.3s;
 }
-.footer .footer_social li :hover div {
+.footer__wrapper .footer__social li :hover div {
   opacity: 0.7;
   transition: 1s;
 }
-.footer .footer_navigation {
+.footer__wrapper .footer__navigation {
   margin-bottom: -1px;
   margin-left: 85px;
   align-self: end;
 }
-.footer .footer_navigation ul {
+.footer__wrapper .footer__navigation ul {
   margin: 0;
   padding: 0;
   display: flex;
@@ -637,7 +646,7 @@ html {
   gap: 58px;
   list-style: none;
 }
-.footer .footer_navigation ul a {
+.footer__wrapper .footer__navigation ul a {
   text-decoration: none;
   font-family: "Roboto";
   font-style: normal;
@@ -646,15 +655,15 @@ html {
   line-height: 140%;
   color: #FFFFFF;
 }
-.footer .footer_navigation ul .current_link {
+.footer__wrapper .footer__navigation ul .current_link {
   color: #FE9013;
   pointer-events: none;
 }
-.footer .footer_navigation a:hover {
+.footer__wrapper .footer__navigation a:hover {
   opacity: 70%;
   transition: 0.3s;
 }
-.footer .designed_by {
+.footer__wrapper .designed_by {
   margin-bottom: -1px;
   place-self: end end;
   font-family: "Roboto";
@@ -664,32 +673,32 @@ html {
   line-height: 130%;
   color: #bdbdbd;
 }
-.footer .designed_by p {
+.footer__wrapper .designed_by p {
   margin: 0;
   margin-top: 10px;
 }
 
-.watch_online_wrapper {
+.watch_online {
   background-image: url(../../assets/images/Giant_Panda.jpg);
   background-position: center bottom;
   background-size: cover;
   background-repeat: no-repeat;
 }
 
-.watch_online {
+.watch_online__wrapper {
   height: 700px;
   max-width: 1160px;
   margin: auto;
   padding: 12px;
 }
-.watch_online .watch_circle {
+.watch_online__wrapper .watch_online__circle {
   margin: 0 96px 69px auto;
   width: 465px;
   height: 465px;
   border-radius: 50%;
   background: linear-gradient(113.96deg, #F9804B 1.49%, #FE9013 101.44%);
 }
-.watch_online .watch_circle h2 {
+.watch_online__wrapper .watch_online__circle h2 {
   position: relative;
   left: 73px;
   top: 74px;
@@ -706,11 +715,11 @@ html {
   text-transform: uppercase;
   color: #FFFFFF;
 }
-.watch_online .watch_circle h2 span {
+.watch_online__wrapper .watch_online__circle h2 span {
   color: rgb(255, 238, 46);
 }
 
-#btn_watch_online {
+#watch_online__button {
   display: block;
   width: 298px;
   height: 54px;
@@ -730,21 +739,21 @@ html {
   color: #FFFFFF;
 }
 
-#btn_watch_online:hover {
+#watch_online__button:hover {
   cursor: pointer;
   background: #E47209;
   transition: 0.3s;
 }
 
-#btn_watch_online:active {
+#watch_online__button:active {
   background: #4B9200;
 }
 
-.the_backstage_wrapper {
+.the_backstage {
   background: url(../../assets/images/flower_foto1.jpg) no-repeat top 12px right;
 }
 
-.the_backstage {
+.the_backstage__wrapper {
   max-width: 1160px;
   margin: auto;
   padding-bottom: 177px;
@@ -753,12 +762,12 @@ html {
   grid-template-columns: 1fr 1fr;
   gap: 87px;
 }
-.the_backstage img {
+.the_backstage__wrapper img {
   display: block;
   -webkit-backdrop-filter: blur(2px);
           backdrop-filter: blur(2px);
 }
-.the_backstage h2 {
+.the_backstage__wrapper h2 {
   margin-top: 0;
   margin-bottom: 22px;
   font-family: "Roboto";
@@ -768,7 +777,7 @@ html {
   line-height: 120%;
   color: #333B41;
 }
-.the_backstage h3 {
+.the_backstage__wrapper h3 {
   margin-top: 0;
   margin-bottom: 32px;
   font-family: "Roboto";
@@ -778,7 +787,7 @@ html {
   line-height: 120%;
   color: #333B41;
 }
-.the_backstage .the_backstage_p1 {
+.the_backstage__wrapper .the_backstage__p1 {
   margin-top: 0;
   margin-bottom: 54px;
   font-family: "Roboto";
@@ -788,7 +797,7 @@ html {
   line-height: 130%;
   color: #333B41;
 }
-.the_backstage .the_backstage_p2 {
+.the_backstage__wrapper .the_backstage__p2 {
   margin-top: 0;
   margin-bottom: 0;
   font-family: "Roboto";
@@ -799,7 +808,7 @@ html {
   color: #333B41;
 }
 
-.pets_wrapper {
+.pets {
   padding-bottom: 100px;
   background: url(../../assets/images/palm_foto.jpg) no-repeat bottom left, url(../../assets/images/strelitzia1.jpg) no-repeat bottom right;
 }
@@ -828,26 +837,26 @@ html {
   grid-area: card6;
 }
 
-.pets_btn_left {
-  grid-area: pets_btn_left;
+.pets__btn_left {
+  grid-area: pets__btn_left;
 }
 
-.pets_btn_right {
-  grid-area: pets_btn_right;
+.pets__btn_right {
+  grid-area: pets__btn_right;
 }
 
-.pets {
+.pets__wrapper {
   max-width: 1160px;
   margin: auto;
   margin-bottom: 80px;
   display: grid;
-  grid-template-areas: "card1 card2 card3" "pets_btn_left . pets_btn_right" "card4 card5 card6";
+  grid-template-areas: "card1 card2 card3" "pets__btn_left . pets__btn_right" "card4 card5 card6";
   row-gap: 10px;
   -moz-column-gap: 30px;
        column-gap: 30px;
   position: relative;
 }
-.pets .pets_card {
+.pets__wrapper .pets__card {
   width: 366px;
   height: 426px;
   border-radius: 5px;
@@ -855,17 +864,17 @@ html {
   border: 1px solid rgb(250, 111, 50);
   position: relative;
 }
-.pets .pets_card img {
+.pets__wrapper .pets__card img {
   position: relative;
   display: block;
   width: 366px;
   height: 366px;
 }
-.pets .pets_card .pets_card_caption {
+.pets__wrapper .pets__card .pets__card_caption {
   padding: 9px 15px;
   position: relative;
 }
-.pets .pets_card .pets_card_caption h2 {
+.pets__wrapper .pets__card .pets__card_caption h2 {
   margin: 0;
   font-family: "Roboto";
   font-style: normal;
@@ -874,7 +883,7 @@ html {
   text-transform: uppercase;
   color: #000000;
 }
-.pets .pets_card .pets_card_caption p {
+.pets__wrapper .pets__card .pets__card_caption p {
   margin: 0;
   font-family: "Roboto";
   font-style: normal;
@@ -883,7 +892,7 @@ html {
   line-height: 120%;
   color: #000000;
 }
-.pets .pets_card .pets_card_caption img {
+.pets__wrapper .pets__card .pets__card_caption img {
   display: block;
   position: absolute;
   height: 38px;
@@ -891,28 +900,27 @@ html {
   right: 10px;
   top: 8px;
 }
-.pets .pets_card:hover {
+.pets__wrapper .pets__card:hover {
   cursor: pointer;
   transition: 0.3s;
-  overflow: visible;
 }
-.pets .pets_card:hover img:nth-child(1) {
+.pets__wrapper .pets__card:hover img:nth-child(1) {
   z-index: 1;
   width: 386px;
   height: 386px;
   transform: translate(-10px, -10px);
   transition: 0.5s;
 }
-.pets .pets_card:hover .pets_card_caption {
+.pets__wrapper .pets__card:hover .pets__card_caption {
   z-index: 2;
   transform: translateY(-65px);
   transition: 0.5s;
   background: rgba(0, 0, 0, 0.5);
 }
-.pets .pets_card:hover .pets_card_caption h2, .pets .pets_card:hover .pets_card_caption p {
+.pets__wrapper .pets__card:hover .pets__card_caption h2, .pets__wrapper .pets__card:hover .pets__card_caption p {
   color: white;
 }
-.pets .pets_btn_left, .pets .pets_btn_right {
+.pets__wrapper .pets__btn_left, .pets__wrapper .pets__btn_right {
   position: absolute;
   display: block;
   width: 62px;
@@ -923,32 +931,32 @@ html {
   background-position: center;
   background-repeat: no-repeat;
 }
-.pets #pets_btn_left {
+.pets__wrapper #pets__btn_left {
   left: -82px;
   background-image: url(../../assets/icons/arrow_left.svg), linear-gradient(113.96deg, #F9804B 1.49%, #FE9013 101.44%);
 }
-.pets #pets_btn_left:hover {
+.pets__wrapper #pets__btn_left:hover {
   cursor: pointer;
   background-image: url(../../assets/icons/arrow_left.svg), linear-gradient(113.96deg, #E47209 1.49%, #E47209 101.44%);
   transition: 0.9s;
 }
-.pets #pets_btn_left:active {
+.pets__wrapper #pets__btn_left:active {
   background-image: url(../../assets/icons/arrow_left.svg), linear-gradient(113.96deg, #4B9200 1.49%, #4B9200 101.44%);
 }
-.pets #pets_btn_right {
+.pets__wrapper #pets__btn_right {
   right: -80px;
   background-image: url(../../assets/icons/arrow_right.svg), linear-gradient(113.96deg, #F9804B 1.49%, #FE9013 101.44%);
 }
-.pets #pets_btn_right:hover {
+.pets__wrapper #pets__btn_right:hover {
   cursor: pointer;
   background-image: url(../../assets/icons/arrow_right.svg), linear-gradient(113.96deg, #E47209 1.49%, #E47209 101.44%);
   transition: 0.9s;
 }
-.pets #pets_btn_right:active {
+.pets__wrapper #pets__btn_right:active {
   background-image: url(../../assets/icons/arrow_right.svg), linear-gradient(113.96deg, #4B9200 1.49%, #4B9200 101.44%);
 }
 
-#pets_choose_btn {
+#pets__choose_btn {
   display: block;
   width: 298px;
   height: 54px;
@@ -967,24 +975,24 @@ html {
   color: #FFFFFF;
 }
 
-#pets_choose_btn:hover {
+#pets__choose_btn:hover {
   cursor: pointer;
   background: #E47209;
   transition: 0.3s;
 }
 
-#pets_choose_btn:active {
+#pets__choose_btn:active {
   background: #4B9200;
 }
 
-.pick_and_feed_wrapper {
+.pick_and_feed {
   background: linear-gradient(315.75deg, rgba(254, 210, 144, 0.7) 30.06%, #FEBDAB 100.95%, rgba(254, 210, 144, 0.7) 106.36%), linear-gradient(315.75deg, rgba(254, 189, 171, 0.74) 30.06%, rgba(243, 169, 248, 0.66) 50.74%, #E0D8F0 80.49%, #EAF7FE 127.9%, #EAF7FE 149.54%), linear-gradient(315.75deg, rgba(254, 189, 171, 0.74) 30.06%, rgba(243, 169, 248, 0.66) 50.74%, #E0D8F0 80.49%, #EAF7FE 127.9%, #EAF7FE 149.54%);
   opacity: 0.9;
   padding-top: 69px;
   padding-bottom: 100px;
 }
 
-.pick_and_feed {
+.pick_and_feed__wrapper {
   max-width: 1160px;
   margin: auto;
   padding: 41px 98px 59px 100px;
@@ -993,7 +1001,7 @@ html {
           backdrop-filter: blur(2px);
   border-radius: 20px;
 }
-.pick_and_feed h2 {
+.pick_and_feed__wrapper h2 {
   margin: 0;
   margin-bottom: 32px;
   font-family: "Roboto";
@@ -1004,7 +1012,7 @@ html {
   text-align: center;
   color: #FE9013;
 }
-.pick_and_feed h4 {
+.pick_and_feed__wrapper h4 {
   margin: 0;
   margin-bottom: 40px;
   font-family: "Roboto";
@@ -1014,7 +1022,7 @@ html {
   line-height: 120%;
   color: #333B41;
 }
-.pick_and_feed p:nth-child(3) {
+.pick_and_feed__wrapper p:nth-child(3) {
   margin: 0;
   margin-bottom: 10px;
   font-family: "Roboto";
@@ -1025,7 +1033,7 @@ html {
   color: #333B41;
   white-space: nowrap;
 }
-.pick_and_feed p:nth-child(4) {
+.pick_and_feed__wrapper p:nth-child(4) {
   margin: 0;
   margin-bottom: 62px;
   font-family: "Roboto";
@@ -1035,13 +1043,13 @@ html {
   line-height: 130%;
   color: #333B41;
 }
-.pick_and_feed p:nth-child(4) a {
+.pick_and_feed__wrapper p:nth-child(4) a {
   color: #333B41;
   text-underline-offset: 6px;
   -webkit-text-decoration-color: #E47209;
           text-decoration-color: #E47209;
 }
-.pick_and_feed h3 {
+.pick_and_feed__wrapper h3 {
   margin: 0;
   margin-right: 4px;
   margin-bottom: 38px;
@@ -1053,7 +1061,7 @@ html {
   color: #333B41;
   text-align: center;
 }
-.pick_and_feed .how_it_works {
+.pick_and_feed__wrapper .how_it_works {
   max-width: -webkit-fit-content;
   max-width: -moz-fit-content;
   max-width: fit-content;
@@ -1063,11 +1071,11 @@ html {
   grid-template-columns: repeat(5, min-content);
   gap: 30px;
 }
-.pick_and_feed .how_it_works .how_it_works_card {
+.pick_and_feed__wrapper .how_it_works .how_it_works_card {
   max-width: 168px;
   margin-bottom: 60px;
 }
-.pick_and_feed .how_it_works .how_it_works_card div {
+.pick_and_feed__wrapper .how_it_works .how_it_works_card div {
   width: 168px;
   height: 168px;
   margin-bottom: 30px;
@@ -1078,7 +1086,7 @@ html {
   justify-content: center;
   align-items: center;
 }
-.pick_and_feed .how_it_works .how_it_works_card p {
+.pick_and_feed__wrapper .how_it_works .how_it_works_card p {
   margin: 0;
   font-family: "Roboto";
   font-style: normal;
@@ -1088,12 +1096,12 @@ html {
   /* or 22px */
   color: #333B41;
 }
-.pick_and_feed .how_it_works .how_it_works_arrow {
+.pick_and_feed__wrapper .how_it_works .how_it_works_arrow {
   display: block;
   margin-top: 61px;
 }
 
-#feed_btn {
+#pick_and_feed__button {
   display: block;
   width: 298px;
   height: 54px;
@@ -1113,26 +1121,26 @@ html {
   color: #FFFFFF;
 }
 
-#feed_btn:hover {
+#pick_and_feed__button:hover {
   cursor: pointer;
   background: #E47209;
   transition: 0.3s;
 }
 
-#feed_btn:active {
+#pick_and_feed__button:active {
   background: #4B9200;
 }
 
-.testimonials_wrapper {
+.testimonials {
   background: url(../../assets/images/leav_foto.jpg) no-repeat bottom -133px right;
 }
 
-.testimonials {
+.testimonials__wrapper {
   max-width: 1160px;
   margin: auto;
   padding: 143px 0 180px 0;
 }
-.testimonials h2 {
+.testimonials__wrapper h2 {
   margin: 0;
   margin-bottom: 44px;
   font-family: "Roboto";
