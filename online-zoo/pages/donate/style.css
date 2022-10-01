@@ -358,6 +358,9 @@ html {
 
 .header {
   background-color: #000000;
+  padding: 0 30px;
+  position: relative;
+  z-index: 10;
 }
 
 .header__wrapper {
@@ -422,6 +425,17 @@ html {
   transition: 0.3s;
 }
 
+@media screen and (max-width: 1000px) {
+  .header {
+    background-color: #111115;
+  }
+  .header__navigation .logo {
+    margin-right: 63px;
+  }
+  .header__navigation ul {
+    gap: 48px;
+  }
+}
 .footer {
   background: #111115;
   height: 443px;

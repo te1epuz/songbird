@@ -8,6 +8,9 @@ html {
 
 .header {
   background-color: #000000;
+  padding: 0 30px;
+  position: relative;
+  z-index: 10;
 }
 
 .header__wrapper {
@@ -78,4 +81,30 @@ html {
 .header__navigation a:hover {
   opacity: 70%;
   transition: 0.3s;
+}
+
+
+// Media start
+
+@media screen and (max-width: 1599px) {
+}
+
+@media screen and (max-width: 1000px) {
+  .header {
+    background-color: #111115;
+  }
+  .header__navigation {
+    .logo {
+      margin-right: 63px;
+    }
+    ul {
+      gap: 48px;
+    }
+  }
+}
+
+@media screen and (max-width: 640px) {
+}
+
+@media screen and (max-width: 320px) {
 }
