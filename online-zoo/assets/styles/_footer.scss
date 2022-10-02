@@ -17,6 +17,7 @@
   height: max-content;
 
   display: grid;
+  grid-template-columns: auto 1fr auto;
   grid-template-areas:
   'footer__petstory_online . footer__subscribe'
   'donate_for_volunteers_btn . .'
@@ -94,7 +95,7 @@
     #input_email:-webkit-autofill {
       background-color: #111115;
       color: #BDBDBD;
-  }
+    }
 
     #input_submit {
       width: 129px;
@@ -132,7 +133,7 @@
   }
 
   #donate_for_volunteers_btn {
-    margin-top: 35px;
+    margin-top: 36px;
     display: block;
     width: 298px;
     height: 54px;
@@ -214,16 +215,13 @@
   }
 
   .footer__navigation {
-    margin-bottom: -1px;
-    margin-left: 85px;
     align-self: end;
 
     ul {
-      margin: 0;
+      margin: 0 32px -1px 101px;
       padding: 0;
       display: flex;
-      align-items: center;
-      gap: 58px;
+      justify-content: space-between;
       list-style: none;
 
       a {
@@ -263,4 +261,129 @@
       margin-top: 10px;
     }
   }
+}
+
+
+
+// --------------------------------------- MEDIA START ---------------------
+
+@media screen and (max-width: 1599px) {
+  .footer {
+    padding: 30px 30px 30px 30px;
+  }
+
+  .footer__wrapper {
+    padding-top: 0;
+    grid-template-areas:
+    'footer__petstory_online footer__subscribe footer__subscribe'
+    'donate_for_volunteers_btn donate_for_volunteers_btn .'
+    'footer__social footer__navigation designed_by';
+
+    a.footer__petstory_online {
+      p {
+        margin: 11px 0 0 1px;
+      }
+    }
+
+    .footer__subscribe {
+      margin: 11px 32px 0 0;
+
+      #input_email {
+        margin-right: 5px;
+      }
+
+      #input_submit {
+        margin: 0 1px 0 0;
+      }
+    }
+
+    #donate_for_volunteers_btn {
+      margin: 35px 0 0 1px;
+    }
+
+    .footer__navigation {
+
+      ul {
+        margin: 0 90px -1px 180px;
+      }
+    }
+  }
+
+
+}
+
+
+@media screen and (max-width: 1000px) {
+}
+
+
+@media screen and (max-width: 980px) {
+  .footer {
+    padding: 12px 20px 15px 20px;
+    height: 282px;
+  }
+
+  .footer__wrapper {
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+    'footer__petstory_online . footer__social'
+    'donate_for_volunteers_btn donate_for_volunteers_btn footer__social'
+    'footer__navigation footer__navigation designed_by';
+
+    a.footer__petstory_online {
+      p {
+        margin: 1px 0 0 1px;
+      }
+    }
+
+    .footer__subscribe {
+      display: none;
+    }
+
+
+    .footer__social {
+      margin-top: 0;
+
+      li {
+        width: fit-content;
+        margin: 0 0 19px auto;
+
+        a {
+          div {
+            margin-right: 0;
+          }
+          span {
+            display: none;
+          }
+        }
+      }
+    }
+
+    #donate_for_volunteers_btn {
+      margin: 32px 0 0 0px;
+    }
+
+
+    .footer__navigation {
+      ul {
+        margin: 0 73px 0px 1px;
+      }
+    }
+
+    .designed_by {
+      margin: 14px 1px 0 0;
+    }
+  }
+}
+
+
+@media screen and (max-width: 640px) {
+}
+
+
+@media screen and (max-width: 600px) {
+}
+
+
+@media screen and (max-width: 320px) {
 }

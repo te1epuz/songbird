@@ -333,7 +333,7 @@
 .pick_and_feed {
   background: linear-gradient(315.75deg, rgba(254, 210, 144, 0.7) 30.06%, #FEBDAB 100.95%, rgba(254, 210, 144, 0.7) 106.36%), linear-gradient(315.75deg, rgba(254, 189, 171, 0.74) 30.06%, rgba(243, 169, 248, 0.66) 50.74%, #E0D8F0 80.49%, #EAF7FE 127.9%, #EAF7FE 149.54%), linear-gradient(315.75deg, rgba(254, 189, 171, 0.74) 30.06%, rgba(243, 169, 248, 0.66) 50.74%, #E0D8F0 80.49%, #EAF7FE 127.9%, #EAF7FE 149.54%);
 opacity: 0.9;
-  padding: 66px 30px 100px 30px;
+  padding: 68px 30px 100px 30px;
 }
 
 .pick_and_feed__wrapper {
@@ -494,11 +494,11 @@ opacity: 0.9;
 .testimonials__wrapper {
   max-width: 1160px;
   margin: auto;
-  padding: 143px 0 180px 0;
+  padding: 141px 0 180px 0;
 
   h2 {
     margin: 0;
-    margin-bottom: 44px;
+    margin-bottom: 45px;
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
@@ -513,11 +513,11 @@ opacity: 0.9;
 .testimonial_cards_block {
   display: flex;
   gap: 30px;
-  margin-bottom: 17px;
+  margin-bottom: 16px;
 
   .testimonial_card_outer {
     min-width: 267px;
-    height: 391px;
+    height: 392px;
     background: linear-gradient(315.75deg, rgba(254, 189, 171, 0.74) 30.06%, rgba(243, 169, 248, 0.66) 50.74%, #E0D8F0 80.49%, #EAF7FE 127.9%, #EAF7FE 149.54%);
     border-radius: 20px;
     padding: 2px;
@@ -675,14 +675,13 @@ opacity: 0.9;
 
 
 
-// Media start
 
+
+// ------------------------------------- Media start----------------------------
 @media screen and (max-width: 1599px) {
-
 
   .watch_online {
     background: url(../../assets/images/Giant_Panda_smalldesktop.jpg) no-repeat cover;
-    // background-size: 1200px;
   }
 
   .watch_online__wrapper {
@@ -706,6 +705,104 @@ opacity: 0.9;
     margin-right: 107px;
     padding-left: 10px;
   }
+}
+
+@media screen and (max-width: 1000px) {
+  .watch_online {
+    background-size: 1200px;
+  }
+}
+
+@media screen and (max-width: 980px) {
+  .watch_online__wrapper {
+    height: 52.32vw;
+
+    .watch_online__circle {
+      margin: -22px 14vw 5vw auto;
+      width: 38.7vw;
+      height: 38.7vw;
+
+      h2 {
+        top: 6vw;
+        width: 53.8vw;
+        font-size: 8.67vw;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .watch_online {
+    background: url(../../assets/images/Giant_Panda_tablet.jpg) no-repeat center bottom;
+  }
+  .watch_online__wrapper {
+    height: 58.3vw;
+    padding: 44px 22px 0px 20px;
+
+    .watch_online__circle {
+      margin: 0 7.7vw 0 auto;
+      width: 37.2vw;
+      height: 37.2vw;
+
+      h2 {
+        top: 5.9vw;
+        width: 51.8vw;
+        font-size: 8.5vw;
+        left: -1px;
+      }
+    }
+  }
+  #watch_online__button {
+    margin: -3px auto auto 0;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .watch_online {
+    background-position: center;
+  }
+
+  .watch_online__wrapper {
+    height: 65vw;
+    padding: 56px 12px 0px 11px;
+
+    .watch_online__circle {
+      margin: 0 8.0vw 0 auto;
+      h2 {
+        width: min-content;
+        font-size: 8.8vw;
+        margin-left: 6vw;
+      }
+    }
+  }
+
+  #watch_online__button {
+    position: relative;
+    z-index: 5;
+    width: 100%;
+    max-width: 298px;
+    margin: auto;
+    margin-top: 20.5vw;
+    padding-left: 10px;
+  }
+}
+
+
+@media screen and (max-width: 320px) {
+  .watch_online {
+    background: url(../../assets/images/Giant_Panda_mobile.jpg) no-repeat center bottom;
+  }
+
+  .watch_online__wrapper {
+    height: 69.1vw;
+  }
+}
+
+
+
+
+// ------------------------------------- Media The backstage
+@media screen and (max-width: 1599px) {
 
   .the_backstage {
     background: none;
@@ -728,11 +825,86 @@ opacity: 0.9;
   .the_backstage__photo {
     overflow: hidden;
   }
+}
 
+@media screen and (max-width: 1000px) {
+  .visible_desktop {display: none;}
+  .visible_small_desktop {display: block;}
+}
+
+@media screen and (max-width: 980px) {
+
+  .the_backstage {
+    background: url(../../assets/images/backstage_bg_tablet.jpg) no-repeat top -5px right;
+    padding: 69px 133px 78px 20px;
+  }
+
+  .the_backstage__wrapper {
+    display: block;
+    padding: 0;
+
+    .the_backstage__photo {
+      display: none;
+    }
+
+    h2 {
+      margin-left: 4px;
+    }
+
+    .the_backstage__p1 {
+      margin-bottom: 30px;
+    }
+
+    h3 {
+      margin-left: 4px;
+      margin-bottom: 19px;
+    }
+  }
+}
+
+@media screen and (max-width: 640px) {
+}
+
+
+@media screen and (max-width: 600px) {
+  .the_backstage {
+    background: url(../../assets/images/backstage_bg_mobile.jpg) no-repeat top 38px right;
+    padding: 105px 10px 39px 10px;
+  }
+
+  .the_backstage__wrapper {
+    h2 {
+      font-size: 7.5vw;
+      margin: 0 0 10px 0;
+    }
+
+    .the_backstage__p1 {
+      margin: 0 13px 21px 2px
+    }
+
+    h3 {
+      margin: 0px 0px 9px 2px;
+    }
+
+    .the_backstage__p2 {
+      margin: 0 0 0px 0px;
+      line-height: 138%;
+    }
+  }
+}
+
+
+@media screen and (max-width: 320px) {
+}
+
+
+
+// ---------------------------------------- Media PETS
+@media screen and (max-width: 1599px) {
 
 
   .pets {
-    padding: 0 20px 50px 20px;
+    padding-bottom: 140px;
     background: url(../../assets/images/palm_foto_smalldesktop.jpg) no-repeat bottom left,
                 url(../../assets/images/strelitzia_smalldesktop.jpg) no-repeat bottom right;
   }
@@ -740,9 +912,9 @@ opacity: 0.9;
   .pets__wrapper {
 
     margin-bottom: 81px;
-    // justify-content: space-evenly;
     row-gap: 15px;
     position: relative;
+
     .pets__card {
       width: 100%;
       max-height: 35.4vw;
@@ -778,161 +950,13 @@ opacity: 0.9;
     }
 
   }
-
-  .pick_and_feed {
-    padding-top: 30px;
-    padding-bottom: 50px;
-  }
-
-
-  .pick_and_feed__wrapper {
-    padding: 30px 48px 50px 49px;
-
-    h2 {
-      margin-bottom: 20px;
-    }
-
-    h4 {
-      margin-bottom: 22px;
-    }
-
-    p:nth-child(3) {
-      margin-bottom: 10px;
-      width: 96%;
-      white-space: normal;
-    }
-
-    p:nth-child(4) {
-      margin-bottom: 40px;
-      width: 100%;
-      a {
-        text-underline-offset: 4px;
-      }
-    }
-
-    h3 {
-      margin-right: 0;
-      margin-bottom: 40px;
-    }
-
-    .how_it_works {
-      .how_it_works_card {
-        margin-bottom: 71px;
-      }
-    }
-  }
-
-  .testimonials {
-    background: url(../../assets/images/leav_foto_smalldesktop.jpg) no-repeat bottom -86px right;
-    padding: 0 30px;
-  }
-
-  .testimonials__wrapper {
-    padding: 101px 0 140px 0;
-
-    h2 {
-      margin-bottom: 29px;
-    }
-  }
-
-  .testimonial_cards_block {
-    margin-bottom: 14px;
-    justify-content: center;
-
-    .testimonial_card_outer {
-      max-width: 293px;
-      height: 391px;
-    }
-
-    .testimonial_card_outer:last-child {
-      display: none;
-    }
-  }
-
-  .testimonial_slider_block {
-    margin-bottom: 48px;
-    padding-right: 14px;
-    width: 43%;
-  }
-
-  #testimonial_slider::-webkit-slider-thumb {
-    height: 6px;
-  }
-
-  #testimonial_slider::-moz-range-thumb {
-    height: 6px;
-  }
-
-  #testimonial_slider::-webkit-slider-thumb:hover {
-    height: 8px;
-  }
-
-  #testimonial_slider::-webkit-slider-runnable-track {
-    height: 8px;
-  }
-
-  #testimonial_slider::-moz-range-track {
-    height: 8px;
-  }
-
 }
-
-@media screen and (max-width: 1000px) {
-  .visible_desktop {display: none;}
-  .visible_small_desktop {display: block;}
-  .watch_online {
-    background-size: 1200px;
-  }
-
-}
-
 
 @media screen and (max-width: 980px) {
-  .watch_online__wrapper {
-    height: 52.32vw;
-
-    .watch_online__circle {
-      margin: -22px 14vw 5vw auto;
-      width: 38.7vw;
-      height: 38.7vw;
-
-      h2 {
-        top: 6vw;
-        width: 53.8vw;
-        font-size: 8.67vw;
-      }
-    }
-  }
-
-  .the_backstage {
-    background: url(../../assets/images/backstage_bg_tablet.jpg) no-repeat top -5px right;
-    padding: 69px 133px 78px 20px;
-  }
-
-  .the_backstage__wrapper {
-    display: block;
-    padding: 0;
-
-    .the_backstage__photo {
-      display: none;
-    }
-
-    h2 {
-      margin-left: 4px;
-    }
-
-    .the_backstage__p1 {
-      margin-bottom: 30px;
-    }
-
-    h3 {
-      margin-left: 4px;
-      margin-bottom: 19px;
-    }
-  }
 
   .pets {
-    padding-bottom: 100px;
+    padding: 0 20px 100px 20px;
+
     background: url(../../assets/images/pets_bg1_tablet.jpg) no-repeat bottom left,
                 url(../../assets/images/pets_bg2_tablet.jpg) no-repeat bottom right;
   }
@@ -1002,11 +1026,129 @@ opacity: 0.9;
       }
     }
   }
+}
+
+
+
+
+@media screen and (max-width: 640px) {
+}
+
+
+
+
+@media screen and (max-width: 600px) {
+  .pets {
+    padding: 0 10px 60px 10px;
+
+    background: url(../../assets/images/pets_bg1_mobile.jpg) no-repeat bottom left,
+                url(../../assets/images/pets_bg2_mobile.jpg) no-repeat bottom -4px right;
+  }
+
+  .pets__wrapper {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    margin-bottom: 19px;
+
+    .pets__card {
+      max-width: none;
+      width: 285px;
+      max-height: none;
+      height: auto;
+
+      img {
+        max-width: none;
+        max-height: none;
+        width: 100%;
+        height: auto;
+      }
+
+      .pets__card_caption{
+        padding: 8px 11px 11px 11px;
+      }
+    }
+
+    #pets__btn_left, #pets__btn_right {
+      display: none;
+    }
+  }
+
+  #pets__choose_btn {
+    max-width: 298px;
+    width: 100%;
+    padding-left: 10px;
+  }
+
+}
+
+
+
+@media screen and (max-width: 320px) {
+  .pets__wrapper {
+    .pets__card {
+      max-width: 285px;
+      width: 100%;
+    }
+  }
+}
+
+
+
+
+
+// ------------------------------------- Media Pick and feed
+@media screen and (max-width: 1599px) {
+
+  .pick_and_feed {
+    padding-top: 30px;
+    padding-bottom: 50px;
+  }
+
+
+  .pick_and_feed__wrapper {
+    padding: 30px 48px 50px 49px;
+
+    h2 {
+      margin-bottom: 20px;
+    }
+
+    h4 {
+      margin-bottom: 22px;
+    }
+
+    p:nth-child(3) {
+      margin-bottom: 10px;
+      width: 96%;
+      white-space: normal;
+    }
+
+    p:nth-child(4) {
+      margin-bottom: 40px;
+      width: 100%;
+      a {
+        text-underline-offset: 4px;
+      }
+    }
+
+    h3 {
+      margin-right: 0;
+      margin-bottom: 40px;
+    }
+
+    .how_it_works {
+      .how_it_works_card {
+        margin-bottom: 71px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 980px) {
 
   .pick_and_feed {
     padding: 20px 0 20px 0;
   }
-
 
   .pick_and_feed__wrapper {
     padding: 10px 20px 60px 20px;
@@ -1043,8 +1185,6 @@ opacity: 0.9;
 
       .how_it_works_arrow {
         position: relative;
-        width: 10px;
-        height: 10px;
 
         div {
           position: absolute;
@@ -1055,66 +1195,227 @@ opacity: 0.9;
           background: url(../../assets/icons/pick_and_feed_green_arrow.svg) no-repeat;
         }
       }
-        // .how_it_works_arrow:nth-child(4) div {
-        //   left: 53.9vw;
-        //   top: -2.7vw;
-    }    // }
-  }
-
-
-
-
-
-
-}
-
-@media screen and (max-width: 640px) {
-  .watch_online {
-    background: url(../../assets/images/Giant_Panda_tablet.jpg) no-repeat center bottom;
-  }
-  .watch_online__wrapper {
-    height: 58.3vw;
-    padding: 45px 22px 0px 20px;
-
-    .watch_online__circle {
-      margin: 0 7.7vw 0 auto;
-      width: 37.2vw;
-      height: 37.2vw;
-
-      h2 {
-        top: 5.9vw;
-        width: 51.8vw;
-        font-size: 8.5vw;
-        left: -1px
-      }
     }
   }
-  #watch_online__button {
-    margin: -3px auto auto 0;
-  }
-
-
-  
-
-
-  
-
 }
 
 
 
-
+@media screen and (max-width: 640px) {
+}
 
 
 @media screen and (max-width: 600px) {
-  #watch_online__button {
-    width: 298px;
-    margin: auto;
-    margin-top: 18vw;
+  .pick_and_feed {
+    padding: 20px 10px 20px 10px;
+  }
+
+  .pick_and_feed__wrapper {
+    padding: 21px 0px 40px 0px;
+
+    h2 {
+      margin-bottom: 9px;
+      font-size: 7.5vw;
+    }
+
+    h4 {
+      padding: 0 11px 0 8px;
+      margin: 0 0 20px 0;
+      font-size: 5.6vw;
+      text-align: center;
+    }
+
+    p:nth-child(3) {
+      display: none;
+    }
+
+    p:nth-child(4) {
+      display: none;
+    }
+
+    h3 {
+      margin: 0 0 19px 0;
+      font-size: 7.5vw;
+    }
+
+    .how_it_works {
+      margin: 0 0 38px 0;
+      flex-direction: column;
+      align-items: center;
+
+      .how_it_works_card {
+        margin: 0;
+        div {
+          margin-bottom: 10px;
+        }
+      }
+
+      .how_it_works_card:nth-child(1) {
+        margin-bottom: 42px;
+      }
+
+      .how_it_works_card:nth-child(3) {
+        margin-bottom: 28px;
+      }
+      .how_it_works_arrow {
+        div {
+          margin: -51px 0px 0px 56px;
+          transform: rotate(85deg);
+          background: url(../../assets/icons/pick_and_feed_green_arrow.svg) no-repeat;
+        }
+      }
+    }
+  }
+
+  #pick_and_feed__button {
+    max-width: 298px;
+    width: 100%;
+    // margin: 0 -15px 0 -5px;
     padding-left: 10px;
+  }
+
+}
+
+
+@media screen and (max-width: 320px) {
+}
+
+
+
+
+
+
+// --------------------------------------- Media Testimonials
+@media screen and (max-width: 1599px) {
+
+  .testimonials {
+    background: url(../../assets/images/leav_foto_smalldesktop.jpg) no-repeat bottom -86px right;
+    padding: 0 30px;
+  }
+
+  .testimonials__wrapper {
+    padding: 101px 0 140px 0;
+
+    h2 {
+      margin-bottom: 29px;
+    }
+  }
+
+  .testimonial_cards_block {
+    margin-bottom: 14px;
+    justify-content: center;
+
+    .testimonial_card_outer {
+      max-width: 293px;
+      height: 391px;
+    }
+
+    .testimonial_card_outer:last-child {
+      display: none;
+    }
+  }
+
+  .testimonial_slider_block {
+    margin-bottom: 48px;
+    padding-right: 14px;
+    width: 43%;
+  }
+
+  #testimonial_slider::-webkit-slider-thumb {
+    height: 6px;
+  }
+
+  #testimonial_slider::-moz-range-thumb {
+    height: 6px;
+  }
+
+  #testimonial_slider::-webkit-slider-thumb:hover {
+    height: 8px;
+  }
+
+  #testimonial_slider::-webkit-slider-runnable-track {
+    height: 8px;
+  }
+
+  #testimonial_slider::-moz-range-track {
+    height: 8px;
   }
 }
 
+
+@media screen and (max-width: 980px) {
+
+  .testimonials {
+    background: url(../../assets/images/testimonials_bg_tablet.jpg) no-repeat bottom -69px right;
+    padding: 61px 20px 80px 20px;
+  }
+
+  .testimonials__wrapper {
+    padding: 0;
+
+    h2 {
+      margin-bottom: 29px;
+      margin-right: 4px;
+    }
+  }
+
+  .testimonial_cards_block {
+    flex-direction: column;
+    margin-bottom: 40px;
+    gap: 15px;
+
+    .testimonial_card_outer {
+      max-width: 100%;
+      height: 109px;
+
+      .testimonial_card {
+        padding: 10px;
+        border: 0 solid #F1F3F2;
+        border-bottom: 10px solid #F1F3F2;;
+
+        .testimonial_card_text {
+          margin: 0 5px;
+
+        }
+      }
+    }
+  }
+
+  .testimonial_slider_block {
+    display: none;
+  }
+
+  #leave_feedback_btn {
+    width: 240px;
+    margin: auto;
+  }
+}
+
+
+
+
+
+
+
+
+@media screen and (max-width: 1599px) {
+}
+
+
+@media screen and (max-width: 1000px) {
+}
+
+
+@media screen and (max-width: 980px) {
+}
+
+
+@media screen and (max-width: 640px) {
+}
+
+
+@media screen and (max-width: 600px) {
+}
 
 
 @media screen and (max-width: 320px) {
