@@ -130,18 +130,6 @@
         margin-right: 14px;
       }
     }
-
-    p.share {
-      font-family: 'Roboto';
-      font-style: normal;
-      font-weight: 400;
-      font-size: 16px;
-      line-height: 140%;
-      color: #333B41;
-      text-align: center;
-      margin-left: 5px;
-      margin-bottom: 0;
-    }
   }
 }
 
@@ -153,7 +141,7 @@
 
 p.amount {
   margin-left: 4px;
-  margin-bottom: 17px;
+  margin-bottom: 15px;
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 400;
@@ -199,15 +187,13 @@ p.amount {
   }
 }
 
-.radio_block::after {
-  content: "";
-  display: block;
-  width: 94%;
+.radio_block_line {
+  position: relative;
+  z-index: 1;
+  top: 14px;
   height: 2px;
-  background: #72828E;
-  top: 13px;
-  left: 2.9%;
-  position: absolute;
+  background-color: #72828E;
+  margin: 0 30px 0 26px;
 }
 
 .radio_block div label:hover{
@@ -223,7 +209,7 @@ input.radio_amount {
   border-radius: 50%;
   background: #FFEE2E;
   z-index: 1;
-  display: grid;
+  // display: grid;
 }
 
 input.radio_amount::before {
@@ -402,18 +388,372 @@ input.radio_period:active {
   background: #4B9200;
 }
 
+p.share {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+  color: #333B41;
+  text-align: center;
+  margin-left: 5px;
+  margin-bottom: 0;
+}
 
-// Media start
+
+// ----------------------------------------------  Media start
 
 @media screen and (max-width: 1599px) {
+  .main_donate {
+    padding: 41px 30px 30px 30px;
+
+    h2 {
+      margin: 0 92px 28px 0;
+      text-align: left;
+    }
+
+    h3 {
+      margin-bottom: 39px;
+    }
+
+    .pick_and_feed {
+      padding: 20px 30px 45px 30px;
+
+      h2 {
+        margin: 0px 15px 11px 0px;
+      }
+
+      h3 {
+        margin: 0px 0px 59px 17px;
+      }
+    }
+  }
+
+
+  .form_amount {
+    max-width: 810px;
+    margin: auto;
+  }
+
+  p.amount {
+    margin-left: 0px;
+  }
+
+  .radio_block {
+    margin-bottom: 98px;
+    padding: 0 10px 0 10px;
+
+    div:nth-child(1) {
+      display: none;
+    }
+
+    div{
+      label {
+        left: -27px;
+        padding-left: 17px;
+      }
+    }
+  }
+
+  .radio_block_line {
+    margin: 0 10px 0 10px;
+  }
 }
 
 @media screen and (max-width: 1000px) {
+  .panda_header {
+    height: 390px;
+    background-position: left -172px bottom;
+  }
+}
 
+@media screen and (max-width: 980px) {
+  .panda_header {
+    height: 335px;
+  }
+
+  .main_donate {
+    padding: 30px 20px 46px 20px;
+
+    h2 {
+      margin: 0 0px 19px 0;
+      font-size: 24px;
+      line-height: 120%;
+    }
+
+    p {
+      margin-bottom: 30px;
+    }
+
+    h3 {
+      margin: 0;
+      margin-bottom: 29px;
+    }
+
+    .pick_and_feed {
+      padding: 30px 0px 31px 0px;
+
+      h2 {
+        margin: 0px 0px 21px 0px;
+      }
+
+      h3 {
+        margin: 0px 35px 49px 35px;
+        text-align: center;
+      }
+
+      .food_per_animal {
+        margin-bottom: 42px;
+        padding: 0 20px;
+      }
+    }
+  }
+
+  p.amount {
+    margin: 0px 0px 4px 10px;
+  }
+
+
+
+  .radio_block {
+    margin-bottom: 98px;
+    padding: 0 35px 0 35px;
+
+    div:nth-child(2) {
+      display: none;
+    }
+
+    div:nth-child(3) {
+      display: none;
+    }
+
+    div{
+      label {
+        left: -27px;
+        padding-left: 8px;
+      }
+    }
+  }
+
+  .radio_block_line {
+    margin: 0 35px 0 35px;
+  }
 }
 
 @media screen and (max-width: 640px) {
+  .panda_header {
+    height: 369px;
+    background: url(../../assets/images/donate_panda_bg_tablet.jpg) center bottom no-repeat;
+  }
+
+
+  #another_amount {
+    margin-bottom: 31px;
+    width: 180px;
+    height: 42px;
+    padding-left: 5px;
+  }
+
+  #dollar_sign {
+    left: 219px;
+    top: 9px;
+    font-size: 22px;
+  }
+
+  .radio_period_select {
+    padding-right: 19px;
+    margin-bottom: 29px;
+    gap: 50px;
+
+    label {
+      padding-left: 11px;
+    }
+  }
+
+  #feed_btn {
+    margin-bottom: 30px;
+    margin-left: 2px;
+  }
+
+  p.share {
+    margin-left: 0px;
+    margin-bottom: 0px;
+  }
+
+
 }
 
+@media screen and (max-width: 600px) {
+  .panda_header {
+    background-size: cover;
+    height: 69vw;
+  }
+
+  .main_donate {
+    padding: 31px 10px 21px 10px;
+
+    p {
+      line-height: 138%;
+      margin-bottom: 30px;
+    }
+
+    h3 {
+      margin: 0;
+      margin-bottom: 29px;
+      font-size: 24px;
+
+    }
+
+    .pick_and_feed {
+      padding: 20px 0px 21px 0px;
+
+      h2 {
+        margin: 0px 0px 9px 0px;
+        font-size: 24px;
+      }
+
+      h3 {
+        margin: 0px 2px 11px 2px;
+        font-size: 16px;
+        line-height: 135%;
+
+      }
+
+      .food_per_animal {
+        margin-bottom: 4px;
+        justify-content: center;
+        gap: 4px;
+        align-items: flex-start;
+        padding: 0 1px;
+
+        div{
+          margin: 60px 0px 0px 0px;
+
+          h2 {
+            margin-bottom: 7px;
+            font-size: 40px;
+          }
+
+          p {
+            font-size: 9px;
+          }
+        }
+
+        img:nth-child(2) {
+          margin-top: 73px;
+          margin-right: 31px;
+          width: 9px;
+        }
+
+        img:nth-child(3) {
+          max-width: 160px;
+          margin-right: 0px;
+        }
+      }
+    }
+  }
+
+  p.amount {
+    margin: 0px 0px 6px 1px;
+  }
+
+
+
+  .radio_block {
+    height: 14px;
+    margin-bottom: 49px;
+    padding: 0 17px 0 17px;
+
+    div{
+      label {
+        width: 40px;
+        height: 50px;
+        left: -16px;
+        top: -27px;
+        padding-left: 7px;
+        padding-top: 43px;
+        font-size: 13px;
+
+        span {
+          font-size: 11px;
+        }
+      }
+    }
+  }
+
+  .radio_block_line {
+    margin: 0 17px 0 17px;
+    top: 8px;
+  }
+
+
+  input.radio_amount {
+    width: 6px;
+    height: 6px;
+  }
+
+  input.radio_amount::before {
+    content: "";
+    width: 10px;
+    height: 10px;
+    border: 1px solid #FE9013;
+    top: -3px;
+    left: -3px;
+  }
+
+  input.radio_amount:checked::before {
+    transform: scale(1);
+  }
+
+  input.radio_amount:focus {
+    outline: max(1px, 1px) solid #FE9013;
+    outline-offset: max(6px, 0.15em);
+  }
+
+  #another_amount {
+    margin-bottom: 25px;
+    
+  }
+
+  .radio_period_select {
+    padding-right: 21px;
+    margin-bottom: 26px;
+  }
+
+  #feed_btn {
+    max-width: 298px;
+    width: 100%;
+    margin-left: 0px;
+    padding-top: 3px;
+  }
+
+  p.share {
+    font-size: 15.9px;
+    margin-bottom: 0px;
+  }
+
+
+}
+
+
+
+ 
+
 @media screen and (max-width: 320px) {
+  .panda_header {
+    // height: 220px;
+    background: url(../../assets/images/donate_panda_bg_mobile.jpg) center bottom no-repeat;
+  }
+
+
+  .main_donate {
+    .pick_and_feed {
+      .food_per_animal {
+        img:nth-child(2) {
+          margin-right: auto;
+        }
+      }
+    }
+  }
+
 }

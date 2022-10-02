@@ -777,7 +777,7 @@ html {
     margin: 35px 0 0 1px;
   }
   .footer__wrapper .footer__navigation ul {
-    margin: 0 90px -1px 180px;
+    margin: 0 77px -1px 193px;
   }
 }
 @media screen and (max-width: 980px) {
@@ -814,10 +814,63 @@ html {
     margin: 32px 0 0 0px;
   }
   .footer__wrapper .footer__navigation ul {
-    margin: 0 73px 0px 1px;
+    margin: 0 74px 1px 1px;
   }
   .footer__wrapper .designed_by {
     margin: 14px 1px 0 0;
+  }
+}
+@media screen and (max-width: 600px) {
+  .footer {
+    padding: 14px 10px 20px 10px;
+    height: auto;
+  }
+  .footer__wrapper {
+    grid-template-rows: auto auto auto auto auto;
+    grid-template-columns: auto;
+    grid-template-areas: "footer__petstory_online" "footer__social" "donate_for_volunteers_btn" "designed_by" "footer__navigation";
+  }
+  .footer__wrapper a.footer__petstory_online {
+    padding: 0;
+    margin-bottom: 29px;
+  }
+  .footer__wrapper a.footer__petstory_online p {
+    display: flex;
+    margin: 0 auto;
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
+    height: 30px;
+    align-items: flex-end;
+    border: none;
+    background-image: url(../../assets/icons/bamboo.svg);
+    background-position: 72px 3px;
+  }
+  .footer__wrapper .footer__social {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 0 23px 28px 23px;
+  }
+  .footer__wrapper .footer__social li {
+    margin: 0;
+  }
+  .footer__wrapper #donate_for_volunteers_btn {
+    padding-top: 2px;
+    padding-left: 2px;
+    margin: 0 auto 18px auto;
+    max-width: 298px;
+    width: 100%;
+  }
+  .footer__wrapper .footer__navigation ul {
+    justify-content: space-between;
+    margin: 0 11px 0px 11px;
+  }
+  .footer__wrapper .designed_by {
+    margin: 0px 0px 28px 0px;
+    font-size: 15px;
+  }
+  .footer__wrapper .designed_by p {
+    margin-top: 12px;
   }
 }
 .visible_small_desktop {
@@ -846,9 +899,11 @@ html {
 }
 .watch_online__wrapper .watch_online__circle h2 {
   position: relative;
-  left: 73px;
+  left: 82px;
   top: 74px;
-  width: 500.31px;
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
   padding: 0;
   margin: 0;
   font-family: "Roboto";
@@ -1466,7 +1521,7 @@ html {
   }
   .watch_online__wrapper .watch_online__circle h2 {
     position: relative;
-    left: 8px;
+    left: 66px;
     top: 53px;
     font-size: 85px;
   }
@@ -1491,8 +1546,10 @@ html {
   }
   .watch_online__wrapper .watch_online__circle h2 {
     top: 6vw;
-    width: 53.8vw;
     font-size: 8.67vw;
+  }
+  #watch_online__button {
+    margin: -3px auto auto 0;
   }
 }
 @media screen and (max-width: 640px) {
@@ -1510,12 +1567,8 @@ html {
   }
   .watch_online__wrapper .watch_online__circle h2 {
     top: 5.9vw;
-    width: 51.8vw;
     font-size: 8.5vw;
-    left: -1px;
-  }
-  #watch_online__button {
-    margin: -3px auto auto 0;
+    left: 43px;
   }
 }
 @media screen and (max-width: 600px) {
@@ -1530,11 +1583,8 @@ html {
     margin: 0 8vw 0 auto;
   }
   .watch_online__wrapper .watch_online__circle h2 {
-    width: -webkit-min-content;
-    width: -moz-min-content;
-    width: min-content;
     font-size: 8.8vw;
-    margin-left: 6vw;
+    left: 6vw;
   }
   #watch_online__button {
     position: relative;
@@ -1845,13 +1895,14 @@ html {
     padding: 21px 0px 40px 0px;
   }
   .pick_and_feed__wrapper h2 {
-    margin-bottom: 9px;
+    margin-bottom: 10px;
     font-size: 7.5vw;
   }
   .pick_and_feed__wrapper h4 {
     padding: 0 11px 0 8px;
-    margin: 0 0 20px 0;
-    font-size: 5.6vw;
+    margin: 0 0 18px 0;
+    font-size: 18px;
+    line-height: 122%;
     text-align: center;
   }
   .pick_and_feed__wrapper p:nth-child(3) {
@@ -1889,7 +1940,8 @@ html {
   #pick_and_feed__button {
     max-width: 298px;
     width: 100%;
-    padding-left: 10px;
+    padding-top: 2px;
+    padding-left: 8px;
   }
 }
 @media screen and (max-width: 1599px) {
@@ -1953,7 +2005,8 @@ html {
     gap: 15px;
   }
   .testimonial_cards_block .testimonial_card_outer {
-    max-width: 100%;
+    max-width: 600px;
+    margin: auto;
     height: 109px;
   }
   .testimonial_cards_block .testimonial_card_outer .testimonial_card {
@@ -1970,5 +2023,25 @@ html {
   #leave_feedback_btn {
     width: 240px;
     margin: auto;
+  }
+}
+@media screen and (max-width: 600px) {
+  .testimonials {
+    background: url(../../assets/images/testimonials_bg_mobile.jpg) no-repeat bottom -30px right;
+    padding: 29px 10px 60px 10px;
+  }
+  .testimonials__wrapper h2 {
+    font-size: 7.5vw;
+    margin: 0 0 19px 0;
+  }
+  .testimonial_cards_block {
+    margin-bottom: 30px;
+  }
+  .testimonial_cards_block .testimonial_card_outer {
+    min-width: 0;
+  }
+  #leave_feedback_btn {
+    max-width: 240px;
+    width: 100%;
   }
 }/*# sourceMappingURL=style.css.map */

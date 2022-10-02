@@ -33,9 +33,9 @@
 
     h2 {
       position: relative;
-      left: 73px;
+      left: 82px;
       top: 74px;
-      width: 500.31px;
+      width: min-content;
       // height: 400px;
       padding: 0;
       margin: 0;
@@ -694,7 +694,7 @@ opacity: 0.9;
 
       h2 {
         position: relative;
-        left: 8px;
+        left: 66px;
         top: 53px;
         font-size: 85px;
       }
@@ -724,10 +724,12 @@ opacity: 0.9;
 
       h2 {
         top: 6vw;
-        width: 53.8vw;
         font-size: 8.67vw;
       }
     }
+  }
+  #watch_online__button {
+    margin: -3px auto auto 0;
   }
 }
 
@@ -746,14 +748,10 @@ opacity: 0.9;
 
       h2 {
         top: 5.9vw;
-        width: 51.8vw;
         font-size: 8.5vw;
-        left: -1px;
+        left: 43px;
       }
     }
-  }
-  #watch_online__button {
-    margin: -3px auto auto 0;
   }
 }
 
@@ -769,9 +767,9 @@ opacity: 0.9;
     .watch_online__circle {
       margin: 0 8.0vw 0 auto;
       h2 {
-        width: min-content;
+        // width: min-content;
         font-size: 8.8vw;
-        margin-left: 6vw;
+        left: 6vw;
       }
     }
   }
@@ -1214,14 +1212,15 @@ opacity: 0.9;
     padding: 21px 0px 40px 0px;
 
     h2 {
-      margin-bottom: 9px;
+      margin-bottom: 10px;
       font-size: 7.5vw;
     }
 
     h4 {
       padding: 0 11px 0 8px;
-      margin: 0 0 20px 0;
-      font-size: 5.6vw;
+      margin: 0 0 18px 0;
+      font-size: 18px; //5.6vw;
+      line-height: 122%;
       text-align: center;
     }
 
@@ -1270,18 +1269,13 @@ opacity: 0.9;
   #pick_and_feed__button {
     max-width: 298px;
     width: 100%;
-    // margin: 0 -15px 0 -5px;
-    padding-left: 10px;
+    padding-top: 2px;
+    padding-left: 8px;
   }
-
 }
-
 
 @media screen and (max-width: 320px) {
 }
-
-
-
 
 
 
@@ -1342,7 +1336,6 @@ opacity: 0.9;
   }
 }
 
-
 @media screen and (max-width: 980px) {
 
   .testimonials {
@@ -1365,7 +1358,8 @@ opacity: 0.9;
     gap: 15px;
 
     .testimonial_card_outer {
-      max-width: 100%;
+      max-width: 600px;
+      margin: auto;
       height: 109px;
 
       .testimonial_card {
@@ -1391,30 +1385,35 @@ opacity: 0.9;
   }
 }
 
-
-
-
-
-
-
-
-@media screen and (max-width: 1599px) {
-}
-
-
-@media screen and (max-width: 1000px) {
-}
-
-
-@media screen and (max-width: 980px) {
-}
-
-
 @media screen and (max-width: 640px) {
 }
 
 
 @media screen and (max-width: 600px) {
+  .testimonials {
+    background: url(../../assets/images/testimonials_bg_mobile.jpg) no-repeat bottom -30px right;
+    padding: 29px 10px 60px 10px;
+  }
+
+  .testimonials__wrapper {
+    h2 {
+      font-size: 7.5vw;
+      margin: 0 0 19px 0;
+    }
+  }
+
+  .testimonial_cards_block {
+    margin-bottom: 30px;
+
+    .testimonial_card_outer {
+      min-width: 0;
+    }
+  }
+
+  #leave_feedback_btn {
+    max-width: 240px;
+    width: 100%;
+  }
 }
 
 
