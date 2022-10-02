@@ -6,6 +6,10 @@ html {
   box-sizing: border-box;
 }
 
+.header__navigation_tablet {
+  display: none;
+}
+
 .header {
   background-color: #000000;
   padding: 0 30px;
@@ -103,7 +107,71 @@ html {
   }
 }
 
+
+@media screen and (max-width: 980px) {
+  .header__navigation {
+    .logo {
+      margin-right: 4%;
+    }
+    ul {
+      gap: 4%;
+    }
+  }
+}
+
 @media screen and (max-width: 640px) {
+  .header {
+    padding: 0 20px;
+    position: fixed;
+    width: 100vw;
+  }
+
+  .header__wrapper {
+    height: 34px;
+  }
+
+  .header__navigation {
+    display: none
+  }
+
+  .header__navigation_tablet {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .header__logo_tablet {
+      text-decoration: none;
+      color: #FFFFFF;
+      h1 {
+        padding-top: 3px;
+        margin: 0;
+        width: 46px;
+        font-size: 12.2899px;
+        background-image: url(../../assets/icons/bamboo_tablet.svg);
+        background-position: 3px 16px;
+        background-repeat: no-repeat;
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 400;
+        line-height: 120%;
+        text-align: center;
+      }
+    }
+    .header__burger_button {
+      width: 18px;
+      height: 15px;
+      background: url(../../assets/icons/burger_menu.svg) no-repeat center;
+    }
+    :hover {
+      cursor: pointer;
+      opacity: 70%;
+      transition: 0.3s;
+    }
+  }
+
+  // .header__navigation a:hover {
+  //   opacity: 70%;
+  //   transition: 0.3s;
+  // }
 }
 
 @media screen and (max-width: 320px) {

@@ -356,6 +356,10 @@ html {
   box-sizing: border-box;
 }
 
+.header__navigation_tablet {
+  display: none;
+}
+
 .header {
   background-color: #000000;
   padding: 0 30px;
@@ -434,6 +438,60 @@ html {
   }
   .header__navigation ul {
     gap: 48px;
+  }
+}
+@media screen and (max-width: 980px) {
+  .header__navigation .logo {
+    margin-right: 4%;
+  }
+  .header__navigation ul {
+    gap: 4%;
+  }
+}
+@media screen and (max-width: 640px) {
+  .header {
+    padding: 0 20px;
+    position: fixed;
+    width: 100vw;
+  }
+  .header__wrapper {
+    height: 34px;
+  }
+  .header__navigation {
+    display: none;
+  }
+  .header__navigation_tablet {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .header__navigation_tablet .header__logo_tablet {
+    text-decoration: none;
+    color: #FFFFFF;
+  }
+  .header__navigation_tablet .header__logo_tablet h1 {
+    padding-top: 3px;
+    margin: 0;
+    width: 46px;
+    font-size: 12.2899px;
+    background-image: url(../../assets/icons/bamboo_tablet.svg);
+    background-position: 3px 16px;
+    background-repeat: no-repeat;
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+    text-align: center;
+  }
+  .header__navigation_tablet .header__burger_button {
+    width: 18px;
+    height: 15px;
+    background: url(../../assets/icons/burger_menu.svg) no-repeat center;
+  }
+  .header__navigation_tablet :hover {
+    cursor: pointer;
+    opacity: 70%;
+    transition: 0.3s;
   }
 }
 .footer {
@@ -692,7 +750,7 @@ html {
   margin-top: 10px;
 }
 
-.small_desktop {
+.visible_small_desktop {
   display: none;
 }
 
@@ -721,7 +779,6 @@ html {
   left: 73px;
   top: 74px;
   width: 500.31px;
-  height: 400px;
   padding: 0;
   margin: 0;
   font-family: "Roboto";
@@ -868,6 +925,7 @@ html {
   margin: auto;
   margin-bottom: 80px;
   display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   grid-template-areas: "card1 card2 card3" "pets__btn_left . pets__btn_right" "card4 card5 card6";
   row-gap: 10px;
   -moz-column-gap: 30px;
@@ -924,21 +982,19 @@ html {
 }
 .pets__wrapper .pets__card:hover img:nth-child(1) {
   z-index: 1;
-  width: 386px;
-  height: 384px;
-  transform: translate(-10px, -10px);
+  transform: scale(1.1);
   transition: 0.5s;
 }
 .pets__wrapper .pets__card:hover .pets__card_caption {
   z-index: 2;
-  transform: translateY(-67px);
+  transform: translateY(-37px);
   transition: 0.5s;
   background: rgba(0, 0, 0, 0.5);
 }
 .pets__wrapper .pets__card:hover .pets__card_caption h2, .pets__wrapper .pets__card:hover .pets__card_caption p {
   color: white;
 }
-.pets__wrapper .pets__btn_left, .pets__wrapper .pets__btn_right {
+.pets__wrapper #pets__btn_left, .pets__wrapper #pets__btn_right {
   position: absolute;
   display: block;
   width: 62px;
@@ -1006,8 +1062,7 @@ html {
 .pick_and_feed {
   background: linear-gradient(315.75deg, rgba(254, 210, 144, 0.7) 30.06%, #FEBDAB 100.95%, rgba(254, 210, 144, 0.7) 106.36%), linear-gradient(315.75deg, rgba(254, 189, 171, 0.74) 30.06%, rgba(243, 169, 248, 0.66) 50.74%, #E0D8F0 80.49%, #EAF7FE 127.9%, #EAF7FE 149.54%), linear-gradient(315.75deg, rgba(254, 189, 171, 0.74) 30.06%, rgba(243, 169, 248, 0.66) 50.74%, #E0D8F0 80.49%, #EAF7FE 127.9%, #EAF7FE 149.54%);
   opacity: 0.9;
-  padding-top: 69px;
-  padding-bottom: 100px;
+  padding: 66px 30px 100px 30px;
 }
 
 .pick_and_feed__wrapper {
@@ -1018,6 +1073,7 @@ html {
   -webkit-backdrop-filter: blur(2px);
           backdrop-filter: blur(2px);
   border-radius: 20px;
+  position: relative;
 }
 .pick_and_feed__wrapper h2 {
   margin: 0;
@@ -1060,6 +1116,7 @@ html {
   font-size: 16px;
   line-height: 130%;
   color: #333B41;
+  width: 90%;
 }
 .pick_and_feed__wrapper p:nth-child(4) a {
   color: #333B41;
@@ -1080,14 +1137,10 @@ html {
   text-align: center;
 }
 .pick_and_feed__wrapper .how_it_works {
-  max-width: -webkit-fit-content;
-  max-width: -moz-fit-content;
-  max-width: fit-content;
+  max-width: 766px;
   margin: auto;
-  display: grid;
-  grid-template-columns: repeat(5, -webkit-min-content);
-  grid-template-columns: repeat(5, min-content);
-  gap: 30px;
+  display: flex;
+  justify-content: space-between;
 }
 .pick_and_feed__wrapper .how_it_works .how_it_works_card {
   max-width: 168px;
@@ -1114,9 +1167,12 @@ html {
   /* or 22px */
   color: #333B41;
 }
-.pick_and_feed__wrapper .how_it_works .how_it_works_arrow {
+.pick_and_feed__wrapper .how_it_works .how_it_works_arrow div {
   display: block;
+  width: 70px;
+  height: 36px;
   margin-top: 61px;
+  background: url(../../assets/icons/arrow_big.svg) no-repeat center;
 }
 
 #pick_and_feed__button {
@@ -1327,25 +1383,8 @@ html {
 }
 
 @media screen and (max-width: 1599px) {
-  .the_backstage {
-    background: none;
-  }
-  .the_backstage__wrapper {
-    gap: 5vw;
-  }
-  .the_backstage__photo {
-    overflow: hidden;
-  }
-}
-@media screen and (max-width: 1000px) {
-  .desktop {
-    display: none;
-  }
-  .small_desktop {
-    display: block;
-  }
   .watch_online {
-    background-size: 1200px;
+    background: url(../../assets/images/Giant_Panda_smalldesktop.jpg) no-repeat cover;
   }
   .watch_online__wrapper {
     height: 504px;
@@ -1365,8 +1404,11 @@ html {
     margin-right: 107px;
     padding-left: 10px;
   }
+  .the_backstage {
+    background: none;
+  }
   .the_backstage__wrapper {
-    gap: 31px;
+    gap: 3vw;
     padding-bottom: 141px;
     padding-top: 109px;
   }
@@ -1376,21 +1418,25 @@ html {
   .the_backstage__wrapper .the_backstage__p2 {
     padding-right: 2px;
   }
+  .the_backstage__photo {
+    overflow: hidden;
+  }
   .pets {
-    padding-bottom: 140px;
+    padding: 0 20px 50px 20px;
     background: url(../../assets/images/palm_foto_smalldesktop.jpg) no-repeat bottom left, url(../../assets/images/strelitzia_smalldesktop.jpg) no-repeat bottom right;
   }
   .pets__wrapper {
     margin-bottom: 81px;
     row-gap: 15px;
+    position: relative;
   }
   .pets__wrapper .pets__card {
-    width: 294px;
-    height: 354px;
+    width: 100%;
+    max-height: 35.4vw;
   }
   .pets__wrapper .pets__card img {
-    width: 294px;
-    height: 294px;
+    max-height: 29.4vw;
+    width: 100%;
   }
   .pets__wrapper .pets__card .pets__card_caption {
     padding: 10px 15px;
@@ -1400,14 +1446,264 @@ html {
     right: 11px;
     top: 8px;
   }
-  .pets__wrapper .pets__btn_left, .pets__wrapper .pets__btn_right {
+  .pets__wrapper #pets__btn_left, .pets__wrapper #pets__btn_right {
     position: relative;
     top: 0px;
   }
   .pets__wrapper #pets__btn_left {
-    left: 322px;
+    place-self: flex-end;
+    left: 93px;
   }
   .pets__wrapper #pets__btn_right {
     right: 92px;
+  }
+  .pick_and_feed {
+    padding-top: 30px;
+    padding-bottom: 50px;
+  }
+  .pick_and_feed__wrapper {
+    padding: 30px 48px 50px 49px;
+  }
+  .pick_and_feed__wrapper h2 {
+    margin-bottom: 20px;
+  }
+  .pick_and_feed__wrapper h4 {
+    margin-bottom: 22px;
+  }
+  .pick_and_feed__wrapper p:nth-child(3) {
+    margin-bottom: 10px;
+    width: 96%;
+    white-space: normal;
+  }
+  .pick_and_feed__wrapper p:nth-child(4) {
+    margin-bottom: 40px;
+    width: 100%;
+  }
+  .pick_and_feed__wrapper p:nth-child(4) a {
+    text-underline-offset: 4px;
+  }
+  .pick_and_feed__wrapper h3 {
+    margin-right: 0;
+    margin-bottom: 40px;
+  }
+  .pick_and_feed__wrapper .how_it_works .how_it_works_card {
+    margin-bottom: 71px;
+  }
+  .testimonials {
+    background: url(../../assets/images/leav_foto_smalldesktop.jpg) no-repeat bottom -86px right;
+    padding: 0 30px;
+  }
+  .testimonials__wrapper {
+    padding: 101px 0 140px 0;
+  }
+  .testimonials__wrapper h2 {
+    margin-bottom: 29px;
+  }
+  .testimonial_cards_block {
+    margin-bottom: 14px;
+    justify-content: center;
+  }
+  .testimonial_cards_block .testimonial_card_outer {
+    max-width: 293px;
+    height: 391px;
+  }
+  .testimonial_cards_block .testimonial_card_outer:last-child {
+    display: none;
+  }
+  .testimonial_slider_block {
+    margin-bottom: 48px;
+    padding-right: 14px;
+    width: 43%;
+  }
+  #testimonial_slider::-webkit-slider-thumb {
+    height: 6px;
+  }
+  #testimonial_slider::-moz-range-thumb {
+    height: 6px;
+  }
+  #testimonial_slider::-webkit-slider-thumb:hover {
+    height: 8px;
+  }
+  #testimonial_slider::-webkit-slider-runnable-track {
+    height: 8px;
+  }
+  #testimonial_slider::-moz-range-track {
+    height: 8px;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .visible_desktop {
+    display: none;
+  }
+  .visible_small_desktop {
+    display: block;
+  }
+  .watch_online {
+    background-size: 1200px;
+  }
+}
+@media screen and (max-width: 980px) {
+  .watch_online__wrapper {
+    height: 52.32vw;
+  }
+  .watch_online__wrapper .watch_online__circle {
+    margin: -22px 14vw 5vw auto;
+    width: 38.7vw;
+    height: 38.7vw;
+  }
+  .watch_online__wrapper .watch_online__circle h2 {
+    top: 6vw;
+    width: 53.8vw;
+    font-size: 8.67vw;
+  }
+  .the_backstage {
+    background: url(../../assets/images/backstage_bg_tablet.jpg) no-repeat top -5px right;
+    padding: 69px 133px 78px 20px;
+  }
+  .the_backstage__wrapper {
+    display: block;
+    padding: 0;
+  }
+  .the_backstage__wrapper .the_backstage__photo {
+    display: none;
+  }
+  .the_backstage__wrapper h2 {
+    margin-left: 4px;
+  }
+  .the_backstage__wrapper .the_backstage__p1 {
+    margin-bottom: 30px;
+  }
+  .the_backstage__wrapper h3 {
+    margin-left: 4px;
+    margin-bottom: 19px;
+  }
+  .pets {
+    padding-bottom: 100px;
+    background: url(../../assets/images/pets_bg1_tablet.jpg) no-repeat bottom left, url(../../assets/images/pets_bg2_tablet.jpg) no-repeat bottom right;
+  }
+  .pets__wrapper {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "card1 card2" "pets__btn_left pets__btn_right" "card3 card4";
+    row-gap: 15px;
+    -moz-column-gap: 30px;
+         column-gap: 30px;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    margin-bottom: 59px;
+  }
+  .pets__wrapper .pets__card:nth-child(7) {
+    display: none;
+  }
+  .pets__wrapper .pets__card:nth-child(8) {
+    display: none;
+  }
+  .pets__wrapper .pets__card {
+    max-width: 360px;
+    max-height: 52vw;
+  }
+  .pets__wrapper .pets__card img {
+    max-height: 44.4vw;
+    width: 100%;
+  }
+  .pets__wrapper .pets__card .pets__card_caption {
+    padding: 8px 11px;
+  }
+  .pets__wrapper .pets__card .pets__card_caption h2 {
+    font-size: 12.5px;
+  }
+  .pets__wrapper .pets__card .pets__card_caption p {
+    font-size: 11.7px;
+  }
+  .pets__wrapper .pets__card .pets__card_caption img {
+    height: 29px;
+    right: 7px;
+    top: 7px;
+  }
+  .pets__wrapper #pets__btn_left, .pets__wrapper #pets__btn_right {
+    top: -4px;
+  }
+  .pets__wrapper #pets__btn_left {
+    left: 0;
+  }
+  .pets__wrapper #pets__btn_right {
+    right: 0;
+  }
+  .pets__wrapper .pets__card:hover .pets__card_caption {
+    transform: translateY(-27px);
+  }
+  .pick_and_feed {
+    padding: 20px 0 20px 0;
+  }
+  .pick_and_feed__wrapper {
+    padding: 10px 20px 60px 20px;
+  }
+  .pick_and_feed__wrapper h2 {
+    margin-bottom: 20px;
+    font-size: 42px;
+  }
+  .pick_and_feed__wrapper h4 {
+    margin-bottom: 20px;
+    font-size: 22px;
+  }
+  .pick_and_feed__wrapper p:nth-child(3) {
+    width: 100%;
+  }
+  .pick_and_feed__wrapper p:nth-child(4) {
+    margin-bottom: 30px;
+  }
+  .pick_and_feed__wrapper h3 {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+  .pick_and_feed__wrapper .how_it_works {
+    margin-right: 12px;
+  }
+  .pick_and_feed__wrapper .how_it_works .how_it_works_card {
+    margin-bottom: 41px;
+  }
+  .pick_and_feed__wrapper .how_it_works .how_it_works_arrow {
+    position: relative;
+    width: 10px;
+    height: 10px;
+  }
+  .pick_and_feed__wrapper .how_it_works .how_it_works_arrow div {
+    position: absolute;
+    margin-top: -16px;
+    transform: translateX(-48px);
+    width: 89px;
+    height: 29px;
+    background: url(../../assets/icons/pick_and_feed_green_arrow.svg) no-repeat;
+  }
+}
+@media screen and (max-width: 640px) {
+  .watch_online {
+    background: url(../../assets/images/Giant_Panda_tablet.jpg) no-repeat center bottom;
+  }
+  .watch_online__wrapper {
+    height: 58.3vw;
+    padding: 45px 22px 0px 20px;
+  }
+  .watch_online__wrapper .watch_online__circle {
+    margin: 0 7.7vw 0 auto;
+    width: 37.2vw;
+    height: 37.2vw;
+  }
+  .watch_online__wrapper .watch_online__circle h2 {
+    top: 5.9vw;
+    width: 51.8vw;
+    font-size: 8.5vw;
+    left: -1px;
+  }
+  #watch_online__button {
+    margin: -3px auto auto 0;
+  }
+}
+@media screen and (max-width: 600px) {
+  #watch_online__button {
+    width: 298px;
+    margin: auto;
+    margin-top: 18vw;
+    padding-left: 10px;
   }
 }/*# sourceMappingURL=style.css.map */

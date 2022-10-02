@@ -22,6 +22,11 @@
           <li><a href="https://www.figma.com/file/ypzT9idgAILaSRVRmDAJxn/online-zoo-3-weeks?node-id=0%3A1">Designed by ©</a></li>
         </ul>
       </nav>
+      <nav class="header__navigation_tablet">
+        <a class="header__logo_tablet" href="../../pages/main/index.html"><h1>PetStory online</h1></a>
+        <div class="header__burger_button">
+        </div>
+      </nav>
     </div>
   </header>
   <main>
@@ -36,8 +41,8 @@
     <section class="the_backstage">
       <div class="the_backstage__wrapper">
         <div class="the_backstage__photo">
-          <img class="desktop" src="../../assets/images/bamboo-cap.jpg" alt="bamboo-cap">
-          <img class="small_desktop" src="../../assets/images/bamboo-cap-smalldesktop.jpg" alt="bamboo-cap-smalldesktop">
+          <img class="visible_desktop" src="../../assets/images/bamboo-cap.jpg" alt="bamboo-cap">
+          <img class="visible_small_desktop" src="../../assets/images/bamboo-cap-smalldesktop.jpg" alt="bamboo-cap-smalldesktop">
         </div>
         <div>
           <h2>The Backstage of the Wilderness World.</h2>
@@ -49,6 +54,8 @@
     </section>
     <section class="pets">
       <div class="pets__wrapper">
+        <button class="pets__btn_left" id="pets__btn_left"></button>
+        <button class="pets__btn_right" id="pets__btn_right"></button>
         <div class="pets__card card1">
           <img src="../../assets/images/Rectangle1.jpg" alt="pet photo">
           <div class="pets__card_caption">
@@ -97,8 +104,6 @@
             <img src="../../assets/icons/meet-fish_icon.svg" alt="banana bamboo">
           </div>
         </div>
-        <button class="pets__btn_left" id="pets__btn_left"></button>
-        <button class="pets__btn_right" id="pets__btn_right"></button>
       </div>
       <button id="pets__choose_btn" onclick="location.href='#map_link'">Choose your favorite</button>
     </section>
@@ -109,7 +114,7 @@
         <p>During a time when the COVID-19 epidemic is touching all of our lives, we’re proud
           and glad that people around the world find joy in PetStory.</p>
         <p>Even though the zoo has reopened, we need you now more than ever to help us deal
-           with these problems. Please consider <br>a gift to our <a href="../../pages/donate/donate.html">Emergency Support Fund</a> . </p>
+           with these problems. Please consider a gift to our <a href="../../pages/donate/donate.html">Emergency Support Fund</a> . </p>
         <h3>How it works</h3>
         <div class="how_it_works">
           <div class="how_it_works_card">
@@ -118,18 +123,14 @@
             </div>
             <p>Pay with card</p>
           </div>
-          <div class="how_it_works_arrow">
-            <img src="../../assets/icons/arrow_big.svg" alt="arrow">
-          </div>
+          <div class="how_it_works_arrow"><div></div></div>
           <div class="how_it_works_card">
             <div>
               <img src="../../assets/icons/zoo.svg" alt="pay img">
             </div>
             <p>Payment goes to the zoo</p>
           </div>
-          <div class="how_it_works_arrow">
-            <img src="../../assets/icons/arrow_big.svg" alt="arrow">
-          </div>
+          <div class="how_it_works_arrow"><div></div></div>
           <div class="how_it_works_card">
             <div>
               <img src="../../assets/icons/monkey.svg" alt="pay img">
