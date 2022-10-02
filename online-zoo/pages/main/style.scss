@@ -1070,6 +1070,11 @@ opacity: 0.9;
     #pets__btn_left, #pets__btn_right {
       display: none;
     }
+    .pets__card:hover {
+      .pets__card_caption{
+        transform: translateY(-32px);
+      }
+    }
   }
 
   #pets__choose_btn {

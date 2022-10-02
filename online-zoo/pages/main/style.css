@@ -1798,6 +1798,9 @@ html {
   .pets__wrapper #pets__btn_left, .pets__wrapper #pets__btn_right {
     display: none;
   }
+  .pets__wrapper .pets__card:hover .pets__card_caption {
+    transform: translateY(-32px);
+  }
   #pets__choose_btn {
     max-width: 298px;
     width: 100%;
