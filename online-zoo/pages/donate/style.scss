@@ -458,6 +458,19 @@ p.share {
   .radio_block_line {
     margin: 0 10px 0 10px;
   }
+
+
+
+}
+
+@media screen and (max-width: 1599px) { // footer navigation position fix
+  .footer__wrapper {
+    .footer__navigation {
+      ul {
+        margin: 0 77px -1px 193px;
+      }
+    }
+  }
 }
 
 @media screen and (max-width: 1000px) {
@@ -513,8 +526,6 @@ p.share {
     margin: 0px 0px 4px 10px;
   }
 
-
-
   .radio_block {
     margin-bottom: 98px;
     padding: 0 35px 0 35px;
@@ -537,6 +548,17 @@ p.share {
 
   .radio_block_line {
     margin: 0 35px 0 35px;
+  }
+}
+
+
+@media screen and (max-width: 980px) { // footer navigation position fix
+  .footer__wrapper {
+    .footer__navigation {
+      ul {
+        margin: 0 74px 1px 1px;
+      }
+    }
   }
 }
 
@@ -657,8 +679,6 @@ p.share {
     margin: 0px 0px 6px 1px;
   }
 
-
-
   .radio_block {
     height: 14px;
     margin-bottom: 49px;
@@ -712,7 +732,7 @@ p.share {
 
   #another_amount {
     margin-bottom: 25px;
-    
+
   }
 
   .radio_period_select {
@@ -731,13 +751,18 @@ p.share {
     font-size: 15.9px;
     margin-bottom: 0px;
   }
-
-
 }
 
-
-
- 
+@media screen and (max-width: 600px) { // footer navigation position fix
+  .footer__wrapper {
+    .footer__navigation {
+      ul {
+        justify-content: space-between;
+        margin: 0 11px 0px 11px;
+      }
+    }
+  }
+}
 
 @media screen and (max-width: 320px) {
   .panda_header {
