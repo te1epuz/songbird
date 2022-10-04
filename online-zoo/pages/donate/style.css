@@ -486,7 +486,6 @@ html {
   .header__navigation_tablet .header__burger_button {
     width: 18px;
     height: 15px;
-    margin-top: 2px;
     background: url(../../assets/icons/burger_menu.svg) no-repeat center;
   }
   .header__navigation_tablet :hover {
@@ -498,6 +497,11 @@ html {
 @media screen and (max-width: 600px) {
   .header {
     padding: 0 10px;
+  }
+}
+@media screen and (max-width: 320px) {
+  .header__navigation_tablet .header__burger_button {
+    margin-top: 2px;
   }
 }
 .footer {
