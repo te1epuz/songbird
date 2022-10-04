@@ -486,6 +486,7 @@ html {
   .header__navigation_tablet .header__burger_button {
     width: 18px;
     height: 15px;
+    margin-top: 2px;
     background: url(../../assets/icons/burger_menu.svg) no-repeat center;
   }
   .header__navigation_tablet :hover {
@@ -871,6 +872,12 @@ html {
   }
   .footer__wrapper .designed_by p {
     margin-top: 12px;
+  }
+}
+@media screen and (max-width: 320px) {
+  .footer__wrapper #donate_for_volunteers_btn {
+    margin: 0 auto 18px -1px;
+    padding-left: 6px;
   }
 }
 .visible_small_desktop {
