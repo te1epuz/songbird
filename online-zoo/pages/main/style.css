@@ -1448,6 +1448,7 @@ html {
   gap: 30px;
   margin-bottom: 16px;
   transition: 0.5s ease-in-out;
+  position: relative;
 }
 .testimonial_cards_block .testimonial_card_outer {
   min-width: 267px;
@@ -2090,9 +2091,6 @@ html {
     max-width: 293px;
     height: 391px;
   }
-  .testimonial_cards_block .testimonial_card_outer:last-child {
-    display: none;
-  }
   .testimonial_slider_block {
     margin-bottom: 48px;
     padding-right: 14px;
@@ -2126,9 +2124,13 @@ html {
     margin-bottom: 29px;
     margin-right: 4px;
   }
+  .testimonials__cards_block_wrapper {
+    height: 357px;
+    margin-bottom: 40px;
+    overflow: auto;
+  }
   .testimonial_cards_block {
     flex-direction: column;
-    margin-bottom: 40px;
     gap: 15px;
   }
   .testimonial_cards_block .testimonial_card_outer {
@@ -2150,6 +2152,47 @@ html {
   #leave_feedback_btn {
     width: 240px;
     margin: auto;
+  }
+  #testimonials_popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+  }
+  #testimonials_popup .testimonial_card_outer {
+    display: block;
+    height: unset;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 267px;
+    height: 391px;
+    z-index: 102;
+  }
+  #testimonials_popup .popup_x {
+    position: absolute;
+    top: -26px;
+    right: -18px;
+    width: 25px;
+    height: 25px;
+    background: url(../../assets/icons/menu_x.svg) no-repeat center;
+  }
+  #testimonials_popup .popup_x:hover {
+    cursor: pointer;
+    opacity: 70%;
+    transition: 0.3s;
+  }
+  #testimonials_popup .popup_black_bg {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8235294118);
+    z-index: 101;
   }
 }
 @media screen and (max-width: 600px) {

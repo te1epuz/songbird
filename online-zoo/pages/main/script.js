@@ -128,7 +128,6 @@ function shuffleArray(array) {
 
 // TESTIMONIALS CAROUSEL
 
-
 let testimonial_cards_block = document.querySelector('.testimonial_cards_block');
 let testimonial_slider = document.getElementById('testimonial_slider');
 
@@ -171,3 +170,49 @@ function getRandomInt(min, max) {
 	max = Math.floor(max);
 	return Math.floor(Math.random() * (max - min)) + min;
 }
+
+// TESTIMONIALS POPUP
+
+let testimonial_card_outer = document.querySelectorAll('.testimonial_card_outer');
+
+testimonial_card_outer.forEach (card => {
+	card.addEventListener('click', testimonialsPopUp);
+})
+
+function testimonialsPopUp() {
+	if (window.innerWidth > 980) {
+		return;
+	}
+
+	let div = document.createElement('div');
+	div.setAttribute('id','testimonials_popup');
+	div.innerHTML = '<div class="popup_black_bg"></div>';
+	let div2 = this.cloneNode(true);
+	let div3 = document.createElement('div');
+	div3.innerHTML = '<div class="popup_x"></div>'
+	div2.append(div3);
+	div.prepend(div2);
+	testimonial_cards_block.prepend(div);
+
+	document.body.classList.add('hide_overflow');
+
+	window.addEventListener("resize", resizeListener);
+	function resizeListener() {
+		if (window.innerWidth > 980) {
+			popUpClose ()
+			return;
+		}
+	}
+
+	const popup_x = document.querySelector(".popup_x");
+	const popup_black_bg = document.querySelector(".popup_black_bg");
+	popup_x.addEventListener('click', popUpClose);
+	popup_black_bg.addEventListener('click', popUpClose);
+
+	function popUpClose () {
+		div.remove();
+		document.body.classList.remove('hide_overflow');
+	}
+
+}
+
