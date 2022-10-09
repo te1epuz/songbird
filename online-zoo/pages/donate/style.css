@@ -1148,6 +1148,17 @@ input.radio_amount {
   z-index: 1;
 }
 
+input.radio_amount:focus::after {
+  content: "";
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 2px solid #FE9013;
+  position: absolute;
+  top: -14px;
+  left: -14px;
+}
+
 input.radio_amount:checked {
   background: #FE9013;
 }
@@ -1569,9 +1580,17 @@ p.share {
     width: 6px;
     height: 6px;
   }
-  input.radio_amount:focus {
+  input.radio_amount:focus::after {
+    content: "";
+    width: 20px;
+    height: 20px;
+    border: 2px solid #FE9013;
+    top: -9px;
+    left: -9px;
+  }
+  input.radio_amount:checked {
     outline: 2px solid #FE9013;
-    outline-offset: max(6px, 0.15em);
+    outline-offset: 3px;
   }
   #another_amount {
     margin-bottom: 25px;
