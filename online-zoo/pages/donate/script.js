@@ -32,10 +32,19 @@ radio_amount.forEach((input) => {
 })
 
 another_amount.addEventListener('input', () => {
-  radio_amount.forEach((radio) => {
-    radio.checked = false;
-    if (another_amount.value == radio.value) {
-      radio.checked = true;
-    }
-  })
+
+  if (another_amount.value < 0) {
+      another_amount.value = Math.abs(another_amount.value);
+  }
+
+  if (another_amount.value.length >= 4) {
+      another_amount.value = another_amount.value.slice(0,4);
+  }
+
+    radio_amount.forEach((radio) => {
+      radio.checked = false;
+      if (another_amount.value == radio.value) {
+        radio.checked = true;
+      }
+    })
 })

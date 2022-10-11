@@ -160,7 +160,6 @@ function generateFeedback() {
 }
 
 function scrollTestimonials() {
-	console.log(testimonial_slider.value);
 	testimonial_cards_block.style.transform = `translateX(${-297 * testimonial_slider.value + 297}px)`;
 }
 
