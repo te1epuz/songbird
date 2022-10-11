@@ -37,8 +37,8 @@ another_amount.addEventListener('input', () => {
       another_amount.value = Math.abs(another_amount.value);
   }
 
-  if (another_amount.value.length >= 4) {
-      another_amount.value = another_amount.value.slice(0,4);
+  if (another_amount.value > 9999) {
+      another_amount.value = 9999;
   }
 
     radio_amount.forEach((radio) => {
