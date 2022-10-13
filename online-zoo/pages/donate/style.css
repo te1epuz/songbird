@@ -1148,7 +1148,7 @@ input.radio_amount {
   z-index: 1;
 }
 
-input.radio_amount:focus::after {
+input.radio_amount:checked::after {
   content: "";
   width: 34px;
   height: 34px;
