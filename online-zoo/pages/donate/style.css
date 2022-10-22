@@ -1,0 +1,1626 @@
+/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+/* Document
+   ========================================================================== */
+/**
+ * 1. Correct the line height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in iOS.
+ */
+html {
+  line-height: 1.15; /* 1 */
+  -webkit-text-size-adjust: 100%; /* 2 */
+}
+
+/* Sections
+   ========================================================================== */
+/**
+ * Remove the margin in all browsers.
+ */
+body {
+  margin: 0;
+}
+
+/**
+ * Render the `main` element consistently in IE.
+ */
+main {
+  display: block;
+}
+
+/**
+ * Correct the font size and margin on `h1` elements within `section` and
+ * `article` contexts in Chrome, Firefox, and Safari.
+ */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+/* Grouping content
+   ========================================================================== */
+/**
+ * 1. Add the correct box sizing in Firefox.
+ * 2. Show the overflow in Edge and IE.
+ */
+hr {
+  box-sizing: content-box; /* 1 */
+  height: 0; /* 1 */
+  overflow: visible; /* 2 */
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+pre {
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
+}
+
+/* Text-level semantics
+   ========================================================================== */
+/**
+ * Remove the gray background on active links in IE 10.
+ */
+a {
+  background-color: transparent;
+}
+
+/**
+ * 1. Remove the bottom border in Chrome 57-
+ * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+ */
+abbr[title] {
+  border-bottom: none; /* 1 */
+  text-decoration: underline; /* 2 */
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted; /* 2 */
+}
+
+/**
+ * Add the correct font weight in Chrome, Edge, and Safari.
+ */
+b,
+strong {
+  font-weight: bolder;
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+code,
+kbd,
+samp {
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
+}
+
+/**
+ * Add the correct font size in all browsers.
+ */
+small {
+  font-size: 80%;
+}
+
+/**
+ * Prevent `sub` and `sup` elements from affecting the line height in
+ * all browsers.
+ */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+/* Embedded content
+   ========================================================================== */
+/**
+ * Remove the border on images inside links in IE 10.
+ */
+img {
+  border-style: none;
+}
+
+/* Forms
+   ========================================================================== */
+/**
+ * 1. Change the font styles in all browsers.
+ * 2. Remove the margin in Firefox and Safari.
+ */
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit; /* 1 */
+  font-size: 100%; /* 1 */
+  line-height: 1.15; /* 1 */
+  margin: 0; /* 2 */
+}
+
+/**
+ * Show the overflow in IE.
+ * 1. Show the overflow in Edge.
+ */
+button,
+input { /* 1 */
+  overflow: visible;
+}
+
+/**
+ * Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * 1. Remove the inheritance of text transform in Firefox.
+ */
+button,
+select { /* 1 */
+  text-transform: none;
+}
+
+/**
+ * Correct the inability to style clickable types in iOS and Safari.
+ */
+button,
+[type=button],
+[type=reset],
+[type=submit] {
+  -webkit-appearance: button;
+}
+
+/**
+ * Remove the inner border and padding in Firefox.
+ */
+button::-moz-focus-inner,
+[type=button]::-moz-focus-inner,
+[type=reset]::-moz-focus-inner,
+[type=submit]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+/**
+ * Restore the focus styles unset by the previous rule.
+ */
+button:-moz-focusring,
+[type=button]:-moz-focusring,
+[type=reset]:-moz-focusring,
+[type=submit]:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+/**
+ * Correct the padding in Firefox.
+ */
+fieldset {
+  padding: 0.35em 0.75em 0.625em;
+}
+
+/**
+ * 1. Correct the text wrapping in Edge and IE.
+ * 2. Correct the color inheritance from `fieldset` elements in IE.
+ * 3. Remove the padding so developers are not caught out when they zero out
+ *    `fieldset` elements in all browsers.
+ */
+legend {
+  box-sizing: border-box; /* 1 */
+  color: inherit; /* 2 */
+  display: table; /* 1 */
+  max-width: 100%; /* 1 */
+  padding: 0; /* 3 */
+  white-space: normal; /* 1 */
+}
+
+/**
+ * Add the correct vertical alignment in Chrome, Firefox, and Opera.
+ */
+progress {
+  vertical-align: baseline;
+}
+
+/**
+ * Remove the default vertical scrollbar in IE 10+.
+ */
+textarea {
+  overflow: auto;
+}
+
+/**
+ * 1. Add the correct box sizing in IE 10.
+ * 2. Remove the padding in IE 10.
+ */
+[type=checkbox],
+[type=radio] {
+  box-sizing: border-box; /* 1 */
+  padding: 0; /* 2 */
+}
+
+/**
+ * Correct the cursor style of increment and decrement buttons in Chrome.
+ */
+[type=number]::-webkit-inner-spin-button,
+[type=number]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/**
+ * 1. Correct the odd appearance in Chrome and Safari.
+ * 2. Correct the outline style in Safari.
+ */
+[type=search] {
+  -webkit-appearance: textfield; /* 1 */
+  outline-offset: -2px; /* 2 */
+}
+
+/**
+ * Remove the inner padding in Chrome and Safari on macOS.
+ */
+[type=search]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+ * 1. Correct the inability to style clickable types in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari.
+ */
+::-webkit-file-upload-button {
+  -webkit-appearance: button; /* 1 */
+  font: inherit; /* 2 */
+}
+
+/* Interactive
+   ========================================================================== */
+/*
+ * Add the correct display in Edge, IE 10+, and Firefox.
+ */
+details {
+  display: block;
+}
+
+/*
+ * Add the correct display in all browsers.
+ */
+summary {
+  display: list-item;
+}
+
+/* Misc
+   ========================================================================== */
+/**
+ * Add the correct display in IE 10+.
+ */
+template {
+  display: none;
+}
+
+/**
+ * Add the correct display in IE 10.
+ */
+[hidden] {
+  display: none;
+}
+
+/* roboto-100 - latin_cyrillic */
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 100;
+  src: url("../../assets/fonts/roboto-v30-latin_cyrillic-100.eot"); /* IE9 Compat Modes */
+  src: local(""), url("../../assets/fonts/roboto-v30-latin_cyrillic-100.eot?#iefix") format("embedded-opentype"), url("../../assets/fonts/roboto-v30-latin_cyrillic-100.woff2") format("woff2"), url("../../assets/fonts/roboto-v30-latin_cyrillic-100.woff") format("woff"), url("../../assets/fonts/roboto-v30-latin_cyrillic-100.ttf") format("truetype"), url("../../assets/fonts/roboto-v30-latin_cyrillic-100.svg#Roboto") format("svg"); /* Legacy iOS */
+}
+/* roboto-300 - latin_cyrillic */
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 300;
+  src: url("../../assets/fonts/roboto-v30-latin_cyrillic-300.eot"); /* IE9 Compat Modes */
+  src: local(""), url("../../assets/fonts/roboto-v30-latin_cyrillic-300.eot?#iefix") format("embedded-opentype"), url("../../assets/fonts/roboto-v30-latin_cyrillic-300.woff2") format("woff2"), url("../../assets/fonts/roboto-v30-latin_cyrillic-300.woff") format("woff"), url("../../assets/fonts/roboto-v30-latin_cyrillic-300.ttf") format("truetype"), url("../../assets/fonts/roboto-v30-latin_cyrillic-300.svg#Roboto") format("svg"); /* Legacy iOS */
+}
+/* roboto-regular - latin_cyrillic */
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../../assets/fonts/roboto-v30-latin_cyrillic-regular.eot"); /* IE9 Compat Modes */
+  src: local(""), url("../../assets/fonts/roboto-v30-latin_cyrillic-regular.eot?#iefix") format("embedded-opentype"), url("../../assets/fonts/roboto-v30-latin_cyrillic-regular.woff2") format("woff2"), url("../../assets/fonts/roboto-v30-latin_cyrillic-regular.woff") format("woff"), url("../../assets/fonts/roboto-v30-latin_cyrillic-regular.ttf") format("truetype"), url("../../assets/fonts/roboto-v30-latin_cyrillic-regular.svg#Roboto") format("svg"); /* Legacy iOS */
+}
+/* roboto-500 - latin_cyrillic */
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  src: url("../../assets/fonts/roboto-v30-latin_cyrillic-500.eot"); /* IE9 Compat Modes */
+  src: local(""), url("../../assets/fonts/roboto-v30-latin_cyrillic-500.eot?#iefix") format("embedded-opentype"), url("../../assets/fonts/roboto-v30-latin_cyrillic-500.woff2") format("woff2"), url("../../assets/fonts/roboto-v30-latin_cyrillic-500.woff") format("woff"), url("../../assets/fonts/roboto-v30-latin_cyrillic-500.ttf") format("truetype"), url("../../assets/fonts/roboto-v30-latin_cyrillic-500.svg#Roboto") format("svg"); /* Legacy iOS */
+}
+/* roboto-700 - latin_cyrillic */
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../../assets/fonts/roboto-v30-latin_cyrillic-700.eot"); /* IE9 Compat Modes */
+  src: local(""), url("../../assets/fonts/roboto-v30-latin_cyrillic-700.eot?#iefix") format("embedded-opentype"), url("../../assets/fonts/roboto-v30-latin_cyrillic-700.woff2") format("woff2"), url("../../assets/fonts/roboto-v30-latin_cyrillic-700.woff") format("woff"), url("../../assets/fonts/roboto-v30-latin_cyrillic-700.ttf") format("truetype"), url("../../assets/fonts/roboto-v30-latin_cyrillic-700.svg#Roboto") format("svg"); /* Legacy iOS */
+}
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.header__navigation_tablet {
+  display: none;
+}
+
+.header {
+  background-color: #000000;
+  padding: 0 30px;
+  position: relative;
+  z-index: 10;
+}
+
+.header__wrapper {
+  max-width: 1160px;
+  height: 80px;
+  margin: auto;
+}
+
+.header__navigation {
+  display: flex;
+}
+.header__navigation .logo {
+  text-decoration: none;
+  color: #FFFFFF;
+  margin-right: 62px;
+}
+.header__navigation .logo h1 {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 19.0145px;
+  line-height: 120%;
+  padding-top: 4px;
+  text-align: center;
+  width: 82px;
+  height: 52px;
+  border: 1px solid #FFFFFF;
+  border-radius: 2px;
+  background-image: url(../../assets/icons/bamboo.svg);
+  background-position: 9px 24px;
+  background-repeat: no-repeat;
+}
+.header__navigation ul {
+  margin: 0;
+  margin-top: 3px;
+  padding: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 58px;
+  list-style: none;
+}
+.header__navigation ul :last-child {
+  margin-left: auto;
+}
+.header__navigation ul a {
+  text-decoration: none;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 140%;
+  color: #FFFFFF;
+}
+.header__navigation ul .current_link {
+  color: #FE9013;
+  pointer-events: none;
+}
+
+.header__navigation a:hover {
+  opacity: 70%;
+  transition: 0.3s;
+}
+
+@media screen and (max-width: 1000px) {
+  .header {
+    background-color: #111115;
+  }
+  .header__navigation .logo {
+    margin-right: 63px;
+  }
+  .header__navigation ul {
+    gap: 48px;
+  }
+}
+@media screen and (max-width: 980px) {
+  .header__navigation .logo {
+    margin-right: 4%;
+  }
+  .header__navigation ul {
+    gap: 4%;
+  }
+}
+@media screen and (max-width: 640px) {
+  .header {
+    padding: 0 20px;
+    position: fixed;
+    width: 100vw;
+  }
+  .header__wrapper {
+    height: 34px;
+  }
+  .header__nav_burger_active {
+    transform: translateY(329px);
+  }
+  .black_bg_active {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8235294118);
+  }
+  .header__navigation {
+    position: fixed;
+    flex-direction: column;
+    z-index: 10;
+    left: 0px;
+    top: -329px;
+    width: 100%;
+    height: 329px;
+    padding: 10px 10px 40px 10px;
+    background: #FFFFFF;
+    transition: 0.3s;
+  }
+  .header__navigation .logo {
+    color: rgb(254, 144, 19);
+    margin: 0px 0px 30px 0px;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+  }
+  .header__navigation .logo h1 {
+    font-weight: 400;
+    font-size: 15.2116px;
+    line-height: 120%;
+    padding-top: 2px;
+    margin: 0px;
+    width: 65.6px;
+    height: 41.6px;
+    border: 1px solid rgb(254, 144, 19);
+    border-radius: 2px;
+    background-image: url(../../assets/icons/bamboo_orange.svg);
+    background-position: 7px 18px;
+  }
+  .header__navigation ul {
+    margin: 0;
+    padding: 0;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+  .header__navigation ul :last-child {
+    margin: 0px;
+  }
+  .header__navigation ul a {
+    font-weight: 400;
+    color: #333B41;
+  }
+  .header__navigation ul .current_link {
+    pointer-events: all;
+  }
+  .header__navigation .header__burger_x {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 25px;
+    height: 25px;
+    background: url(../../assets/icons/menu_x.svg) no-repeat center;
+  }
+  .header__navigation .header__burger_x:hover {
+    cursor: pointer;
+    opacity: 70%;
+    transition: 0.3s;
+  }
+  .header__navigation_tablet {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .header__navigation_tablet .header__logo_tablet {
+    text-decoration: none;
+    color: #FFFFFF;
+  }
+  .header__navigation_tablet .header__logo_tablet h1 {
+    padding-top: 3px;
+    margin: 0;
+    width: 46px;
+    font-size: 12.2899px;
+    background-image: url(../../assets/icons/bamboo_tablet.svg);
+    background-position: 3px 16px;
+    background-repeat: no-repeat;
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+    text-align: center;
+  }
+  .header__navigation_tablet .header__burger_button {
+    width: 18px;
+    height: 15px;
+    background: url(../../assets/icons/burger_menu.svg) no-repeat center;
+  }
+  .header__navigation_tablet :hover {
+    cursor: pointer;
+    opacity: 70%;
+    transition: 0.3s;
+  }
+}
+@media screen and (max-width: 600px) {
+  .header {
+    padding: 0 10px;
+  }
+}
+@media screen and (max-width: 320px) {
+  .header__navigation_tablet .header__burger_button {
+    margin-top: 2px;
+  }
+}
+.footer {
+  background: #111115;
+  height: 443px;
+}
+
+.footer__petstory_online {
+  grid-area: footer__petstory_online;
+}
+
+.footer__subscribe {
+  grid-area: footer__subscribe;
+}
+
+#donate_for_volunteers_btn {
+  grid-area: donate_for_volunteers_btn;
+}
+
+.footer__social {
+  grid-area: footer__social;
+}
+
+.footer__navigation {
+  grid-area: footer__navigation;
+}
+
+.designed_by {
+  grid-area: designed_by;
+}
+
+.footer__wrapper {
+  margin: auto;
+  max-width: 1160px;
+  padding-top: 23px;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  grid-template-areas: "footer__petstory_online . footer__subscribe" "donate_for_volunteers_btn . ." "footer__social footer__navigation designed_by";
+}
+.footer__wrapper a.footer__petstory_online {
+  text-decoration: none;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 140%;
+  color: #FFFFFF;
+}
+.footer__wrapper a.footer__petstory_online p {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 19.0145px;
+  line-height: 120%;
+  /* or 23px */
+  text-align: center;
+  width: 82px;
+  height: 52px;
+  border: 1px solid #FFFFFF;
+  border-radius: 2px;
+  background-image: url(../../assets/icons/bamboo.svg);
+  background-position: 9px 20px;
+  background-repeat: no-repeat;
+}
+.footer__wrapper a.footer__petstory_online :hover {
+  opacity: 70%;
+  transition: 0.3s;
+}
+.footer__wrapper .footer__subscribe {
+  margin-top: 18px;
+  justify-self: end;
+}
+.footer__wrapper .footer__subscribe p {
+  margin: 0;
+  margin-bottom: 13px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 120%;
+  color: #FFFFFF;
+}
+.footer__wrapper .footer__subscribe #input_email {
+  width: 228px;
+  height: 42px;
+  padding: 10px;
+  margin-right: 6px;
+  background-color: #111115;
+  border: 1px solid rgb(249, 128, 75);
+  border-radius: 2px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+  color: #BDBDBD;
+  outline: none;
+}
+.footer__wrapper .footer__subscribe #input_email::-moz-placeholder {
+  color: #BDBDBD;
+}
+.footer__wrapper .footer__subscribe #input_email:-ms-input-placeholder {
+  color: #BDBDBD;
+}
+.footer__wrapper .footer__subscribe #input_email::placeholder {
+  color: #BDBDBD;
+}
+.footer__wrapper .footer__subscribe #input_email:-webkit-autofill {
+  background-color: #111115;
+  color: #BDBDBD;
+}
+.footer__wrapper .footer__subscribe #input_submit {
+  width: 129px;
+  height: 42px;
+  background: #F1F3F2;
+  border: 1px solid #333B41;
+  border-radius: 5px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+  color: #000000;
+}
+.footer__wrapper .footer__subscribe #input_submit:hover {
+  transform: scale(1.02);
+}
+.footer__wrapper .footer__subscribe #input_submit:active {
+  border: 1px solid #4B9200;
+  color: #4B9200;
+  transform: scale(1);
+}
+.footer__wrapper .footer__subscribe #input_email:invalid {
+  border: 1px solid #D31414;
+  color: #D31414;
+}
+.footer__wrapper .footer__subscribe #input_email:invalid ~ #input_submit {
+  border: 1px solid #D31414;
+  color: #D31414;
+}
+.footer__wrapper #donate_for_volunteers_btn {
+  margin-top: 36px;
+  display: block;
+  width: 298px;
+  height: 54px;
+  padding-left: 6px;
+  background-color: #FE9013;
+  background-image: linear-gradient(113.96deg, #F9804B 1.49%, #FE9013 101.44%);
+  border: 0;
+  border-radius: 5px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 140%;
+  text-align: center;
+  text-transform: uppercase;
+  color: #FFFFFF;
+}
+.footer__wrapper #donate_for_volunteers_btn:hover {
+  cursor: pointer;
+  background: #E47209;
+  transition: 0.3s;
+}
+.footer__wrapper #donate_for_volunteers_btn:active {
+  background: #4B9200;
+}
+.footer__wrapper .footer__social {
+  list-style: none;
+  margin-top: 35px;
+  margin-bottom: 0;
+  padding: 0;
+}
+.footer__wrapper .footer__social li {
+  margin-top: 9px;
+}
+.footer__wrapper .footer__social li a {
+  text-decoration: none;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+  color: #FFFFFF;
+}
+.footer__wrapper .footer__social li a div {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: rgba(196, 196, 196, 0.5);
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 12px;
+}
+.footer__wrapper .footer__social li :active {
+  color: #4B9200;
+  transition: 0.3s;
+}
+.footer__wrapper .footer__social li :active div {
+  background: #4B9200;
+  transition: 1s;
+}
+.footer__wrapper .footer__social li :hover {
+  opacity: 0.7;
+  transition: 0.3s;
+}
+.footer__wrapper .footer__social li :hover div {
+  opacity: 0.7;
+  transition: 1s;
+}
+.footer__wrapper .footer__navigation {
+  align-self: end;
+}
+.footer__wrapper .footer__navigation ul {
+  margin: 0 32px -1px 101px;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+}
+.footer__wrapper .footer__navigation ul a {
+  text-decoration: none;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+  color: #FFFFFF;
+}
+.footer__wrapper .footer__navigation ul .current_link {
+  color: #FE9013;
+  pointer-events: none;
+}
+.footer__wrapper .footer__navigation a:hover {
+  opacity: 70%;
+  transition: 0.3s;
+}
+.footer__wrapper .designed_by {
+  margin-bottom: -1px;
+  place-self: end end;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 100;
+  font-size: 16px;
+  line-height: 130%;
+  color: #bdbdbd;
+}
+.footer__wrapper .designed_by p {
+  margin: 0;
+  margin-top: 10px;
+}
+
+@media screen and (max-width: 1599px) {
+  .footer {
+    padding: 30px 30px 30px 30px;
+  }
+  .footer__wrapper {
+    padding-top: 0;
+    grid-template-areas: "footer__petstory_online footer__subscribe footer__subscribe" "donate_for_volunteers_btn donate_for_volunteers_btn ." "footer__social footer__navigation designed_by";
+  }
+  .footer__wrapper a.footer__petstory_online p {
+    margin: 11px 0 0 1px;
+  }
+  .footer__wrapper .footer__subscribe {
+    margin: 11px 32px 0 0;
+  }
+  .footer__wrapper .footer__subscribe #input_email {
+    margin-right: 5px;
+  }
+  .footer__wrapper .footer__subscribe #input_submit {
+    margin: 0 1px 0 0;
+  }
+  .footer__wrapper #donate_for_volunteers_btn {
+    margin: 35px 0 0 1px;
+  }
+  .footer__wrapper .footer__navigation ul {
+    margin: 0 89px -1px 181px;
+  }
+}
+@media screen and (max-width: 980px) {
+  .footer {
+    padding: 12px 20px 15px 20px;
+    height: 282px;
+  }
+  .footer__wrapper {
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas: "footer__petstory_online . footer__social" "donate_for_volunteers_btn donate_for_volunteers_btn footer__social" "footer__navigation footer__navigation designed_by";
+  }
+  .footer__wrapper a.footer__petstory_online p {
+    margin: 1px 0 0 1px;
+  }
+  .footer__wrapper .footer__subscribe {
+    display: none;
+  }
+  .footer__wrapper .footer__social {
+    margin-top: 0;
+  }
+  .footer__wrapper .footer__social li {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    margin: 0 0 19px auto;
+  }
+  .footer__wrapper .footer__social li a div {
+    margin-right: 0;
+  }
+  .footer__wrapper .footer__social li a span {
+    display: none;
+  }
+  .footer__wrapper #donate_for_volunteers_btn {
+    margin: 32px 0 0 0px;
+  }
+  .footer__wrapper .footer__navigation ul {
+    margin: 0 74px 1px 1px;
+  }
+  .footer__wrapper .designed_by {
+    margin: 14px 1px 0 0;
+  }
+}
+@media screen and (max-width: 600px) {
+  .footer {
+    padding: 14px 10px 20px 10px;
+    height: auto;
+  }
+  .footer__wrapper {
+    grid-template-rows: auto auto auto auto auto;
+    grid-template-columns: auto;
+    grid-template-areas: "footer__petstory_online" "footer__social" "donate_for_volunteers_btn" "designed_by" "footer__navigation";
+  }
+  .footer__wrapper a.footer__petstory_online {
+    padding: 0;
+    margin-bottom: 29px;
+  }
+  .footer__wrapper a.footer__petstory_online p {
+    display: flex;
+    margin: 0 auto;
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
+    height: 30px;
+    align-items: flex-end;
+    border: none;
+    background-image: url(../../assets/icons/bamboo.svg);
+    background-position: 72px 3px;
+  }
+  .footer__wrapper .footer__social {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 0 23px 28px 23px;
+  }
+  .footer__wrapper .footer__social li {
+    margin: 0;
+  }
+  .footer__wrapper #donate_for_volunteers_btn {
+    padding-top: 2px;
+    padding-left: 2px;
+    margin: 0 auto 18px auto;
+    max-width: 298px;
+    width: 100%;
+  }
+  .footer__wrapper .footer__navigation ul {
+    justify-content: space-between;
+    margin: 0 11px 0px 11px;
+  }
+  .footer__wrapper .designed_by {
+    margin: 0px 0px 28px 0px;
+    font-size: 15px;
+  }
+  .footer__wrapper .designed_by p {
+    margin-top: 12px;
+  }
+}
+@media screen and (max-width: 320px) {
+  .footer__wrapper #donate_for_volunteers_btn {
+    margin: 0 auto 18px -1px;
+    padding-left: 6px;
+  }
+}
+.panda_header {
+  height: 386px;
+  background-image: url(../../assets/images/donate_panda_bg.jpg);
+  background-position: center bottom;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.main_donate_wrapper {
+  background: linear-gradient(315.75deg, rgba(254, 210, 144, 0.7) 30.06%, #FEBDAB 100.95%, rgba(254, 210, 144, 0.7) 106.36%), linear-gradient(315.75deg, rgba(254, 189, 171, 0.74) 30.06%, rgba(243, 169, 248, 0.66) 50.74%, #E0D8F0 80.49%, #EAF7FE 127.9%, #EAF7FE 149.54%), linear-gradient(315.75deg, rgba(254, 189, 171, 0.74) 30.06%, rgba(243, 169, 248, 0.66) 50.74%, #E0D8F0 80.49%, #EAF7FE 127.9%, #EAF7FE 149.54%);
+}
+
+.main_donate {
+  max-width: 1160px;
+  margin: auto;
+  padding-top: 40px;
+  padding-bottom: 180px;
+}
+.main_donate h2 {
+  margin: 0;
+  margin-right: 4px;
+  margin-bottom: 10px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 130%;
+  color: #FFFFFF;
+  text-align: center;
+}
+.main_donate p {
+  margin: 0;
+  margin-bottom: 47px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 140%;
+  color: #FFFFFF;
+}
+.main_donate h3 {
+  margin-bottom: 58px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 130%;
+  color: #FE9013;
+}
+.main_donate .pick_and_feed {
+  background: rgba(255, 255, 255, 0.52);
+  -webkit-backdrop-filter: blur(2px);
+          backdrop-filter: blur(2px);
+  border-radius: 20px;
+  padding: 40px 92px 62px 92px;
+}
+.main_donate .pick_and_feed h2 {
+  font-family: "Roboto";
+  margin-right: 12px;
+  margin-bottom: 21px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 120%;
+  text-align: center;
+  color: #FE9013;
+}
+.main_donate .pick_and_feed h3 {
+  margin: 0;
+  margin-bottom: 59px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 120%;
+  color: #333B41;
+}
+.main_donate .pick_and_feed .food_per_animal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 48px;
+}
+.main_donate .pick_and_feed .food_per_animal div {
+  margin-top: 58px;
+  margin-right: 11px;
+}
+.main_donate .pick_and_feed .food_per_animal div h2 {
+  margin: 0;
+  margin-bottom: 11px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 72px;
+  line-height: 80%;
+  text-transform: uppercase;
+  color: #000000;
+}
+.main_donate .pick_and_feed .food_per_animal div p {
+  margin: 0;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+  color: #333B41;
+}
+.main_donate .pick_and_feed .food_per_animal img:nth-child(2) {
+  margin-right: 64px;
+  margin-top: 30px;
+}
+.main_donate .pick_and_feed .food_per_animal img:nth-child(3) {
+  margin-right: 14px;
+}
+
+.form_amount {
+  position: relative;
+}
+
+p.amount {
+  margin-left: 4px;
+  margin-bottom: 15px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+  color: #000000;
+}
+
+.radio_block {
+  height: 27px;
+  margin-bottom: 98px;
+  padding: 0 30px 0 26px;
+  background: #404950;
+  border-radius: 2px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+.radio_block div {
+  position: relative;
+}
+.radio_block div label {
+  z-index: 1;
+  display: block;
+  width: 65px;
+  height: 90px;
+  position: absolute;
+  top: -24px;
+  left: -27px;
+  padding-top: 55px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 26px;
+  line-height: 140%;
+  color: #333B41;
+}
+.radio_block div label span {
+  font-size: 22px;
+  font-weight: 800;
+}
+
+.radio_block_line {
+  position: relative;
+  z-index: 1;
+  top: 14px;
+  height: 2px;
+  background-color: #72828E;
+  margin: 0 30px 0 26px;
+}
+
+.radio_block div label:hover {
+  cursor: pointer;
+}
+
+input.radio_amount {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  position: relative;
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #FFEE2E;
+  z-index: 1;
+}
+
+input.radio_amount:checked::after {
+  content: "";
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 2px solid #FE9013;
+  position: absolute;
+  top: -14px;
+  left: -14px;
+}
+
+input.radio_amount:checked {
+  background: #FE9013;
+}
+
+input.radio_amount:checked ~ label {
+  color: #FE9013;
+}
+
+input.radio_amount:checked {
+  outline: 2px solid #FE9013;
+  outline-offset: max(5px, 0.15em);
+}
+
+input.radio_amount:hover {
+  background: #FE9013;
+}
+
+.payment_block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: auto;
+  position: relative;
+}
+
+#another_amount {
+  display: block;
+  margin: auto;
+  margin-bottom: 25px;
+  width: 268px;
+  height: 54px;
+  background: transparent;
+  border: 1px solid #929699;
+  border-radius: 2px;
+  padding-left: 8px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 140%;
+  color: #929699;
+  text-align: center;
+  position: relative;
+  outline: none;
+}
+
+#another_amount::-moz-placeholder {
+  text-align: left;
+  color: #929699;
+}
+
+#another_amount:-ms-input-placeholder {
+  text-align: left;
+  color: #929699;
+}
+
+#another_amount::placeholder {
+  text-align: left;
+  color: #929699;
+}
+
+#another_amount:focus {
+  color: #4B9200;
+  border: 1px solid #4B9200;
+  outline: none;
+}
+
+#another_amount:focus ~ div {
+  color: #4B9200;
+}
+
+#another_amount:invalid {
+  color: #D31414;
+  border: 1px solid #D31414;
+  outline: none;
+}
+
+#another_amount:invalid ~ div {
+  color: #D31414;
+}
+
+#dollar_sign {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: auto;
+  position: absolute;
+  left: 265px;
+  top: 15px;
+  color: #929699;
+  font-family: "Roboto";
+  font-weight: 800;
+  font-size: 22px;
+}
+
+#another_amountt::-webkit-outer-spin-button,
+#another_amount::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+#another_amount {
+  -moz-appearance: textfield;
+}
+
+.radio_period_select {
+  display: flex;
+  margin: auto;
+  padding-right: 15px;
+  margin-bottom: 30px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  gap: 51px;
+}
+.radio_period_select label {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+  color: #333B41;
+  padding-left: 11px;
+}
+
+input.radio_period {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  position: relative;
+  top: 2px;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  border: 1px solid #FE9013;
+  z-index: 1;
+}
+
+input.radio_period:checked {
+  background: #FE9013;
+}
+
+input.radio_period:active {
+  background: #4B9200;
+}
+
+#feed_btn {
+  display: block;
+  width: 298px;
+  height: 54px;
+  margin-bottom: 30px;
+  margin-left: 6px;
+  padding-left: 10px;
+  background-color: #FE9013;
+  background-image: linear-gradient(113.96deg, #F9804B 1.49%, #FE9013 101.44%);
+  border: 0;
+  border-radius: 25px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 140%;
+  text-align: center;
+  text-transform: uppercase;
+  color: #FFFFFF;
+}
+
+#feed_btn:hover {
+  cursor: pointer;
+  background: #E47209;
+  transition: 0.3s;
+}
+
+#feed_btn:active {
+  background: #4B9200;
+}
+
+p.share {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+  color: #333B41;
+  text-align: center;
+  margin-left: 5px;
+  margin-bottom: 0;
+}
+
+@media screen and (max-width: 1599px) {
+  .main_donate {
+    padding: 41px 30px 30px 30px;
+  }
+  .main_donate h2 {
+    margin: 0 92px 28px 0;
+    text-align: left;
+  }
+  .main_donate h3 {
+    margin-bottom: 39px;
+  }
+  .main_donate .pick_and_feed {
+    padding: 20px 30px 45px 30px;
+  }
+  .main_donate .pick_and_feed h2 {
+    margin: 0px 15px 11px 0px;
+  }
+  .main_donate .pick_and_feed h3 {
+    margin: 0px 0px 59px 17px;
+  }
+  .form_amount {
+    max-width: 810px;
+    margin: auto;
+  }
+  p.amount {
+    margin-left: 0px;
+  }
+  .radio_block {
+    margin-bottom: 98px;
+    padding: 0 10px 0 10px;
+  }
+  .radio_block div:nth-child(1) {
+    display: none;
+  }
+  .radio_block div label {
+    left: -27px;
+    padding-left: 17px;
+  }
+  .radio_block_line {
+    margin: 0 10px 0 10px;
+  }
+}
+@media screen and (max-width: 1599px) {
+  .footer__wrapper .footer__navigation ul {
+    margin: 0 77px -1px 193px;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .panda_header {
+    height: 390px;
+    background-position: left -172px bottom;
+  }
+}
+@media screen and (max-width: 980px) {
+  .panda_header {
+    height: 335px;
+  }
+  .main_donate {
+    padding: 30px 20px 46px 20px;
+  }
+  .main_donate h2 {
+    margin: 0 0px 19px 0;
+    font-size: 24px;
+    line-height: 120%;
+  }
+  .main_donate p {
+    margin-bottom: 30px;
+  }
+  .main_donate h3 {
+    margin: 0;
+    margin-bottom: 29px;
+  }
+  .main_donate .pick_and_feed {
+    padding: 30px 0px 31px 0px;
+  }
+  .main_donate .pick_and_feed h2 {
+    margin: 0px 0px 21px 0px;
+  }
+  .main_donate .pick_and_feed h3 {
+    margin: 0px 35px 49px 35px;
+    text-align: center;
+  }
+  .main_donate .pick_and_feed .food_per_animal {
+    margin-bottom: 42px;
+    padding: 0 20px;
+  }
+  p.amount {
+    margin: 0px 0px 4px 10px;
+  }
+  .radio_block {
+    margin-bottom: 98px;
+    padding: 0 35px 0 35px;
+  }
+  .radio_block div:nth-child(2) {
+    display: none;
+  }
+  .radio_block div:nth-child(3) {
+    display: none;
+  }
+  .radio_block div label {
+    left: -27px;
+    padding-left: 8px;
+  }
+  .radio_block_line {
+    margin: 0 35px 0 35px;
+  }
+}
+@media screen and (max-width: 980px) {
+  .footer__wrapper .footer__navigation ul {
+    margin: 0 74px 1px 1px;
+  }
+}
+@media screen and (max-width: 640px) {
+  .panda_header {
+    height: 369px;
+    background: url(../../assets/images/donate_panda_bg_tablet.jpg) center bottom no-repeat;
+  }
+  #another_amount {
+    margin-bottom: 31px;
+    width: 180px;
+    height: 42px;
+    padding-left: 5px;
+    font-size: 18px;
+  }
+  #dollar_sign {
+    left: 219px;
+    top: 9px;
+    font-size: 22px;
+  }
+  .radio_period_select {
+    padding-right: 19px;
+    margin-bottom: 29px;
+    gap: 50px;
+  }
+  .radio_period_select label {
+    padding-left: 11px;
+  }
+  #feed_btn {
+    margin-bottom: 30px;
+    margin-left: 2px;
+  }
+  p.share {
+    margin-left: 0px;
+    margin-bottom: 0px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .panda_header {
+    background-size: cover;
+    height: 69vw;
+  }
+  .main_donate {
+    padding: 31px 10px 21px 10px;
+  }
+  .main_donate p {
+    line-height: 138%;
+    margin-bottom: 30px;
+  }
+  .main_donate h3 {
+    margin: 0;
+    margin-bottom: 29px;
+    font-size: 24px;
+  }
+  .main_donate .pick_and_feed {
+    padding: 20px 0px 21px 0px;
+  }
+  .main_donate .pick_and_feed h2 {
+    margin: 0px 0px 9px 0px;
+    font-size: 24px;
+  }
+  .main_donate .pick_and_feed h3 {
+    margin: 0px 2px 11px 2px;
+    font-size: 16px;
+    line-height: 135%;
+  }
+  .main_donate .pick_and_feed .food_per_animal {
+    margin-bottom: 4px;
+    justify-content: center;
+    gap: 4px;
+    align-items: flex-start;
+    padding: 0 1px;
+  }
+  .main_donate .pick_and_feed .food_per_animal div {
+    margin: 60px 0px 0px 0px;
+  }
+  .main_donate .pick_and_feed .food_per_animal div h2 {
+    margin-bottom: 7px;
+    font-size: 40px;
+  }
+  .main_donate .pick_and_feed .food_per_animal div p {
+    font-size: 9px;
+  }
+  .main_donate .pick_and_feed .food_per_animal img:nth-child(2) {
+    margin-top: 73px;
+    margin-right: 31px;
+    width: 9px;
+  }
+  .main_donate .pick_and_feed .food_per_animal img:nth-child(3) {
+    max-width: 160px;
+    margin-right: 0px;
+  }
+  p.amount {
+    margin: 0px 0px 6px 1px;
+  }
+  .radio_block {
+    height: 14px;
+    margin-bottom: 49px;
+    padding: 0 17px 0 17px;
+  }
+  .radio_block div label {
+    width: 40px;
+    height: 50px;
+    left: -16px;
+    top: -27px;
+    padding-left: 7px;
+    padding-top: 43px;
+    font-size: 13px;
+  }
+  .radio_block div label span {
+    font-size: 11px;
+  }
+  .radio_block_line {
+    margin: 0 17px 0 17px;
+    top: 8px;
+  }
+  input.radio_amount {
+    width: 6px;
+    height: 6px;
+  }
+  input.radio_amount:focus::after {
+    content: "";
+    width: 20px;
+    height: 20px;
+    border: 2px solid #FE9013;
+    top: -9px;
+    left: -9px;
+  }
+  input.radio_amount:checked {
+    outline: 2px solid #FE9013;
+    outline-offset: 3px;
+  }
+  #another_amount {
+    margin-bottom: 25px;
+  }
+  .radio_period_select {
+    padding-right: 21px;
+    margin-bottom: 26px;
+  }
+  #feed_btn {
+    max-width: 298px;
+    width: 100%;
+    margin-left: 0px;
+    padding-top: 3px;
+  }
+  p.share {
+    font-size: 15.9px;
+    margin-bottom: 0px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .footer__wrapper .footer__navigation ul {
+    justify-content: space-between;
+    margin: 0 11px 0px 11px;
+  }
+}
+@media screen and (max-width: 320px) {
+  .panda_header {
+    background: url(../../assets/images/donate_panda_bg_mobile.jpg) center bottom no-repeat;
+  }
+  .main_donate .pick_and_feed .food_per_animal img:nth-child(2) {
+    margin-right: auto;
+  }
+}/*# sourceMappingURL=style.css.map */

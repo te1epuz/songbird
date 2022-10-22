@@ -1,0 +1,783 @@
+@import '../../assets/styles/normalize';
+@import '../../assets/styles/typography';
+
+@import '../../assets/styles/header';
+@import '../../assets/styles/footer';
+
+// --------------   MAIN DONATE styles
+
+.panda_header {
+  height: 386px;
+  background-image: url(../../assets/images/donate_panda_bg.jpg);
+  background-position: center bottom;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.main_donate_wrapper {
+  background: linear-gradient(315.75deg, rgba(254, 210, 144, 0.7) 30.06%, #FEBDAB 100.95%, rgba(254, 210, 144, 0.7) 106.36%), linear-gradient(315.75deg, rgba(254, 189, 171, 0.74) 30.06%, rgba(243, 169, 248, 0.66) 50.74%, #E0D8F0 80.49%, #EAF7FE 127.9%, #EAF7FE 149.54%), linear-gradient(315.75deg, rgba(254, 189, 171, 0.74) 30.06%, rgba(243, 169, 248, 0.66) 50.74%, #E0D8F0 80.49%, #EAF7FE 127.9%, #EAF7FE 149.54%);
+}
+
+.main_donate {
+  max-width: 1160px;
+  margin: auto;
+  padding-top: 40px;
+  padding-bottom: 180px;
+
+  h2 {
+    margin: 0;
+    margin-right: 4px;
+    margin-bottom: 10px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 130%;
+    color: #FFFFFF;
+    text-align: center;
+  }
+
+  p {
+    margin: 0;
+    margin-bottom: 47px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 140%;
+    color: #FFFFFF;
+  }
+
+  h3 {
+    margin-bottom: 58px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 130%;
+    color: #FE9013;
+  }
+
+  .pick_and_feed {
+    background: rgba(255, 255, 255, 0.52);
+    backdrop-filter: blur(2px);
+    border-radius: 20px;
+    padding: 40px 92px 62px 92px;
+
+    h2 {
+      font-family: 'Roboto';
+      margin-right: 12px;
+      margin-bottom: 21px;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 48px;
+      line-height: 120%;
+      text-align: center;
+      color: #FE9013;
+    }
+
+    h3 {
+      margin: 0;
+      margin-bottom: 59px;
+      font-family: 'Roboto';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 24px;
+      line-height: 120%;
+      color: #333B41;
+    }
+
+    .food_per_animal {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 48px;
+
+      div{
+
+        margin-top: 58px;
+        margin-right: 11px;
+
+        h2 {
+          margin: 0;
+          margin-bottom: 11px;
+          font-family: 'Roboto';
+          font-style: normal;
+          font-weight: 500;
+          font-size: 72px;
+          line-height: 80%;
+          text-transform: uppercase;
+          color: #000000;
+        }
+
+        p {
+          margin: 0;
+          font-family: 'Roboto';
+          font-style: normal;
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 140%;
+          color: #333B41;
+        }
+      }
+
+      img:nth-child(2) {
+        margin-right: 64px;
+        margin-top: 30px;
+      }
+
+      img:nth-child(3) {
+        margin-right: 14px;
+      }
+    }
+  }
+}
+
+//----------------------- form start
+
+.form_amount {
+  position: relative;
+}
+
+p.amount {
+  margin-left: 4px;
+  margin-bottom: 15px;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+  color: #000000;
+}
+
+.radio_block {
+  height: 27px;
+  margin-bottom: 98px;
+  padding: 0 30px 0 26px;
+  background: #404950;
+  border-radius: 2px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+
+  div{
+    position: relative;
+
+    label {
+      z-index: 1;
+      display: block;
+      width: 65px;
+      height: 90px;
+      position: absolute;
+      top: -24px;
+      left: -27px;
+      padding-top: 55px;
+      font-family: 'Roboto';
+      font-style: normal;
+      font-weight: 500;
+      font-size: 26px;
+      line-height: 140%;
+      color: #333B41;
+      span {
+        font-size: 22px;
+        font-weight: 800;
+      }
+    }
+  }
+}
+
+.radio_block_line {
+  position: relative;
+  z-index: 1;
+  top: 14px;
+  height: 2px;
+  background-color: #72828E;
+  margin: 0 30px 0 26px;
+}
+
+.radio_block div label:hover{
+  cursor: pointer;
+}
+
+input.radio_amount {
+  appearance: none;
+  position: relative;
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #FFEE2E;
+  z-index: 1;
+}
+
+input.radio_amount:checked::after {
+  content: "";
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  // transition: 120ms transform ease-in-out;
+  border: 2px solid #FE9013;
+  position: absolute;
+  top: -14px;
+  left: -14px;
+}
+
+// input.radio_amount:checked::before {
+//   transform: scale(1);
+// }
+
+input.radio_amount:checked {
+  background: #FE9013;
+}
+
+input.radio_amount:checked ~ label{
+  color: #FE9013;
+}
+
+input.radio_amount:checked {
+  outline: max(2px, 2px) solid #FE9013;
+  outline-offset: max(5px, 0.15em);
+}
+
+input.radio_amount:hover {
+  background: #FE9013;
+}
+
+.payment_block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: fit-content;
+  margin: auto;
+  position: relative;
+}
+
+#another_amount {
+  display: block;
+  margin: auto;
+  margin-bottom: 25px;
+  width: 268px;
+  height: 54px;
+  background: transparent;
+  border: 1px solid #929699;
+  border-radius: 2px;
+  padding-left: 8px;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 140%;
+  color: #929699;
+  text-align: center;
+  position: relative;
+  outline: none;
+}
+
+#another_amount::placeholder {
+  text-align: left;
+  color: #929699;
+}
+
+#another_amount:focus {
+  color: #4B9200;
+  border: 1px solid #4B9200;
+  outline: none;
+}
+
+#another_amount:focus ~ div {
+  color: #4B9200;
+}
+
+#another_amount:invalid {
+  color: #D31414;
+  border: 1px solid #D31414;
+  outline: none;
+}
+
+#another_amount:invalid ~ div {
+  color: #D31414;
+}
+
+#dollar_sign {
+  width: fit-content;
+  margin: auto;
+  position: absolute;
+  left: 265px;
+  top: 15px;
+  color: #929699;
+  font-family: 'Roboto';
+  font-weight: 800;
+  font-size: 22px;
+}
+
+#another_amountt::-webkit-outer-spin-button,
+#another_amount::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+#another_amount {
+  -moz-appearance: textfield;
+}
+
+.radio_period_select {
+  display: flex;
+  margin: auto;
+  padding-right: 15px;
+  margin-bottom: 30px;
+  width: fit-content;
+  gap: 51px;
+
+  label {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 140%;
+    color: #333B41;
+    padding-left: 11px;
+  }
+}
+
+input.radio_period {
+  appearance: none;
+  position: relative;
+  top: 2px;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  border: 1px solid #FE9013;
+  z-index: 1;
+}
+
+input.radio_period:checked {
+  background: #FE9013;
+}
+
+input.radio_period:active {
+  background: #4B9200;
+}
+
+#feed_btn {
+  display: block;
+  width: 298px;
+  height: 54px;
+  margin-bottom: 30px;
+  margin-left: 6px;
+  padding-left: 10px;
+  background-color: #FE9013;
+  background-image: linear-gradient(113.96deg, #F9804B 1.49%, #FE9013 101.44%);
+  border: 0;
+  border-radius: 25px;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 140%;
+  text-align: center;
+  text-transform: uppercase;
+  color: #FFFFFF;
+}
+
+#feed_btn:hover {
+    cursor: pointer;
+    background: #E47209;
+    transition: 0.3s;
+  }
+
+#feed_btn:active {
+  background: #4B9200;
+}
+
+p.share {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+  color: #333B41;
+  text-align: center;
+  margin-left: 5px;
+  margin-bottom: 0;
+}
+
+
+// ----------------------------------------------  Media start
+
+@media screen and (max-width: 1599px) {
+  .main_donate {
+    padding: 41px 30px 30px 30px;
+
+    h2 {
+      margin: 0 92px 28px 0;
+      text-align: left;
+    }
+
+    h3 {
+      margin-bottom: 39px;
+    }
+
+    .pick_and_feed {
+      padding: 20px 30px 45px 30px;
+
+      h2 {
+        margin: 0px 15px 11px 0px;
+      }
+
+      h3 {
+        margin: 0px 0px 59px 17px;
+      }
+    }
+  }
+
+
+  .form_amount {
+    max-width: 810px;
+    margin: auto;
+  }
+
+  p.amount {
+    margin-left: 0px;
+  }
+
+  .radio_block {
+    margin-bottom: 98px;
+    padding: 0 10px 0 10px;
+
+    div:nth-child(1) {
+      display: none;
+    }
+
+    div{
+      label {
+        left: -27px;
+        padding-left: 17px;
+      }
+    }
+  }
+
+  .radio_block_line {
+    margin: 0 10px 0 10px;
+  }
+
+
+
+}
+
+@media screen and (max-width: 1599px) { // footer navigation position fix
+  .footer__wrapper {
+    .footer__navigation {
+      ul {
+        margin: 0 77px -1px 193px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .panda_header {
+    height: 390px;
+    background-position: left -172px bottom;
+  }
+}
+
+@media screen and (max-width: 980px) {
+  .panda_header {
+    height: 335px;
+  }
+
+  .main_donate {
+    padding: 30px 20px 46px 20px;
+
+    h2 {
+      margin: 0 0px 19px 0;
+      font-size: 24px;
+      line-height: 120%;
+    }
+
+    p {
+      margin-bottom: 30px;
+    }
+
+    h3 {
+      margin: 0;
+      margin-bottom: 29px;
+    }
+
+    .pick_and_feed {
+      padding: 30px 0px 31px 0px;
+
+      h2 {
+        margin: 0px 0px 21px 0px;
+      }
+
+      h3 {
+        margin: 0px 35px 49px 35px;
+        text-align: center;
+      }
+
+      .food_per_animal {
+        margin-bottom: 42px;
+        padding: 0 20px;
+      }
+    }
+  }
+
+  p.amount {
+    margin: 0px 0px 4px 10px;
+  }
+
+  .radio_block {
+    margin-bottom: 98px;
+    padding: 0 35px 0 35px;
+
+    div:nth-child(2) {
+      display: none;
+    }
+
+    div:nth-child(3) {
+      display: none;
+    }
+
+    div{
+      label {
+        left: -27px;
+        padding-left: 8px;
+      }
+    }
+  }
+
+  .radio_block_line {
+    margin: 0 35px 0 35px;
+  }
+}
+
+
+@media screen and (max-width: 980px) { // footer navigation position fix
+  .footer__wrapper {
+    .footer__navigation {
+      ul {
+        margin: 0 74px 1px 1px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .panda_header {
+    height: 369px;
+    background: url(../../assets/images/donate_panda_bg_tablet.jpg) center bottom no-repeat;
+  }
+
+
+  #another_amount {
+    margin-bottom: 31px;
+    width: 180px;
+    height: 42px;
+    padding-left: 5px;
+    font-size: 18px;
+  }
+
+  #dollar_sign {
+    left: 219px;
+    top: 9px;
+    font-size: 22px;
+  }
+
+  .radio_period_select {
+    padding-right: 19px;
+    margin-bottom: 29px;
+    gap: 50px;
+
+    label {
+      padding-left: 11px;
+    }
+  }
+
+  #feed_btn {
+    margin-bottom: 30px;
+    margin-left: 2px;
+  }
+
+  p.share {
+    margin-left: 0px;
+    margin-bottom: 0px;
+  }
+
+
+}
+
+@media screen and (max-width: 600px) {
+  .panda_header {
+    background-size: cover;
+    height: 69vw;
+  }
+
+  .main_donate {
+    padding: 31px 10px 21px 10px;
+
+    p {
+      line-height: 138%;
+      margin-bottom: 30px;
+    }
+
+    h3 {
+      margin: 0;
+      margin-bottom: 29px;
+      font-size: 24px;
+
+    }
+
+    .pick_and_feed {
+      padding: 20px 0px 21px 0px;
+
+      h2 {
+        margin: 0px 0px 9px 0px;
+        font-size: 24px;
+      }
+
+      h3 {
+        margin: 0px 2px 11px 2px;
+        font-size: 16px;
+        line-height: 135%;
+
+      }
+
+      .food_per_animal {
+        margin-bottom: 4px;
+        justify-content: center;
+        gap: 4px;
+        align-items: flex-start;
+        padding: 0 1px;
+
+        div{
+          margin: 60px 0px 0px 0px;
+
+          h2 {
+            margin-bottom: 7px;
+            font-size: 40px;
+          }
+
+          p {
+            font-size: 9px;
+          }
+        }
+
+        img:nth-child(2) {
+          margin-top: 73px;
+          margin-right: 31px;
+          width: 9px;
+        }
+
+        img:nth-child(3) {
+          max-width: 160px;
+          margin-right: 0px;
+        }
+      }
+    }
+  }
+
+  p.amount {
+    margin: 0px 0px 6px 1px;
+  }
+
+  .radio_block {
+    height: 14px;
+    margin-bottom: 49px;
+    padding: 0 17px 0 17px;
+
+    div{
+      label {
+        width: 40px;
+        height: 50px;
+        left: -16px;
+        top: -27px;
+        padding-left: 7px;
+        padding-top: 43px;
+        font-size: 13px;
+
+        span {
+          font-size: 11px;
+        }
+      }
+    }
+  }
+
+  .radio_block_line {
+    margin: 0 17px 0 17px;
+    top: 8px;
+  }
+
+
+  input.radio_amount {
+    width: 6px;
+    height: 6px;
+  }
+
+  input.radio_amount:focus::after {
+    content: "";
+    width: 20px;
+    height: 20px;
+    border: 2px solid #FE9013;
+    top: -9px;
+    left: -9px;
+  }
+
+  input.radio_amount:checked {
+    outline: max(2px, 2px) solid #FE9013;
+    outline-offset: max(3px);
+  }
+
+  #another_amount {
+    margin-bottom: 25px;
+
+  }
+
+  .radio_period_select {
+    padding-right: 21px;
+    margin-bottom: 26px;
+  }
+
+  #feed_btn {
+    max-width: 298px;
+    width: 100%;
+    margin-left: 0px;
+    padding-top: 3px;
+  }
+
+  p.share {
+    font-size: 15.9px;
+    margin-bottom: 0px;
+  }
+}
+
+@media screen and (max-width: 600px) { // footer navigation position fix
+  .footer__wrapper {
+    .footer__navigation {
+      ul {
+        justify-content: space-between;
+        margin: 0 11px 0px 11px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .panda_header {
+    // height: 220px;
+    background: url(../../assets/images/donate_panda_bg_mobile.jpg) center bottom no-repeat;
+  }
+
+
+  .main_donate {
+    .pick_and_feed {
+      .food_per_animal {
+        img:nth-child(2) {
+          margin-right: auto;
+        }
+      }
+    }
+  }
+
+}
