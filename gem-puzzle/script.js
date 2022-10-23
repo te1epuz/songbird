@@ -257,6 +257,10 @@ function drawBoard() {
                 newDiv.addEventListener('mousedown', dragAndDrop);
             }
 
+            if (checkMovabilityDirection(newDiv)) {
+                newDiv.addEventListener('touchstart', touchDragAndDrop);
+            }
+
             newDiv.addEventListener('click', movePuzzle);
 
 
@@ -417,6 +421,83 @@ function dragAndDrop(event) { // ----------------------------- DRAG AND DPOR :(
     function onMouseUp() {
         document.removeEventListener('mouseup', onMouseUp);
         document.removeEventListener('mousemove', onMouseMove);
+
+        if (Math.abs(newLeft) < event.target.offsetWidth / 4) {
+            event.target.style.left = '0px'
+        }
+        if (Math.abs(newLeft) >= event.target.offsetWidth / 4) {
+            movePuzzle(event);
+        }
+        if (Math.abs(newTop) < event.target.offsetWidth / 4) {
+            event.target.style.top = '0px'
+        }
+        if (Math.abs(newTop) >= event.target.offsetWidth / 4) {
+            movePuzzle(event);
+        }
+    }
+    event.target.addEventListener('click', movePuzzle);
+}
+
+function touchDragAndDrop(event) { // ----------------------------- DRAG AND DPOR mor mobile:(
+    event.preventDefault();
+    document.addEventListener('touchmove', onMouseMove);
+    document.addEventListener('touchend', onMouseUp);
+
+    let shiftX = event.touches[0].clientX;
+    let shiftY = event.touches[0].clientY;
+    let newLeft;
+    let newTop;
+
+    function onMouseMove(move_event) {
+
+        newLeft = move_event.touches[0].clientX - shiftX;
+        newTop = move_event.touches[0].clientY - shiftY;
+
+        if (Math.abs(newLeft) > 10 || Math.abs(newTop) > 10) {
+            event.target.removeEventListener('click', movePuzzle); // keep click event when hand is shaky
+        }
+
+        if (event.target.dataset.direction === 'right'){
+            if (newLeft > event.target.offsetWidth + 1) {
+                newLeft = event.target.offsetWidth + 1;
+            }
+            if (newLeft < 0) {
+                newLeft = 0;
+            }
+            event.target.style.left = newLeft + 'px';
+        }
+        if (event.target.dataset.direction === 'left'){
+            if (newLeft < -event.target.offsetWidth - 1 ) {
+                newLeft = -event.target.offsetWidth - 1;
+            }
+            if (newLeft > 0) {
+                newLeft = 0;
+            }
+            event.target.style.left = newLeft + 'px';
+        }
+        if (event.target.dataset.direction === 'down'){
+            if (newTop > event.target.offsetWidth + 1) {
+                newTop = event.target.offsetWidth + 1;
+            }
+            if (newTop < 0) {
+                newTop = 0;
+            }
+            event.target.style.top = newTop + 'px';
+        }
+        if (event.target.dataset.direction === 'up'){
+            if (newTop < -event.target.offsetWidth - 1 ) {
+                newTop = -event.target.offsetWidth - 1;
+            }
+            if (newTop > 0) {
+                newTop = 0;
+            }
+            event.target.style.top = newTop + 'px';
+        }
+    }
+
+    function onMouseUp() {
+        document.removeEventListener('touchend', onMouseUp);
+        document.removeEventListener('touchmove', onMouseMove);
 
         if (Math.abs(newLeft) < event.target.offsetWidth / 4) {
             event.target.style.left = '0px'
