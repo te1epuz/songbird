@@ -1,8 +1,12 @@
 body {
+  width: 100vw;
+  height: 100vh;
   font-size: 1px;
   font-family: Arial, Helvetica, sans-serif;
   padding-top: 50px;
-  background-color: black;
+  background: url(./assets/images/bg-full.jpg) center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 * {
@@ -17,33 +21,41 @@ body {
   max-width: 700px;
   margin: auto;
   background: rgb(206, 206, 206);
-  padding: 30px 50px 5px 50px;
+  padding: 30px 50px 30px 50px;
   position: relative;
+  border: 5px solid grey;
+  border-bottom: none;
+  box-shadow: 0px 0px 5px black;
 }
 
-.header__nav ul {
+.header__nav {
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
 }
-.header__nav ul li button {
+.header__nav button {
+  display: block;
   font-size: 25em;
   text-transform: uppercase;
   border-radius: 5px;
   cursor: pointer;
 }
-.header__nav ul li button:active {
-  transform: scale(0.98);
-}
-.header__nav ul li div {
+.header__nav div {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 5px;
 }
-.header__nav ul li div button {
-  width: 25%;
+.header__nav div button {
+  width: 40px;
+  height: 40px;
   border: 1px solid black;
+}
+
+#new_game_btn {
+  font-size: 60em;
+}
+
+button:active {
+  transform: scale(0.98);
 }
 
 #win_window {
@@ -53,26 +65,32 @@ body {
   top: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.494);
+  background-color: rgba(0, 0, 0, 0.758);
 }
 #win_window div {
-  margin: auto;
-  margin-top: 300px;
-  max-width: 600px;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   background: rgb(206, 206, 206);
-  padding: 40px;
+  padding: 60px 40px 30px 40px;
   border-radius: 30px;
+  box-shadow: 0px 0px 15px black;
+  border: 5px solid grey;
 }
 #win_window #win_message {
   font-size: 35em;
   text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: 50px;
 }
 #win_window button {
   display: block;
   margin: auto;
   padding: 0 30px;
-  font-size: 25em;
+  font-size: 75em;
   border-radius: 10px;
   cursor: pointer;
 }
@@ -103,6 +121,9 @@ body {
   padding: 20px 50px;
   font-size: 25em;
   text-transform: uppercase;
+  border: 5px solid grey;
+  border-top: none;
+  box-shadow: 0px 0px 5px black;
 }
 
 .main__stats {
@@ -114,6 +135,9 @@ body {
 
 .main__game {
   background: rgb(250, 250, 246);
+  background: url(./assets/images/bg-small.jpg) center;
+  background-repeat: no-repeat;
+  background-size: cover;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(4, 1fr);
@@ -130,6 +154,8 @@ body {
   background: rgb(255, 255, 241);
   border: 7px solid rgb(139, 125, 152);
   border-radius: 10%;
+  outline: 2px solid rgb(139, 125, 152);
+  outline-offset: -10px;
   cursor: pointer;
   position: relative;
 }
@@ -145,22 +171,39 @@ body {
   cursor: default;
 }
 
+.options {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.options li button {
+  font-size: 1em;
+  text-transform: uppercase;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
 .main__top_score {
-  max-width: -webkit-max-content;
-  max-width: -moz-max-content;
-  max-width: max-content;
+  display: block;
   margin: auto;
   margin-bottom: 20px;
+  font-size: 1em;
+  text-transform: uppercase;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 #main__top_results {
-  max-width: -webkit-max-content;
-  max-width: -moz-max-content;
-  max-width: max-content;
   margin: auto;
   height: 15vh;
   overflow-y: auto;
   text-transform: lowercase;
+  background: rgb(250, 250, 246);
+  border: 5px solid rgb(206, 206, 206);
+  padding: 10px;
+}
+#main__top_results div {
+  text-align: center;
 }
 
 @media screen and (max-width: 700px) {
@@ -171,17 +214,13 @@ body {
   .header__wrapper {
     padding: 20px 10px;
   }
+  .header__nav {
+    justify-content: space-around;
+  }
   .main__wrapper {
     padding: 20px 10px;
   }
   .main__game {
     font-size: 1.5em;
-  }
-  #win_window div {
-    margin-top: 30vw;
-    padding: 5%;
-  }
-  #win_window #win_message {
-    margin-bottom: 5%;
   }
 }/*# sourceMappingURL=style.css.map */
