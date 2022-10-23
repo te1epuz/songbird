@@ -4,6 +4,7 @@ create_html_markup();
 const new_game_btn = document.getElementById('new_game_btn');
 const sound_btn = document.getElementById('sound_btn');
 const main__game = document.querySelector('.main__game');
+const main__top_score = document.querySelector('.main__top_score');
 
 let autoSave = true;
 let muteSound = false;
@@ -120,6 +121,11 @@ auto_save_btn.addEventListener('click', () => {
         auto_save_btn.classList.remove('btn_pressed');
     }
 })
+
+main__top_score.addEventListener('click', () => {
+    main__top_results.classList.toggle('hidden');
+})
+
 
 // ------------- TIMER --------------
 
@@ -248,7 +254,7 @@ function drawBoard() {
             newDiv.innerHTML = value;
 
             if (checkMovabilityDirection(newDiv)) {
-                newDiv.addEventListener('mousedown', dragAndDrop); // WTF WTF WTF WTF WTF WTF WTF WTF WTF WTF WTF
+                newDiv.addEventListener('mousedown', dragAndDrop);
             }
 
             newDiv.addEventListener('click', movePuzzle);
@@ -439,6 +445,7 @@ function winGame() {
     let newTopScore = []
     newTopScore.push(moves);
     newTopScore.push(returnData(minutes) + ':' + returnData(seconds));
+    newTopScore.push(seconds); // required for sorting
     newTopScore.push(board.length + 'x' + board.length);
     topScore.push(newTopScore);
     showTopScore();
@@ -459,21 +466,31 @@ function winGame() {
 
 function showTopScore() {
     if (topScore.length === 0){
+        main__top_results.innerHTML = '';
         const newDiv = document.createElement("div");
-        newDiv.textContent = 'no winners yet';
+        newDiv.textContent = 'no winners yet...';
         main__top_results.append(newDiv);
     }
     else {
-        topScore.sort((a,b) => a[0] - b[0]);
+        topScore.sort((a,b) => a[0] === b[0] ? a[2] - b[2] : a[0] - b[0]);
         if (topScore.length > 10) {
            topScore.splice(-1, 1);
         }
         main__top_results.innerHTML = '';
         topScore.forEach(value => {
             const newDiv = document.createElement("div");
-            newDiv.textContent = `moves: ${value[0]}  time: ${value[1]}  board size: ${value[2]}`
+            newDiv.textContent = `moves: ${value[0]}  time: ${value[1]}  board size: ${value[3]}`
             main__top_results.append(newDiv);
         })
+        const newDiv = document.createElement("div");
+        newDiv.textContent = "(reset top 10...)";
+        newDiv.style.fontSize = "0.75em";
+        newDiv.style.cursor = "pointer";
+        newDiv.addEventListener('click', () => {
+            topScore = [];
+            showTopScore();
+        });
+        main__top_results.append(newDiv);
     }
 }
 
