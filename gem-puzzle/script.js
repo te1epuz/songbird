@@ -195,8 +195,10 @@ function generateBoard(size, savedBoard = 0) {
     let evenOrOddCheckSumm = 0; // check for solvability
     for (let row = 0; row < size; row++) {
         for (let column = 0; column < size; column++){
-            if (board[row][column] === 0){ // if empty cell - add row number
-                evenOrOddCheckSumm = evenOrOddCheckSumm + row + 1;
+            if (board[row][column] === 0){ // if empty cell
+                if (size % 2 === 0) { // if board 2, 4, 6 or 8 - add row number
+                    evenOrOddCheckSumm = evenOrOddCheckSumm + row + 1;
+                }
                 continue;
             }
             for (let subColumn = column + 1; subColumn < size; subColumn++){ // check rest of current row
@@ -219,10 +221,7 @@ function generateBoard(size, savedBoard = 0) {
             }
         }
     }
-    if (evenOrOddCheckSumm % 2 === 0 && size % 2 === 0) { // can be solved
-    } else if (evenOrOddCheckSumm % 2 !== 0 && size % 2 !== 0) { // odd size - odd summ - can be solved!
-    }
-    else { // unsolvable
+    if (evenOrOddCheckSumm % 2 !== 0) { // unsolvable
         generateBoard(size);
     }
     if (checkVictory()) { //auto victory - reshuffle!!!
