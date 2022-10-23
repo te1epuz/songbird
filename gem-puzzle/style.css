@@ -217,6 +217,10 @@ button:active {
   .header__nav {
     justify-content: space-around;
   }
+  .header__nav div button {
+    width: 6vw;
+    height: 6vw;
+  }
   .main__wrapper {
     padding: 20px 10px;
   }

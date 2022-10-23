@@ -254,7 +254,7 @@ function drawBoard() {
             newDiv.innerHTML = value;
 
             if (checkMovabilityDirection(newDiv)) {
-                newDiv.addEventListener('mousedown', dragAndDrop); // WTF WTF WTF WTF WTF WTF WTF WTF WTF WTF WTF
+                newDiv.addEventListener('mousedown', dragAndDrop);
             }
 
             newDiv.addEventListener('click', movePuzzle);
@@ -468,7 +468,7 @@ function showTopScore() {
     if (topScore.length === 0){
         main__top_results.innerHTML = '';
         const newDiv = document.createElement("div");
-        newDiv.textContent = 'no winners yet';
+        newDiv.textContent = 'no winners yet...';
         main__top_results.append(newDiv);
     }
     else {
