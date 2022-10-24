@@ -9,6 +9,7 @@ const main__top_score = document.querySelector('.main__top_score');
 let autoSave = true;
 let muteSound = false;
 let boardSize = 4;  //default board size
+let boardSizeSelected = 4;
 let board = [];
 let moves;
 let minutes;
@@ -51,6 +52,7 @@ function getLocalStorage() {
     if(localStorage.getItem('boardSize')) {
         boardSize = localStorage.getItem('boardSize');
         new_game_size.textContent = boardSize+"x"+boardSize;
+        boardSizeSelected = boardSize;
     } else {
     }
     if(localStorage.getItem('minutes')) {
@@ -82,6 +84,7 @@ function setLocalStorage() {
         localStorage.setItem('minutes', minutes);
         localStorage.setItem('seconds', seconds);
         localStorage.setItem('board', board);
+        localStorage.setItem('boardSize', boardSizeSelected);
     } else {
         localStorage.clear();
     }
@@ -170,6 +173,7 @@ new_game_btn.addEventListener('click', () => {
     drawBoard();
     resetTimer();
     localStorage.setItem('boardSize', boardSize); // save to local only on new boardSize confirm!!!
+    boardSizeSelected = boardSize;
 })
 
 function generateBoard(size, savedBoard = 0) {
