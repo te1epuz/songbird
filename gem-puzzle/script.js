@@ -438,7 +438,7 @@ function dragAndDrop(event) { // ----------------------------- DRAG AND DPOR :(
 }
 
 function touchDragAndDrop(event) { // ----------------------------- DRAG AND DPOR mor mobile:(
-    event.preventDefault();
+    // event.preventDefault();
     document.addEventListener('touchmove', onTouchMove);
     document.addEventListener('touchend', onTouchEnd);
 
@@ -451,6 +451,10 @@ function touchDragAndDrop(event) { // ----------------------------- DRAG AND DPO
 
         newLeft = move_event.touches[0].clientX - shiftX;
         newTop = move_event.touches[0].clientY - shiftY;
+
+        if (Math.abs(newLeft) > 10 || Math.abs(newTop) > 10) {
+            event.target.removeEventListener('click', movePuzzle); // keep click event when hand is shaky
+        }
 
         if (event.target.dataset.direction === 'right'){
             if (newLeft > event.target.offsetWidth + 1) {
@@ -493,7 +497,20 @@ function touchDragAndDrop(event) { // ----------------------------- DRAG AND DPO
     function onTouchEnd() {
         document.removeEventListener('touchend', onTouchEnd);
         document.removeEventListener('touchmove', onTouchMove);
-        movePuzzle(event);
+
+        if (Math.abs(newLeft) < event.target.offsetWidth / 4) {
+            event.target.style.left = '0px'
+        }
+        if (Math.abs(newLeft) >= event.target.offsetWidth / 4) {
+            movePuzzle(event);
+        }
+        if (Math.abs(newTop) < event.target.offsetWidth / 4) {
+            event.target.style.top = '0px'
+        }
+        if (Math.abs(newTop) >= event.target.offsetWidth / 4) {
+            movePuzzle(event);
+        }
+        // movePuzzle(event);
     }
     event.target.addEventListener('click', movePuzzle);
 }
