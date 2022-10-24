@@ -38,6 +38,9 @@ function getLocalStorage() {
         muteSound = localStorage.getItem('muteSound');
         if (muteSound === 'true') {
             muteSound = true;
+            audio_move.muted = true;
+            audio_menu.muted = true;
+            audio_win.muted = true;
             sound_btn.classList.add('btn_pressed');
         } else {
             muteSound = false;
