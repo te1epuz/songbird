@@ -505,7 +505,8 @@ function touchDragAndDrop(event) { // ----------------------------- DRAG AND DPO
     function onTouchEnd() {
         document.removeEventListener('touchend', onTouchEnd);
         document.removeEventListener('touchmove', onTouchMove);
-        document.documentElement.style.overflow = 'auto';
+
+        ;
 
         if (Math.abs(newLeft) < event.target.offsetWidth / 4) {
             event.target.style.left = '0px'
@@ -520,6 +521,7 @@ function touchDragAndDrop(event) { // ----------------------------- DRAG AND DPO
             movePuzzle(event);
         }
         // movePuzzle(event);
+        setTimeout(() => {document.documentElement.style.overflow = 'auto';}, 300)
     }
     event.target.addEventListener('click', movePuzzle);
 }
