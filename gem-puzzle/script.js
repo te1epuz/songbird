@@ -448,7 +448,7 @@ function touchDragAndDrop(event) { // ----------------------------- DRAG AND DPO
     // event.preventDefault();
     document.addEventListener('touchmove', onTouchMove);
     document.addEventListener('touchend', onTouchEnd);
-    // document.documentElement.style.overflow = 'hidden';
+    document.documentElement.style.overflow = 'hidden';
 
     let shiftX = event.touches[0].clientX;
     let shiftY = event.touches[0].clientY;
@@ -505,7 +505,7 @@ function touchDragAndDrop(event) { // ----------------------------- DRAG AND DPO
     function onTouchEnd() {
         document.removeEventListener('touchend', onTouchEnd);
         document.removeEventListener('touchmove', onTouchMove);
-        // document.documentElement.style.overflow = 'auto';
+        document.documentElement.style.overflow = 'auto';
 
         if (Math.abs(newLeft) < event.target.offsetWidth / 4) {
             event.target.style.left = '0px'
