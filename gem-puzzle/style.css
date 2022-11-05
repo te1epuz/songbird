@@ -3,7 +3,6 @@ body {
   height: 100vh;
   font-size: 1px;
   font-family: Arial, Helvetica, sans-serif;
-  padding-top: 50px;
   background: url(./assets/images/bg-full.jpg) center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -135,10 +134,7 @@ button:active {
 }
 
 .main__game {
-  background: rgb(250, 250, 246);
-  background: url(./assets/images/bg-small.jpg) center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  background: rgb(237, 237, 237);
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(4, 1fr);
