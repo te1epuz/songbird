@@ -18,8 +18,8 @@
     </div>
     <nav class="header__nav">
       <ul class="header__nav-block">
-        <li class="header__nav-item header__nav-item_current">Главная</li>
-        <li class="header__nav-item">Викторина</li>
+        <li class="header__nav-item header__nav-item-home header__nav-item_current">Главная</li>
+        <li class="header__nav-item header__nav-item-start">Викторина</li>
       </ul>
     </nav>
   </header>
@@ -30,6 +30,30 @@
         <button class="main__welcome-btn">Начать игру</button>
       </div>
       <img class="main__welcome-img" src="assets/images/welcome.jpg" alt="parrot with microphone">
+    </section>
+    <section class="main__game">
+      <ul class="game__levels">
+        <li class="game__level game__level_current">Разминка</li>
+        <li class="game__level">Воробьиные</li>
+        <li class="game__level">Лесные птицы</li>
+        <li class="game__level">Певчие птицы</li>
+        <li class="game__level">Хищные птицы</li>
+        <li class="game__level">Морские птицы</li>
+      </ul>
+      <div class="game__question">
+        question picture name play description
+      </div>
+      <div class="game__answers-wrapper">
+        <ul class="game__answers">
+          <li class="game__answer">answer1</li>
+          <li class="game__answer">answer2</li>
+          <li class="game__answer">answer3</li>
+        </ul>
+        <div class="game__selected-answer">
+          picture name play description
+        </div>
+      </div>
+      <button class="game__next-btn">Следующий уровень</button>
     </section>
   </main>
   <footer class="footer">
