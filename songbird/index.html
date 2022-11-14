@@ -15,6 +15,7 @@
       <a href="index.html">
         <img class="header__logo" src="assets/images/logo.svg" alt="songbird logo">
       </a>
+      <p class="header__score hidden-block">Score: 0</p>
     </div>
     <nav class="header__nav">
       <ul class="header__nav-block">
@@ -32,6 +33,7 @@
       <img class="main__welcome-img" src="assets/images/welcome.jpg" alt="parrot with microphone">
     </section>
     <section class="main__game disabled-block">
+    <!-- <section class="main__game"> -->
       <ul class="game__levels">
         <li class="game__level game__level_current">Разминка</li>
         <li class="game__level">Воробьиные</li>
@@ -57,7 +59,15 @@
           <li class="game__answer">answer6</li>
         </ul>
         <div class="game__selected-answer">
-          Послушайте плеер. Выберите птицу из списка.
+          <div class="selected-answer__wrapper disabled-block" >
+            <img class="selected-answer__img" src="assets/images/unknown-bird.png" alt="unknown bird">
+            <div class="selected-answer__desription">
+              <h2 class="selected-answer__title">Name</h2>
+              <p class="selected-answer__name">Surname</p>
+              <!-- <audio controls>player?</audio> -->
+            </div>
+          </div>
+          <p class="selected-answer__info">text</p>
         </div>
       </div>
       <button class="game__next-btn game__next-btn_disabled">Следующий уровень</button>

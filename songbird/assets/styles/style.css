@@ -8,8 +8,17 @@
   font-size: 18px;
 }
 
+.header__top-row {
+  display: flex;
+  justify-content: space-between;
+}
 .header__top-row .header__logo {
   width: 200px;
+}
+.header__top-row .header__score {
+  align-self: center;
+  font-size: 22px;
+  transition: 0.5s;
 }
 
 .header__nav {
@@ -107,6 +116,7 @@
   padding: 8px 12px;
   flex-grow: 1;
   white-space: nowrap;
+  transition: 0.5s;
 }
 .game__levels .game__level_current {
   background-color: #444444;
@@ -121,6 +131,7 @@
 }
 
 .question__img {
+  display: block;
   width: 200px;
   height: 150px;
   border-radius: 5px;
@@ -153,7 +164,7 @@
 }
 
 .game__answer {
-  padding: 8px 16px;
+  padding: 16px 16px;
   cursor: pointer;
   transition: 0.2s;
 }
@@ -184,6 +195,36 @@
 
 .game__selected-answer {
   padding: 16px;
+}
+
+.selected-answer__wrapper {
+  display: flex;
+  gap: 25px;
+  margin-bottom: 16px;
+}
+
+.selected-answer__img {
+  display: block;
+  width: 200px;
+  height: 150px;
+  border-radius: 5px;
+}
+
+.selected-answer__desription {
+  width: 100%;
+  padding-right: 9px;
+}
+
+.selected-answer__title {
+  border-bottom: 1px solid #444444;
+  padding: 10px 0px;
+  font-size: 24px;
+}
+
+.selected-answer__name {
+  border-bottom: 1px solid #444444;
+  padding: 10px 0px;
+  font-size: 18px;
 }
 
 .game__next-btn {
