@@ -19,6 +19,9 @@ const gameSelectedAnswerName = document.querySelector('.selected-answer__name');
 const gameSelectedAnswerInfo = document.querySelector('.selected-answer__info');
 const nextLevelBtn = document.querySelector('.game__next-btn');
 const headerScore = document.querySelector('.header__score');
+const mainWinBlock = document.querySelector('.main__win');
+const mainWinBtn = document.querySelector('.main__win-btn');
+
 
 
 
@@ -28,6 +31,7 @@ navHove.addEventListener('click', () => {
 
 startGameBtn.addEventListener('click', startGame);
 navStartGameBtn.addEventListener('click', startGame);
+mainWinBtn.addEventListener('click', reStartGame);
 
 
 let currentLevel = 0;
@@ -36,11 +40,9 @@ function startGame() {
   welcomeScreen.classList.add('hidden-block');
   navHove.classList.remove('header__nav-item_current');
   navStartGameBtn.classList.add('header__nav-item_current');
-  welcomeScreen.addEventListener('transitionend', () => {
-    welcomeScreen.classList.add('disabled-block');
-    mainGameBlock.classList.remove('disabled-block');
-    headerScore.classList.remove('hidden-block')
-  });
+  welcomeScreen.classList.add('disabled-block');
+  mainGameBlock.classList.remove('disabled-block');
+  headerScore.classList.remove('hidden-block');
 
   currentLevel = 0;
   scoreTotal = 0;
@@ -52,9 +54,8 @@ let answerCorrect;
 let answersState;
 
 function startLevel(level) {
-  console.log('start level: ' + level)
   answerCorrect = getRandomInt(0, birdsData[level].length - 1);
-  console.log(birdsData[level].length, answerCorrect);
+  console.log('correct answer: ', answerCorrect + 1);
   answersState = [0, 0, 0, 0, 0, 0]; // 0 - unclicked, 1 - clicked (wrong), 2 - clicked (right)
   updateQuestion();
   updateSelecredAnswer();
@@ -76,11 +77,9 @@ function selectAnswer (element) {
   updateSelecredAnswer(birdsData[currentLevel][elementIndex])
   if (answersState[elementIndex] === 0) {
     if (elementIndex === answerCorrect) {
-      console.log('correct')
       answersState[elementIndex] = 2;
       let scoreAdd = answersState.filter(value => value === 0).length;
       scoreTotal += scoreAdd;
-      console.log('total score: ' + scoreTotal)
       element.target.classList.add('game__answer_right');
       element.target.textContent += ` +${scoreAdd}`
 
@@ -98,23 +97,24 @@ function selectAnswer (element) {
     }
 
   }
-      console.log(answersState)
 }
 
 function startNextLevel(){
-  console.log(gameLevels.children)
   gameLevels.children[currentLevel].classList.remove('game__level_current');
   currentLevel++;
   nextLevelBtn.classList.add('game__next-btn_disabled');
   nextLevelBtn.removeEventListener('click', startNextLevel)
 
   if (currentLevel === 6){
-    console.log('WIN') // <<<<<------------------------ add win function
+    showresults();
+  } else {
+    gameLevels.children[currentLevel].classList.add('game__level_current');
+    startLevel(currentLevel);
   }
-
-  gameLevels.children[currentLevel].classList.add('game__level_current');
-  startLevel(currentLevel);
 }
+
+
+
 
 function updateQuestion(bird = ''){
   if (bird === '') {
@@ -137,6 +137,21 @@ function updateSelecredAnswer(bird = ''){
     gameSelectedAnswerInfo.textContent = bird.description;
     gameSelectedAnswerWrapper.classList.remove('disabled-block')
   }
+}
+
+function showresults() {
+
+  mainGameBlock.classList.add('disabled-block');
+  mainWinBlock.classList.remove('disabled-block');
+
+}
+
+function reStartGame() {
+
+  mainWinBlock.classList.add('disabled-block');
+  gameLevels.children[0].classList.add('game__level_current');
+
+  startGame();
 }
 
 function getRandomInt(min, max) {
