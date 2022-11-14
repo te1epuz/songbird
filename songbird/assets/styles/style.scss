@@ -76,6 +76,7 @@
     font-size: 48px;
     text-align: center;
     pointer-events: none;
+    margin: 10px 0px 25px;
   }
 
   .main__welcome-img {
@@ -144,6 +145,25 @@
   padding: 16px;
   border-radius: 5px;
   background-color: #303030;
+  display: flex;
+  // gap: 25px;
+
+}
+.question__img {
+  width: 200px;
+  height: 150px;
+  border-radius: 5px;
+}
+
+.question__desription {
+  padding: 10px 25px 10px 41px;
+  width: 100%;
+}
+
+.question__title {
+  border-bottom: 1px solid #444444;
+  padding-bottom: 10px;
+  font-size: 28px;
 }
 
 .game__answers-wrapper {
@@ -224,4 +244,20 @@
 
 .disabled-block {
   display: none;
+}
+
+// --------------------------------------- Media ----------------- //
+
+@media screen and (max-width: 780px) {
+
+  .main__welcome-wrapper {
+
+    .main__welcome-title {
+      font-size: 8vw;
+    }
+    .main__welcome-img {
+      display: none;
+    }
+  }
+
 }
