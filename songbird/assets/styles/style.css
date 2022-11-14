@@ -148,6 +148,19 @@
   font-size: 28px;
 }
 
+.question_audio-controls {
+  display: flex;
+}
+
+.question_audio-play-btn {
+  cursor: pointer;
+}
+
+.question_audio-time {
+  display: flex;
+  justify-content: space-between;
+}
+
 .game__answers-wrapper {
   margin-top: 25px;
   display: flex;
