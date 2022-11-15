@@ -46,16 +46,16 @@
         <img class="question__img" src="assets/images/unknown-bird.png" alt="unknown bird">
         <div class="question__desription">
           <h2 class="question__title">*****</h2>
-          <audio scr="" class="question__audio" controls>Audio is not supported.</audio>
+          <audio scr="" class="question__audio" preload="metadata">Audio is not supported.</audio>
           <div class="question_audio-controls">
             <div class="question_audio-play-btn">play</div>
-            <div>
-              <input class="question_audio-seekbar" type="range" step="any">
+            <div class="question_audio-seekbar-wrapper">
+              <input class="question_audio-seekbar" type="range" step="any" value="0">
               <div class="question_audio-time">
                 <div class="question_audio-time-current">--:--</div>
                 <div class="question_audio-time-total">--:--</div>
               </div>
-              <input class="question_audio-volume" type="range" min="0" max="1" step="0.1" >
+              <input class="question_audio-volume" type="range" min="0" max="1" step="0.1" value="1">
             </div>
           </div>
         </div>

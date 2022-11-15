@@ -25,6 +25,8 @@ const mainWinBtn = document.querySelector('.main__win-btn');
 
 const questionAudio = document.querySelector('.question__audio');
 const questionAudioPlayBtn = document.querySelector('.question_audio-play-btn');
+const questionAudioSeekbar = document.querySelector('.question_audio-seekbar');
+const questionAudioVolume = document.querySelector('.question_audio-volume');
 
 navHove.addEventListener('click', () => {
   window.location.href = 'index.html';
@@ -60,6 +62,8 @@ function startLevel(level) {
   answersState = [0, 0, 0, 0, 0, 0]; // 0 - unclicked, 1 - clicked (wrong), 2 - clicked (right)
   updateQuestion();
   updateQuestionAudio(birdsData[currentLevel][answerCorrect]);
+  updateTimeQuestion();
+  changeVolume();
   updateSelecredAnswer();
 
   gameAnswers.innerHTML = '';
@@ -130,10 +134,6 @@ function updateQuestion(bird = ''){
   }
 }
 
-function updateQuestionAudio(bird) {
-  questionAudio.src = bird.audio;
-}
-
 function updateSelecredAnswer(bird = ''){
   if (bird === '') {
     gameSelectedAnswerInfo.textContent = 'Послушайте плеер. Выберите птицу из списка.';
@@ -176,21 +176,35 @@ function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min)) + min;
 }
 
+
+// --------------------------- AUDIO ---------------------
+
+function updateQuestionAudio(bird) {
+  questionAudio.src = bird.audio;
+  questionAudioSeekbar.min = 0;
+  questionAudioSeekbar.max = questionAudio.duration;
+  questionAudioPlayBtn.textContent = 'play';
+}
+
 questionAudioPlayBtn.addEventListener('click', playQuestion);
 
 function playQuestion(){
   if (questionAudio.paused) {
     questionAudio.play();
+    questionAudioPlayBtn.textContent = 'stop';
   } else if (questionAudio.ended) {
     questionAudio.currentTime = 0;
     questionAudio.play();
+    questionAudioPlayBtn.textContent = 'stop';
   } else {
     questionAudio.pause();
+    questionAudioPlayBtn.textContent = 'play';
   }
 }
 
 function pauseQuestion(){
   questionAudio.pause();
+  questionAudioPlayBtn.textContent = 'play';
 }
 
 function playSoundEffect(sound) {
@@ -208,5 +222,47 @@ function playSoundEffect(sound) {
     default:
       console.log("no sound found for " + sound);
   }
+  soundEffect.volume = questionAudioVolume.value;
   soundEffect.play();
 }
+
+questionAudioVolume.addEventListener('input', changeVolume);
+questionAudio.addEventListener('timeupdate', updateTimeQuestion);
+
+function changeVolume() {
+  let myVol = questionAudioVolume.value;
+  questionAudio.volume = myVol;
+  if (myVol == 0) {
+    questionAudio.muted = true;
+  } else {
+    questionAudio.muted = false;
+  }
+}
+
+function updateTimeQuestion() {
+  questionAudio.onloadedmetadata = function() {
+    document.querySelector('.question_audio-time-total').textContent = getTime(questionAudio.duration);
+  }
+  document.querySelector('.question_audio-time-current').textContent = getTime(questionAudio.currentTime);
+  questionAudioSeekbar.min = questionAudio.startTime;
+  questionAudioSeekbar.max = questionAudio.duration;
+  questionAudioSeekbar.value = questionAudio.currentTime;
+}
+
+function getTime(time) {
+  let sec = time;
+  sec = sec % 3600;
+  let min = Math.floor(sec / 60);
+  sec = Math.floor(sec % 60);
+  if (sec.toString().length < 2) { sec = "0" + sec; }
+  if (min.toString().length < 2) { min = "0" + min; }
+  return min + ":" + sec;
+}
+
+questionAudioSeekbar.addEventListener('input', () => {
+  questionAudio.currentTime = questionAudioSeekbar.value;
+})
+// fires when seekbar is changed
+// function ChangeTheTime() {
+//   
+// }

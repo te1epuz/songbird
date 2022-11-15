@@ -149,16 +149,44 @@
 }
 
 .question_audio-controls {
+  margin-top: 16px;
   display: flex;
+  gap: 16px;
 }
 
 .question_audio-play-btn {
+  width: 40px;
+  height: 40px;
+  border: 2px solid #00aa7f;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.2s;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  color: #00aa7f;
+}
+
+.question_audio-play-btn:hover {
+  border: 2px solid #00bc8c;
+  color: #00bc8c;
+}
+
+.question_audio-seekbar-wrapper {
+  width: 100%;
+}
+
+.question_audio-seekbar {
+  width: 100%;
   cursor: pointer;
 }
 
 .question_audio-time {
   display: flex;
   justify-content: space-between;
+  font-size: 14px;
 }
 
 .game__answers-wrapper {
