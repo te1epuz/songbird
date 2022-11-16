@@ -47,15 +47,18 @@
         <div class="question__desription">
           <h2 class="question__title">*****</h2>
           <audio scr="" class="question__audio" preload="metadata">Audio is not supported.</audio>
-          <div class="question_audio-controls">
-            <div class="question_audio-play-btn">play</div>
-            <div class="question_audio-seekbar-wrapper">
-              <input class="question_audio-seekbar" type="range" step="any" value="0">
-              <div class="question_audio-time">
-                <div class="question_audio-time-current">--:--</div>
-                <div class="question_audio-time-total">--:--</div>
+          <div class="question__audio-controls">
+            <div class="question__audio-play-btn"></div>
+            <div class="question__audio-seekbar-wrapper">
+              <input class="question__audio-seekbar" type="range" step="any" value="0">
+              <div class="question__audio-time">
+                <div class="question__audio-time-current">--:--</div>
+                <div class="question__audio-time-total">--:--</div>
               </div>
-              <input class="question_audio-volume" type="range" min="0" max="1" step="0.1" value="1">
+              <div class="question__audio-volume-wrapper">
+                <input class="question__audio-volume" type="range" min="0" max="1" step="0.1" value="1">
+                <div class="question__audio-volume-ico"></div>
+              </div>
             </div>
           </div>
         </div>
@@ -75,7 +78,23 @@
             <div class="selected-answer__desription">
               <h2 class="selected-answer__title">Name</h2>
               <p class="selected-answer__name">Surname</p>
-              <!-- <audio controls>player?</audio> -->
+
+                        <audio scr="" class="selected-answer__audio" preload="metadata">Audio is not supported.</audio>
+                        <div class="selected-answer__audio-controls">
+                          <div class="selected-answer__audio-play-btn"></div>
+                          <div class="selected-answer__audio-seekbar-wrapper">
+                            <input class="selected-answer__audio-seekbar" type="range" step="any" value="0">
+                            <div class="selected-answer__audio-time">
+                              <div class="selected-answer__audio-time-current">--:--</div>
+                              <div class="selected-answer__audio-time-total">--:--</div>
+                            </div>
+                            <div class="selected-answer__audio-volume-wrapper">
+                              <input class="selected-answer__audio-volume" type="range" min="0" max="1" step="0.1" value="1">
+                              <div class="selected-answer__audio-volume-ico"></div>
+                            </div>
+                          </div>
+                        </div>
+
             </div>
           </div>
           <p class="selected-answer__info">text</p>

@@ -148,45 +148,136 @@
   font-size: 28px;
 }
 
-.question_audio-controls {
+.question__audio-controls {
   margin-top: 16px;
   display: flex;
   gap: 16px;
 }
 
-.question_audio-play-btn {
-  width: 40px;
-  height: 40px;
-  border: 2px solid #00aa7f;
-  border-radius: 50%;
+.question__audio-play-btn {
+  width: 50px;
+  height: 50px;
   cursor: pointer;
-  transition: 0.2s;
   flex-shrink: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 18px;
-  color: #00aa7f;
+  transition: 0.2s;
+  background: url(../images/sound-play.png) center no-repeat;
 }
 
-.question_audio-play-btn:hover {
-  border: 2px solid #00bc8c;
-  color: #00bc8c;
+.question__audio-play-btn_pause {
+  background: url(../images/sound-pause.png) center no-repeat;
 }
 
-.question_audio-seekbar-wrapper {
+.question__audio-play-btn:hover {
+  transform: scale(0.95);
+}
+
+.question__audio-seekbar-wrapper {
   width: 100%;
 }
 
-.question_audio-seekbar {
+.question__audio-seekbar {
   width: 100%;
+  height: 4px;
   cursor: pointer;
+  margin-top: 23px;
+  margin-bottom: 5px;
+  background: #555555;
+  -webkit-appearance: none;
+  background-image: linear-gradient(#008966, #00aa7f);
+  background-size: 0% 100%;
+  background-repeat: no-repeat;
 }
 
-.question_audio-time {
+.question__audio-seekbar::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background-color: #00aa7f;
+  cursor: pointer;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.question__audio-seekbar::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+  background-color: #00bc8c;
+}
+
+.question__audio-seekbar::-moz-range-thumb {
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background-color: #00aa7f;
+  cursor: pointer;
+  -moz-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.question__audio-time {
   display: flex;
   justify-content: space-between;
   font-size: 14px;
+}
+
+.question__audio-volume-wrapper {
+  display: flex;
+  gap: 5px;
+}
+
+.question__audio-volume {
+  height: 4px;
+  cursor: pointer;
+  margin-top: 12px;
+  background: #555555;
+  -webkit-appearance: none;
+  background-image: linear-gradient(#008966, #00aa7f);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+.question__audio-volume::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background-color: #00aa7f;
+  cursor: pointer;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.question__audio-volume::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+  background-color: #00bc8c;
+}
+
+.question__audio-volume::-moz-range-thumb {
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background-color: #00aa7f;
+  cursor: pointer;
+  -moz-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.question__audio-volume-ico {
+  width: 28px;
+  height: 28px;
+  background: url(../images/sound-volume.png) no-repeat;
+  background-size: 100%;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.question__audio-volume-ico:hover {
+  transform: scale(0.95);
+}
+
+.question__audio-volume-ico_muted {
+  background: url(../images/sound-muted.png) no-repeat;
+  background-size: 100%;
 }
 
 .game__answers-wrapper {
@@ -241,7 +332,6 @@
 .selected-answer__wrapper {
   display: flex;
   gap: 25px;
-  margin-bottom: 16px;
 }
 
 .selected-answer__img {
@@ -258,14 +348,150 @@
 
 .selected-answer__title {
   border-bottom: 1px solid #444444;
-  padding: 10px 0px;
-  font-size: 24px;
+  padding: 0px 0px 10px;
+  font-size: 22px;
 }
 
 .selected-answer__name {
   border-bottom: 1px solid #444444;
   padding: 10px 0px;
   font-size: 18px;
+}
+
+.selected-answer__info {
+  margin-top: 10px;
+}
+
+.selected-answer__audio-controls {
+  margin-top: 16px;
+  display: flex;
+  gap: 16px;
+}
+
+.selected-answer__audio-play-btn {
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: 0.2s;
+  background: url(../images/sound-play.png) center no-repeat;
+}
+
+.selected-answer__audio-play-btn_pause {
+  background: url(../images/sound-pause.png) center no-repeat;
+}
+
+.selected-answer__audio-play-btn:hover {
+  transform: scale(0.95);
+}
+
+.selected-answer__audio-seekbar-wrapper {
+  width: 100%;
+}
+
+.selected-answer__audio-seekbar {
+  width: 100%;
+  height: 4px;
+  cursor: pointer;
+  margin-top: 23px;
+  margin-bottom: 5px;
+  background: #555555;
+  -webkit-appearance: none;
+  background-image: linear-gradient(#008966, #00aa7f);
+  background-size: 0% 100%;
+  background-repeat: no-repeat;
+}
+
+.selected-answer__audio-seekbar::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background-color: #00aa7f;
+  cursor: pointer;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.selected-answer__audio-seekbar::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+  background-color: #00bc8c;
+}
+
+.selected-answer__audio-seekbar::-moz-range-thumb {
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background-color: #00aa7f;
+  cursor: pointer;
+  -moz-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.selected-answer__audio-time {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+}
+
+.selected-answer__audio-volume-wrapper {
+  display: flex;
+  gap: 5px;
+}
+
+.selected-answer__audio-volume {
+  height: 4px;
+  cursor: pointer;
+  margin-top: 12px;
+  background: #555555;
+  -webkit-appearance: none;
+  background-image: linear-gradient(#008966, #00aa7f);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+.selected-answer__audio-volume::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background-color: #00aa7f;
+  cursor: pointer;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.selected-answer__audio-volume::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+  background-color: #00bc8c;
+}
+
+.selected-answer__audio-volume::-moz-range-thumb {
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background-color: #00aa7f;
+  cursor: pointer;
+  -moz-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.selected-answer__audio-volume-ico {
+  width: 28px;
+  height: 28px;
+  background: url(../images/sound-volume.png) no-repeat;
+  background-size: 100%;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.selected-answer__audio-volume-ico:hover {
+  transform: scale(0.95);
+}
+
+.selected-answer__audio-volume-ico_muted {
+  background: url(../images/sound-muted.png) no-repeat;
+  background-size: 100%;
 }
 
 .game__next-btn {
