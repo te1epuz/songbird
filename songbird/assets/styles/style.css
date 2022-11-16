@@ -526,15 +526,15 @@
   transition: 0.2s;
 }
 
-.game__next-btn_disabled {
-  background-color: #303030;
-  pointer-events: none;
-}
-
 .game__next-btn:hover {
   background-color: #00aa7f;
   border: 1px solid #555555;
   cursor: pointer;
+}
+
+.game__next-btn_disabled {
+  background-color: #303030 !important;
+  pointer-events: none;
 }
 
 .main__win {
