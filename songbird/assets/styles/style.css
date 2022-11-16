@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .body {
   max-width: 1100px;
   margin: auto;
@@ -309,6 +310,10 @@
   background-color: #444444;
 }
 
+.game__answer::before {
+  content: "● ";
+}
+
 .game__answer_right {
   background-color: #008966;
 }
@@ -317,12 +322,22 @@
   background-color: #00aa7f;
 }
 
+.game__answer_right::before {
+  content: "● ";
+  color: rgb(0, 173, 0);
+}
+
 .game__answer_wrong {
   background-color: #890000;
 }
 
 .game__answer_wrong:hover {
   background-color: #aa0000;
+}
+
+.game__answer_wrong::before {
+  content: "● ";
+  color: orangered;
 }
 
 .game__selected-answer {

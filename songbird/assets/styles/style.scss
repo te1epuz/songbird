@@ -343,26 +343,39 @@
   background-color: #444444;
 }
 
+.game__answer::before {
+  content: "● ";
+}
+
 .game__answer_right {
   background-color: #008966; 
 }
 .game__answer_right:hover {
   background-color: #00aa7f; 
 }
+
+.game__answer_right::before {
+  content: "● ";
+  color: rgb(0, 173, 0);
+}
+
 .game__answer_wrong {
   background-color: #890000; 
 }
 .game__answer_wrong:hover {
   background-color: #aa0000; 
 }
+.game__answer_wrong::before {
+  content: "● ";
+  color: orangered;
+}
 
+
+// ------------------------------- selected answer block ---------------------
 
 .game__selected-answer {
   padding: 16px;
 }
-
-// ------------------------------- selected answer block ---------------------
-
 
 .selected-answer__wrapper {
  
