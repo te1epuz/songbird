@@ -55,8 +55,10 @@
   visibility: visible;
   opacity: 1;
   transition: 0.5s;
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  grid-template-areas: "welcome-title welcome-img" "welcome-button welcome-img";
   gap: 16px;
   background-color: #303030;
   border: 1px solid #444444;
@@ -64,24 +66,25 @@
   margin-top: 25px;
   padding: 16px;
 }
-.main__welcome-wrapper .main__welcome {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-.main__welcome-wrapper .main__welcome-title {
+
+.main__welcome-title {
+  grid-area: welcome-title;
   font-size: 48px;
   text-align: center;
   pointer-events: none;
-  margin: 10px 0px 25px;
+  margin: 10px 0px 0px;
 }
-.main__welcome-wrapper .main__welcome-img {
+
+.main__welcome-img {
+  grid-area: welcome-img;
   display: block;
-  width: 50%;
+  width: 100%;
   border-radius: 5px;
 }
 
 .main__welcome-btn {
+  grid-area: welcome-button;
+  align-self: end;
   background-color: #008966;
   border: 1px solid #444444;
   color: #ffffff;
@@ -140,7 +143,7 @@
 
 .question__desription {
   padding: 10px 25px 10px 41px;
-  width: 100%;
+  flex-grow: 1;
 }
 
 .question__title {
@@ -342,6 +345,7 @@
 
 .game__selected-answer {
   padding: 16px;
+  min-width: 520px;
 }
 
 .selected-answer__wrapper {
@@ -357,8 +361,8 @@
 }
 
 .selected-answer__desription {
-  width: 100%;
   padding-right: 9px;
+  flex-grow: 1;
 }
 
 .selected-answer__title {
@@ -583,6 +587,17 @@
   padding: 0px 16px;
 }
 
+.footer__nav-link {
+  text-decoration: none;
+  color: #008966;
+  transition: 0.2s;
+}
+
+.footer__nav-link:hover {
+  text-decoration: none;
+  color: #00bc8c;
+}
+
 .hidden-block {
   opacity: 0;
   visibility: hidden;
@@ -592,14 +607,54 @@
   display: none;
 }
 
+@media screen and (max-width: 855px) {
+  .game__level {
+    width: 23%;
+  }
+  .game__answers-wrapper {
+    flex-direction: column;
+  }
+  .game__answers {
+    flex-basis: auto;
+  }
+  .game__selected-answer {
+    min-width: auto;
+    flex-basis: auto;
+  }
+}
 @media screen and (max-width: 780px) {
-  .main__welcome-wrapper .main__welcome-title {
+  .main__welcome-wrapper {
+    grid-template-columns: 1fr;
+    grid-template-areas: "welcome-title" "welcome-img" "welcome-button";
+  }
+  .main__welcome-title {
     font-size: 8vw;
   }
-  .main__welcome-wrapper .main__welcome-img {
-    display: none;
+  .main__welcome-img {
+    max-width: 300px;
+    place-self: center;
   }
   .main__win-title {
     font-size: 11vw;
+  }
+}
+@media screen and (max-width: 540px) {
+  .game__level {
+    width: 40%;
+  }
+  .game__question {
+    flex-direction: column;
+  }
+  .question__desription {
+    padding: 10px 0 0 0;
+  }
+  .question__img {
+    align-self: center;
+  }
+  .selected-answer__wrapper {
+    flex-direction: column;
+  }
+  .selected-answer__img {
+    align-self: center;
   }
 }/*# sourceMappingURL=style.css.map */
