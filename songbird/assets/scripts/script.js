@@ -1,4 +1,12 @@
-import birdsData from '../birdsdata.js'
+import { default as birdsDataRU } from '../birdsdata.js'
+import { default as birdsDataEN } from '../birdsdataEN.js'
+
+const birdsData = {
+  ru : birdsDataRU,
+  en : birdsDataEN
+}
+
+// const birdsData = birdsDataRU;
 
 const navHove = document.querySelector('.header__nav-item-home');
 const navStartGameBtn = document.querySelector('.header__nav-item-start');
@@ -11,7 +19,6 @@ const gameLevels = document.querySelector('.game__levels');
 const questionImg = document.querySelector('.question__img');
 const questionTitle = document.querySelector('.question__title');
 const gameAnswers = document.querySelector('.game__answers');
-const gameSelectedAnswer = document.querySelector('.game__selected-answer');
 const gameSelectedAnswerWrapper = document.querySelector('.selected-answer__wrapper');
 const gameSelectedAnswerImg = document.querySelector('.selected-answer__img');
 const gameSelectedAnswerTitle = document.querySelector('.selected-answer__title');
@@ -20,8 +27,9 @@ const gameSelectedAnswerInfo = document.querySelector('.selected-answer__info');
 const nextLevelBtn = document.querySelector('.game__next-btn');
 const headerScore = document.querySelector('.header__score');
 const mainWinBlock = document.querySelector('.main__win');
-const mainWinText = document.querySelector('.main__win-text');
 const mainWinBtn = document.querySelector('.main__win-btn');
+
+const langSelector = document.querySelector('.footer__lang-selection');
 
 const questionAudio = document.querySelector('.question__audio');
 const questionAudioPlayBtn = document.querySelector('.question__audio-play-btn');
@@ -35,6 +43,93 @@ const answerAudioSeekbar = document.querySelector('.selected-answer__audio-seekb
 const answerAudioVolume = document.querySelector('.selected-answer__audio-volume');
 const answerAudioVolumeIco = document.querySelector('.selected-answer__audio-volume-ico');
 
+let currentLevel = 0;
+let scoreTotal = 0;
+
+// ------------------------ language ---------------------
+
+const dictionary = {
+  ru : {
+    score: 'Баллы: ',
+    headerNav: ['Главная', 'Викторина'],
+    gameTitle: 'Распознавания птиц по их голосам',
+    btnStart: 'Начать игру',
+    levels: ['Разминка', 'Воробьиные', 'Лесные птицы', 'Певчие птицы', 'Хищные птицы', 'Морские птицы'],
+    answerPlaceholder: 'Послушайте плеер. Выберите птицу из списка.',
+    btnNext: 'Следующий уровень',
+    winTitle: 'Поздравляем!',
+    winText: 'Вы набрали максимальное количество баллов (30 из 30).<br> По ТЗ кнопки рестарта тут быть не должно, поэтому можете перейти на "главную" страницу )',
+    winText2: ['Вы набрали ',' из 30 возможных баллов. Попробуйте ещё раз!'],
+    btnRetry: 'Попробовать ещё раз!',
+  },
+  en : {
+    score: 'Score: ',
+    headerNav: ['Main', 'Quiz'],
+    gameTitle: 'Recognizing birds by their voices',
+    btnStart: 'Start quiz',
+    levels: ['Warm-up', 'Passerines', 'Forest Birds', 'Songbirds', 'Birds of Prey', 'Sea Birds'],
+    answerPlaceholder: 'Listen to the recording. Select a bird from the list.',
+    btnNext: 'Next level',
+    winTitle: 'Congratulations!',
+    winText: `You've scored the maximum number of points (30 of 30).<br> According to the task, the restart button should not be here, so you can go to the "main" page)`,
+    winText2: [`You've scored`,'out of 30 possible points. Try again!'],
+    btnRetry: `Let's try one more time!`,
+  }
+}
+
+let lang;
+if (localStorage.getItem('lang')) {
+  lang = localStorage.getItem('lang');
+}
+if (!(lang in dictionary)){ lang= 'ru' }
+
+const lang_buttons = Array.from(langSelector.children);
+lang_buttons.forEach(element => element.addEventListener('click', (el) => {
+  lang = el.target.id;
+  setLanguage();
+}))
+
+function setLanguage() {
+  lang_buttons.forEach(element => element.classList.remove('footer__lang_active'));
+  document.getElementById(lang).classList.add('footer__lang_active');
+
+  headerScore.children[0].textContent = dictionary[lang].score;
+  document.querySelectorAll('.header__nav-item').forEach((block, index) => {
+    block.textContent = dictionary[lang].headerNav[index];
+  })
+  document.querySelector('.main__welcome-title').textContent = dictionary[lang].gameTitle;
+  document.querySelector('.main__welcome-btn').textContent = dictionary[lang].btnStart;
+  document.querySelectorAll('.game__level').forEach((block, index) => {
+    block.textContent = dictionary[lang].levels[index];
+  })
+  document.querySelector('.selected-answer__placeholder').textContent = dictionary[lang].answerPlaceholder;
+  nextLevelBtn.textContent = dictionary[lang].btnNext;
+  document.querySelector('.main__win-title').textContent = dictionary[lang].winTitle;
+  document.querySelector('.main__win-text').innerHTML = dictionary[lang].winText;
+  document.querySelector('.main__win-text2').textContent = dictionary[lang].winText2[0];
+  document.querySelector('.main__win-text4').textContent = dictionary[lang].winText2[1];
+  mainWinBtn.textContent = dictionary[lang].btnRetry;
+
+  if (questionTitle.textContent !== '*****') {
+    questionTitle.textContent = birdsData[lang][currentLevel][answerCorrect].name
+  }
+
+  Array.from(gameAnswers.children).forEach((element, index) => {
+    element.textContent =  birdsData[lang][currentLevel][index].name
+  })
+  updateSelecredAnswer();
+  localStorage.setItem('lang', lang);
+
+}
+
+setLanguage()
+
+
+
+
+
+
+// ----------------------------- main page -----------------
 
 navHove.addEventListener('click', () => {
   window.location.href = 'index.html';
@@ -43,9 +138,6 @@ navHove.addEventListener('click', () => {
 startGameBtn.addEventListener('click', startGame);
 navStartGameBtn.addEventListener('click', startGame);
 mainWinBtn.addEventListener('click', reStartGame);
-
-let currentLevel = 0;
-let scoreTotal = 0;
 
 function startGame() {
   welcomeScreen.classList.add('hidden-block');
@@ -57,7 +149,7 @@ function startGame() {
 
   currentLevel = 0;
   scoreTotal = 0;
-  headerScore.textContent = `Score: ${scoreTotal}`;
+  headerScore.children[1].textContent = scoreTotal;
   startLevel(currentLevel);
 }
 
@@ -65,17 +157,17 @@ let answerCorrect;
 let answersState;
 
 function startLevel(level) {
-  answerCorrect = getRandomInt(0, birdsData[level].length - 1);
+  answerCorrect = getRandomInt(0, birdsData[lang][level].length - 1);
   console.log('correct answer: ', answerCorrect + 1);
   answersState = [0, 0, 0, 0, 0, 0]; // 0 - unclicked, 1 - clicked (wrong), 2 - clicked (right)
   updateQuestion();
-  updateQuestionAudio(birdsData[currentLevel][answerCorrect]);
+  updateQuestionAudio(birdsData[lang][currentLevel][answerCorrect]);
   updateTimeQuestion();
   // changeVolume();
   updateSelecredAnswer();
 
   gameAnswers.innerHTML = '';
-  birdsData[level].forEach( (element, index) => {
+  birdsData[lang][level].forEach( (element, index) => {
     let li = document.createElement('li');
     li.className = 'game__answer';
     li.textContent = element.name;
@@ -86,7 +178,7 @@ function startLevel(level) {
 
 function selectAnswer (element) {
   let elementIndex = Array.from(element.target.parentNode.children).indexOf(element.target);
-  updateSelecredAnswer(birdsData[currentLevel][elementIndex])
+  updateSelecredAnswer(birdsData[lang][currentLevel][elementIndex])
   if (answersState[elementIndex] === 0) {
     if (elementIndex === answerCorrect) {
       pauseQuestion();
@@ -97,8 +189,8 @@ function selectAnswer (element) {
       element.target.classList.add('game__answer_right');
       element.target.textContent += ` +${scoreAdd}`
 
-      updateQuestion(birdsData[currentLevel][answerCorrect]);
-      headerScore.textContent = `Score: ${scoreTotal}`;
+      updateQuestion(birdsData[lang][currentLevel][answerCorrect]);
+      headerScore.children[1].textContent = scoreTotal;
 
       nextLevelBtn.classList.remove('game__next-btn_disabled');
       nextLevelBtn.addEventListener('click', startNextLevel)
@@ -115,6 +207,8 @@ function selectAnswer (element) {
 }
 
 function startNextLevel(){
+  pauseAnswer();
+  pauseQuestion();
   gameLevels.children[currentLevel].classList.remove('game__level_current');
   questionAudioSeekbar.style.backgroundSize = '0% 100%';
   currentLevel++;
@@ -145,8 +239,9 @@ function updateQuestion(bird = ''){
 
 function updateSelecredAnswer(bird = ''){
   if (bird === '') {
-    gameSelectedAnswerInfo.textContent = 'Послушайте плеер. Выберите птицу из списка.';
+    gameSelectedAnswerInfo.classList.add('disabled-block');
     gameSelectedAnswerWrapper.classList.add('disabled-block');
+    document.querySelector('.selected-answer__placeholder').classList.remove('disabled-block');
     answerAudio.src = '';
   } else {
     gameSelectedAnswerImg.src = bird.image;
@@ -160,30 +255,35 @@ function updateSelecredAnswer(bird = ''){
     answerAudioPlayBtn.classList.remove('selected-answer__audio-play-btn_pause');
     answerAudioSeekbar.style.backgroundSize = '0% 100%';
 
+    document.querySelector('.selected-answer__placeholder').classList.add('disabled-block');
     gameSelectedAnswerWrapper.classList.remove('disabled-block')
+    gameSelectedAnswerInfo.classList.remove('disabled-block');
   }
 }
 
 function showresults() {
-
-  mainGameBlock.classList.add('disabled-block');
-  mainWinBlock.classList.remove('disabled-block');
   if (scoreTotal === 30) {
-    mainWinText.innerHTML = 'Вы набрали максимальное количество баллов (30 из 30).<br> По ТЗ кнопки рестарта тут быть не должно, поэтому можете перейти на "главную" страницу )'
+    document.querySelector('.main__win-text').classList.remove('disabled-block');
+    document.querySelector('.main__win-text2').classList.add('disabled-block');
+    document.querySelector('.main__win-text3').classList.add('disabled-block');
+    document.querySelector('.main__win-text4').classList.add('disabled-block');
     mainWinBtn.classList.add('hidden-block');
   } else {
-    mainWinText.innerHTML = `Вы набрали ${scoreTotal} из 30 возможных баллов. Попробуйте ещё раз!`
+    document.querySelector('.main__win-text3').textContent = scoreTotal;
+    document.querySelector('.main__win-text').classList.add('disabled-block');
+    document.querySelector('.main__win-text2').classList.remove('disabled-block');
+    document.querySelector('.main__win-text3').classList.remove('disabled-block');
+    document.querySelector('.main__win-text4').classList.remove('disabled-block');
+    mainWinBtn.classList.remove('hidden-block');
   }
- 
-
-
+  mainGameBlock.classList.add('disabled-block');
+  mainWinBlock.classList.remove('disabled-block');
 }
 
 function reStartGame() {
 
   mainWinBlock.classList.add('disabled-block');
   gameLevels.children[0].classList.add('game__level_current');
-  mainWinBtn.classList.remove('hidden-block');
   startGame();
 }
 

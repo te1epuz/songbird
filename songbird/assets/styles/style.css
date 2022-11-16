@@ -551,7 +551,7 @@
   pointer-events: none;
 }
 
-.main__win-text {
+.main__win-text, .main__win-text-wrapper {
   margin-top: 50px;
   font-size: 18px;
   text-align: center;
@@ -589,13 +589,27 @@
 
 .footer__nav-link {
   text-decoration: none;
-  color: #008966;
+  color: #ffffff;
   transition: 0.2s;
 }
 
 .footer__nav-link:hover {
   text-decoration: none;
   color: #00bc8c;
+}
+
+.footer__lang {
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+.footer__lang:hover {
+  color: #00bc8c;
+}
+
+.footer__lang_active {
+  color: #00bc8c;
+  pointer-events: none;
 }
 
 .hidden-block {
