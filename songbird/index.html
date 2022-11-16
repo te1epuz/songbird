@@ -15,7 +15,7 @@
       <a href="index.html">
         <img class="header__logo" src="assets/images/logo.svg" alt="songbird logo">
       </a>
-      <p class="header__score hidden-block">Score: 0</p>
+      <p class="header__score hidden-block"><span>Баллы: </span><span>0</span></p>
     </div>
     <nav class="header__nav">
       <ul class="header__nav-block">
@@ -95,23 +95,29 @@
               </div>
             </div>
           </div>
-          <p class="selected-answer__info">text</p>
+          <p class="selected-answer__info disabled-block">text</p>
+          <p class="selected-answer__placeholder">placeholder</p>
         </div>
       </div>
       <button class="game__next-btn game__next-btn_disabled">Следующий уровень</button>
     </section>
     <section class="main__win disabled-block">
-      <h1 class="main__win-title">
-        Поздравляем!
-      </h1>
-      <p class="main__win-text">
-        Вы что-то набрали
+      <h1 class="main__win-title">Поздравляем!</h1>
+      <p class="main__win-text">Вы победили</p>
+      <p class="main__win-text-wrapper">
+        <span class="main__win-text2">Вы набрали</span>
+        <span class="main__win-text3">столько то</span>
+        <span class="main__win-text4">баллов</span>
       </p>
       <button class="main__win-btn">Попробовать ещё раз!</button>
     </section>
   </main>
   <footer class="footer">
     <ul class="footer__nav-block">
+      <li class="footer__nav-item footer__lang-selection">
+        <span class="footer__lang" id="ru">ru</span>
+        <span class="footer__lang" id="en">en</span>
+      </li>
       <li class="footer__nav-item">
         <a class="footer__nav-link"href="https://github.com/Te1epuz">Github</a>
       </li>
