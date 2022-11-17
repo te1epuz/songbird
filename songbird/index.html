@@ -21,6 +21,7 @@
       <ul class="header__nav-block">
         <li class="header__nav-item header__nav-item-home header__nav-item_current">Главная</li>
         <li class="header__nav-item header__nav-item-start">Викторина</li>
+        <li class="header__nav-item header__nav-item-gallery">Галерея</li>
       </ul>
     </nav>
   </header>
@@ -35,7 +36,7 @@
     <section class="main__game disabled-block">
     <!-- <section class="main__game"> -->
       <ul class="game__levels">
-        <li class="game__level game__level_current">Разминка</li>
+        <li class="game__level">Разминка</li>
         <li class="game__level">Воробьиные</li>
         <li class="game__level">Лесные птицы</li>
         <li class="game__level">Певчие птицы</li>
@@ -110,6 +111,55 @@
         <span class="main__win-text4">баллов</span>
       </p>
       <button class="main__win-btn">Попробовать ещё раз!</button>
+    </section>
+    
+    <section class="main__gallery disabled-block">
+      <div class="gallery__selector-wrapper">
+        <ul class="gallery__levels">
+          <li class="gallery__level gallery__level_selected">1</li>
+          <li class="gallery__level">2</li>
+          <li class="gallery__level">3</li>
+          <li class="gallery__level">4</li>
+          <li class="gallery__level">5</li>
+          <li class="gallery__level">6</li>
+        </ul>
+        <ul class="gallery__birds">
+          <li class="gallery__bird  gallery__bird_selected">1</li>
+          <li class="gallery__bird">2</li>
+          <li class="gallery__bird">3</li>
+          <li class="gallery__bird">4</li>
+          <li class="gallery__bird">5</li>
+          <li class="gallery__bird">6</li>
+        </ul>
+      </div>
+      <div class="gallery__selected-bird">
+
+        <div class="gallery__selected-bird-wrapper" >
+          <img class="gallery__selected-bird-img" src="assets/images/unknown-bird.png" alt="unknown bird">
+          <div class="gallery__selected-bird-desription">
+            <h2 class="gallery__selected-bird-title">Name</h2>
+            <p class="gallery__selected-bird-name">Surname</p>
+            <audio scr="" class="gallery__audio" preload="metadata">Audio is not supported.</audio>
+            <div class="gallery__audio-controls">
+              <div class="gallery__audio-play-btn"></div>
+              <div class="gallery__audio-seekbar-wrapper">
+                <input class="gallery__audio-seekbar" type="range" step="any" value="0">
+                <div class="gallery__audio-time">
+                  <div class="gallery__audio-time-current">--:--</div>
+                  <div class="gallery__audio-time-total">--:--</div>
+                </div>
+                <div class="gallery__audio-volume-wrapper">
+                  <input class="gallery__audio-volume" type="range" min="0" max="1" step="0.1" value="1">
+                  <div class="gallery__audio-volume-ico"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p class="gallery__info">text</p>
+
+      </div>
+
     </section>
   </main>
   <footer class="footer">
