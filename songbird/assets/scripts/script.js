@@ -6,10 +6,9 @@ const birdsData = {
   en : birdsDataEN
 }
 
-// const birdsData = birdsDataRU;
-
 const navHove = document.querySelector('.header__nav-item-home');
 const navStartGameBtn = document.querySelector('.header__nav-item-start');
+const navGalleryGameBtn = document.querySelector('.header__nav-item-gallery');
 
 const startGameBtn = document.querySelector('.main__welcome-btn');
 const welcomeScreen = document.querySelector('.main__welcome-wrapper');
@@ -43,15 +42,28 @@ const answerAudioSeekbar = document.querySelector('.selected-answer__audio-seekb
 const answerAudioVolume = document.querySelector('.selected-answer__audio-volume');
 const answerAudioVolumeIco = document.querySelector('.selected-answer__audio-volume-ico');
 
+const galleryAudio = document.querySelector('.gallery__audio');
+const galleryAudioPlayBtn = document.querySelector('.gallery__audio-play-btn');
+const galleryAudioSeekbar = document.querySelector('.gallery__audio-seekbar');
+const galleryAudioVolume = document.querySelector('.gallery__audio-volume');
+const galleryAudioVolumeIco = document.querySelector('.gallery__audio-volume-ico');
+
 let currentLevel = 0;
 let scoreTotal = 0;
+
+let answerCorrect;
+let answersState;
+let answerSelected = 0;
+
+let galleryLevelSelected = 0;
+let galleryBirdSelected = 0;
 
 // ------------------------ language ---------------------
 
 const dictionary = {
   ru : {
     score: 'Баллы: ',
-    headerNav: ['Главная', 'Викторина'],
+    headerNav: ['Главная', 'Викторина', 'Галерея'],
     gameTitle: 'Распознавания птиц по их голосам',
     btnStart: 'Начать игру',
     levels: ['Разминка', 'Воробьиные', 'Лесные птицы', 'Певчие птицы', 'Хищные птицы', 'Морские птицы'],
@@ -64,7 +76,7 @@ const dictionary = {
   },
   en : {
     score: 'Score: ',
-    headerNav: ['Main', 'Quiz'],
+    headerNav: ['Main', 'Quiz', 'Gallery'],
     gameTitle: 'Recognizing birds by their voices',
     btnStart: 'Start quiz',
     levels: ['Warm-up', 'Passerines', 'Forest Birds', 'Songbirds', 'Birds of Prey', 'Sea Birds'],
@@ -82,7 +94,6 @@ if (localStorage.getItem('lang')) {
   lang = localStorage.getItem('lang');
 }
 if (!(lang in dictionary)){ lang= 'ru' }
-
 const lang_buttons = Array.from(langSelector.children);
 lang_buttons.forEach(element => element.addEventListener('click', (el) => {
   lang = el.target.id;
@@ -92,7 +103,6 @@ lang_buttons.forEach(element => element.addEventListener('click', (el) => {
 function setLanguage() {
   lang_buttons.forEach(element => element.classList.remove('footer__lang_active'));
   document.getElementById(lang).classList.add('footer__lang_active');
-
   headerScore.children[0].textContent = dictionary[lang].score;
   document.querySelectorAll('.header__nav-item').forEach((block, index) => {
     block.textContent = dictionary[lang].headerNav[index];
@@ -109,25 +119,24 @@ function setLanguage() {
   document.querySelector('.main__win-text2').textContent = dictionary[lang].winText2[0];
   document.querySelector('.main__win-text4').textContent = dictionary[lang].winText2[1];
   mainWinBtn.textContent = dictionary[lang].btnRetry;
-
   if (questionTitle.textContent !== '*****') {
     questionTitle.textContent = birdsData[lang][currentLevel][answerCorrect].name
   }
-
   Array.from(gameAnswers.children).forEach((element, index) => {
     element.textContent =  birdsData[lang][currentLevel][index].name
   })
-  updateSelecredAnswer();
+  updateSelectedAnswer(birdsData[lang][currentLevel][answerSelected]);
   localStorage.setItem('lang', lang);
-
+  document.querySelectorAll('.gallery__level').forEach((block, index) => {
+    block.textContent = dictionary[lang].levels[index];
+  })
+  document.querySelectorAll('.gallery__bird').forEach((block, index) => {
+    block.textContent = birdsData[lang][galleryLevelSelected][index].name
+  })
+  updateGalleryBird()
 }
 
 setLanguage()
-
-
-
-
-
 
 // ----------------------------- main page -----------------
 
@@ -140,21 +149,28 @@ navStartGameBtn.addEventListener('click', startGame);
 mainWinBtn.addEventListener('click', reStartGame);
 
 function startGame() {
-  welcomeScreen.classList.add('hidden-block');
-  navHove.classList.remove('header__nav-item_current');
-  navStartGameBtn.classList.add('header__nav-item_current');
-  welcomeScreen.classList.add('disabled-block');
-  mainGameBlock.classList.remove('disabled-block');
-  headerScore.classList.remove('hidden-block');
-
+  pauseAnswer();
+  pauseGallery();
+  pauseQuestion();
   currentLevel = 0;
   scoreTotal = 0;
+  welcomeScreen.classList.add('hidden-block');
+  document.querySelectorAll('.header__nav-item').forEach((item) => {
+    item.classList.remove('header__nav-item_current');
+  })
+  document.querySelectorAll('.game__level').forEach((item) => {
+    item.classList.remove('game__level_current');
+  })
+  gameLevels.children[currentLevel].classList.add('game__level_current');
+  navStartGameBtn.classList.add('header__nav-item_current');
+  document.querySelector('.main__gallery').classList.add('disabled-block');
+  welcomeScreen.classList.add('disabled-block');
+  mainWinBlock.classList.add('disabled-block');
+  mainGameBlock.classList.remove('disabled-block');
+  headerScore.classList.remove('hidden-block');
   headerScore.children[1].textContent = scoreTotal;
   startLevel(currentLevel);
 }
-
-let answerCorrect;
-let answersState;
 
 function startLevel(level) {
   answerCorrect = getRandomInt(0, birdsData[lang][level].length - 1);
@@ -163,46 +179,40 @@ function startLevel(level) {
   updateQuestion();
   updateQuestionAudio(birdsData[lang][currentLevel][answerCorrect]);
   updateTimeQuestion();
-  // changeVolume();
-  updateSelecredAnswer();
-
+  updateSelectedAnswer();
   gameAnswers.innerHTML = '';
   birdsData[lang][level].forEach( (element, index) => {
     let li = document.createElement('li');
     li.className = 'game__answer';
     li.textContent = element.name;
-    li.addEventListener('click', selectAnswer)
+    li.addEventListener('click', selectAnswer);
     gameAnswers.append(li);
   });
 }
 
 function selectAnswer (element) {
-  let elementIndex = Array.from(element.target.parentNode.children).indexOf(element.target);
-  updateSelecredAnswer(birdsData[lang][currentLevel][elementIndex])
-  if (answersState[elementIndex] === 0) {
-    if (elementIndex === answerCorrect) {
+  answerSelected = Array.from(element.target.parentNode.children).indexOf(element.target);
+  updateSelectedAnswer(birdsData[lang][currentLevel][answerSelected])
+  if (answersState[answerSelected] === 0) {
+    if (answerSelected === answerCorrect) {
       pauseQuestion();
       playSoundEffect('right');
-      answersState[elementIndex] = 2;
+      answersState[answerSelected] = 2;
       let scoreAdd = answersState.filter(value => value === 0).length;
       scoreTotal += scoreAdd;
       element.target.classList.add('game__answer_right');
       element.target.textContent += ` +${scoreAdd}`
-
       updateQuestion(birdsData[lang][currentLevel][answerCorrect]);
       headerScore.children[1].textContent = scoreTotal;
-
       nextLevelBtn.classList.remove('game__next-btn_disabled');
-      nextLevelBtn.addEventListener('click', startNextLevel)
-
+      nextLevelBtn.addEventListener('click', startNextLevel);
     } else {
-      answersState[elementIndex] = 1;
+      answersState[answerSelected] = 1;
       if (answersState[answerCorrect] !== 2) {
         playSoundEffect('wrong');
         element.target.classList.add('game__answer_wrong');
       }
     }
-
   }
 }
 
@@ -214,7 +224,6 @@ function startNextLevel(){
   currentLevel++;
   nextLevelBtn.classList.add('game__next-btn_disabled');
   nextLevelBtn.removeEventListener('click', startNextLevel);
-
   if (currentLevel === 6){
     playSoundEffect('victory');
     showresults();
@@ -223,9 +232,6 @@ function startNextLevel(){
     startLevel(currentLevel);
   }
 }
-
-
-
 
 function updateQuestion(bird = ''){
   if (bird === '') {
@@ -237,7 +243,7 @@ function updateQuestion(bird = ''){
   }
 }
 
-function updateSelecredAnswer(bird = ''){
+function updateSelectedAnswer(bird = ''){
   if (bird === '') {
     gameSelectedAnswerInfo.classList.add('disabled-block');
     gameSelectedAnswerWrapper.classList.add('disabled-block');
@@ -248,13 +254,11 @@ function updateSelecredAnswer(bird = ''){
     gameSelectedAnswerTitle.textContent = bird.name;
     gameSelectedAnswerName.textContent = bird.species;
     gameSelectedAnswerInfo.textContent = bird.description;
-
     answerAudio.src = bird.audio;
     answerAudioSeekbar.min = 0;
     answerAudioSeekbar.max = answerAudio.duration;
     answerAudioPlayBtn.classList.remove('selected-answer__audio-play-btn_pause');
     answerAudioSeekbar.style.backgroundSize = '0% 100%';
-
     document.querySelector('.selected-answer__placeholder').classList.add('disabled-block');
     gameSelectedAnswerWrapper.classList.remove('disabled-block')
     gameSelectedAnswerInfo.classList.remove('disabled-block');
@@ -281,7 +285,6 @@ function showresults() {
 }
 
 function reStartGame() {
-
   mainWinBlock.classList.add('disabled-block');
   gameLevels.children[0].classList.add('game__level_current');
   startGame();
@@ -293,6 +296,71 @@ function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min)) + min;
 }
 
+// ------------------------ Gallery ---------------------
+
+navGalleryGameBtn.addEventListener('click', openGallery)
+
+function openGallery() {
+  pauseAnswer();
+  pauseGallery();
+  pauseQuestion();
+  welcomeScreen.classList.add('hidden-block');
+  document.querySelectorAll('.header__nav-item').forEach((item) => {
+    item.classList.remove('header__nav-item_current');
+  })
+  navGalleryGameBtn.classList.add('header__nav-item_current');
+  welcomeScreen.classList.add('disabled-block');
+  mainGameBlock.classList.add('disabled-block');
+  headerScore.classList.add('hidden-block');
+  mainWinBlock.classList.add('disabled-block');
+  document.querySelector('.main__gallery').classList.remove('disabled-block');
+}
+
+document.querySelectorAll('.gallery__level').forEach((level) => {
+  level.addEventListener('click', selectGalleryLevel)
+})
+
+function selectGalleryLevel(element) {
+  galleryLevelSelected = Array.from(element.target.parentNode.children).indexOf(element.target);
+  document.querySelectorAll('.gallery__level').forEach((level) => {
+    level.classList.remove('gallery__level_selected');
+  })
+  element.target.classList.add('gallery__level_selected');
+  galleryBirdSelected = 0;
+  selectGalleryBird(0);
+}
+
+document.querySelectorAll('.gallery__bird').forEach((bird) => {
+  bird.addEventListener('click', selectGalleryBird)
+})
+
+function selectGalleryBird(element) {
+  if (element !== 0) {
+    galleryBirdSelected = Array.from(element.target.parentNode.children).indexOf(element.target);
+  }
+  document.querySelectorAll('.gallery__bird').forEach((bird, index) => {
+    bird.textContent = birdsData[lang][galleryLevelSelected][index].name;
+    bird.classList.remove('gallery__bird_selected');
+  })
+  if (element !== 0){
+    element.target.classList.add('gallery__bird_selected');
+  } else {
+    document.querySelectorAll('.gallery__bird')[0].classList.add('gallery__bird_selected');
+  }
+  updateGalleryBird()
+}
+
+function updateGalleryBird(){
+  document.querySelector('.gallery__selected-bird-img').src =  birdsData[lang][galleryLevelSelected][galleryBirdSelected].image;
+  document.querySelector('.gallery__selected-bird-title').textContent = birdsData[lang][galleryLevelSelected][galleryBirdSelected].name;
+  document.querySelector('.gallery__selected-bird-name').textContent = birdsData[lang][galleryLevelSelected][galleryBirdSelected].species;
+  document.querySelector('.gallery__info').textContent = birdsData[lang][galleryLevelSelected][galleryBirdSelected].description;
+  galleryAudio.src = birdsData[lang][galleryLevelSelected][galleryBirdSelected].audio;
+  galleryAudioSeekbar.min = 0;
+  galleryAudioSeekbar.max = galleryAudio.duration;
+  galleryAudioPlayBtn.classList.remove('gallery__audio-play-btn_pause');
+  galleryAudioSeekbar.style.backgroundSize = '0% 100%';
+}
 
 // --------------------------- AUDIO ---------------------
 
@@ -314,7 +382,6 @@ function playSoundEffect(sound) {
   soundEffect.volume = questionAudioVolume.value;
   soundEffect.play();
 }
-
 
 function updateQuestionAudio(bird) {
   questionAudio.src = bird.audio;
@@ -374,46 +441,50 @@ function getTime(time) {
   return min + ":" + sec;
 }
 
-
-
-
-
-
 questionAudioVolume.addEventListener('input', changeVolume);
 answerAudioVolume.addEventListener('input', changeVolume);
+galleryAudioVolume.addEventListener('input', changeVolume);
 
 function changeVolume(element) {
-  // let myVol = questionAudioVolume.value;
   let myVol = element.target.value;
   questionAudio.volume = myVol;
   answerAudio.volume = myVol;
+  galleryAudio.volume = myVol;
   questionAudioVolume.value = questionAudio.volume;
   answerAudioVolume.value = answerAudio.volume;
+  galleryAudioVolume.value = galleryAudio.volume;
 
   if (myVol == 0) {
     questionAudio.muted = true;
     answerAudio.muted = true;
+    galleryAudio.muted = true;
   } else {
     questionAudio.muted = false;
     answerAudio.muted = false;
+    galleryAudio.muted = false;
   }
   questionAudioVolume.style.backgroundSize = (questionAudioVolume.value * 100) + '% 100%';
   answerAudioVolume.style.backgroundSize = (answerAudioVolume.value * 100) + '% 100%';
+  galleryAudioVolume.style.backgroundSize = (galleryAudioVolume.value * 100) + '% 100%';
   if (questionAudio.muted === true) {
     questionAudioVolumeIco.classList.add('question__audio-volume-ico_muted');
     answerAudioVolumeIco.classList.add('selected-answer__audio-volume-ico_muted');
+    galleryAudioVolumeIco.classList.add('gallery__audio-volume-ico_muted');
   } else {
     questionAudioVolumeIco.classList.remove('question__audio-volume-ico_muted');
     answerAudioVolumeIco.classList.remove('selected-answer__audio-volume-ico_muted');
+    galleryAudioVolumeIco.classList.remove('gallery__audio-volume-ico_muted');
   }
 }
 
 questionAudioVolumeIco.addEventListener('click', muteSound);
 answerAudioVolumeIco.addEventListener('click', muteSound);
+galleryAudioVolumeIco.addEventListener('click', muteSound);
 
 function muteSound() {
   questionAudio.muted = !questionAudio.muted;
   answerAudio.muted = !answerAudio.muted;
+  galleryAudio.muted = !galleryAudio.muted;
 
   if (questionAudio.muted === true) {
     questionAudioVolumeIco.classList.add('question__audio-volume-ico_muted');
@@ -422,23 +493,23 @@ function muteSound() {
     answerAudioVolumeIco.classList.add('selected-answer__audio-volume-ico_muted');
     answerAudioVolume.style.backgroundSize = '0% 100%';
     answerAudioVolume.value = 0;
+    galleryAudioVolumeIco.classList.add('gallery__audio-volume-ico_muted');
+    galleryAudioVolume.style.backgroundSize = '0% 100%';
+    galleryAudioVolume.value = 0;
   } else {
     questionAudioVolume.value = questionAudio.volume;
     questionAudioVolume.style.backgroundSize = (questionAudioVolume.value * 100) + '% 100%';
     answerAudioVolume.value = answerAudio.volume;
     answerAudioVolume.style.backgroundSize = (answerAudioVolume.value * 100) + '% 100%';
+    galleryAudioVolume.value = galleryAudio.volume;
+    galleryAudioVolume.style.backgroundSize = (galleryAudioVolume.value * 100) + '% 100%';
     if (questionAudio.volume !== 0) {
       questionAudioVolumeIco.classList.remove('question__audio-volume-ico_muted');
       answerAudioVolumeIco.classList.remove('selected-answer__audio-volume-ico_muted');
+      galleryAudioVolumeIco.classList.remove('gallery__audio-volume-ico_muted');
     }
   }
 }
-
-
-
-
-
-
 
 //---------------------------------   2nd player
 
@@ -483,12 +554,46 @@ function updateTimeAnswer() {
     (answerAudioSeekbar.value - answerAudioSeekbar.min) * 100 / (answerAudioSeekbar.max - answerAudioSeekbar.min) + '% 100%';
 }
 
+// -------------------------------------- gallery player
 
+galleryAudioPlayBtn.addEventListener('click', playGallery);
 
+function playGallery(){
+  if (galleryAudio.paused) {
+    galleryAudio.play();
+    galleryAudioPlayBtn.classList.add('gallery__audio-play-btn_pause');
+  } else if (galleryAudio.ended) {
+    galleryAudio.currentTime = 0;
+    galleryAudio.play();
+    galleryAudioPlayBtn.classList.add('gallery__audio-play-btn_pause');
+  } else {
+    galleryAudio.pause();
+    galleryAudioPlayBtn.classList.remove('gallery__audio-play-btn_pause');
+  }
+}
 
+function pauseGallery(){
+  galleryAudio.pause();
+  galleryAudioPlayBtn.classList.remove('gallery__audio-play-btn_pause');
+}
 
+galleryAudioSeekbar.addEventListener('input', () => {
+  galleryAudio.currentTime = galleryAudioSeekbar.value;
+})
 
+galleryAudio.addEventListener('timeupdate', updateTimeGallery);
 
+function updateTimeGallery() {
+  galleryAudio.onloadedmetadata = function() {
+    document.querySelector('.gallery__audio-time-total').textContent = getTime(galleryAudio.duration);
+  }
+  document.querySelector('.gallery__audio-time-current').textContent = getTime(galleryAudio.currentTime);
+  galleryAudioSeekbar.min = 0;
+  galleryAudioSeekbar.max = galleryAudio.duration;
+  galleryAudioSeekbar.value = galleryAudio.currentTime;
+  galleryAudioSeekbar.style.backgroundSize =
+    (galleryAudioSeekbar.value - galleryAudioSeekbar.min) * 100 / (galleryAudioSeekbar.max - galleryAudioSeekbar.min) + '% 100%';
+}
 
 
 

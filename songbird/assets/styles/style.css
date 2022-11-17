@@ -348,30 +348,30 @@
   min-width: 520px;
 }
 
-.selected-answer__wrapper {
+.selected-answer__wrapper, .gallery__selected-bird-wrapper {
   display: flex;
   gap: 25px;
 }
 
-.selected-answer__img {
+.selected-answer__img, .gallery__selected-bird-img {
   display: block;
   width: 200px;
   height: 150px;
   border-radius: 5px;
 }
 
-.selected-answer__desription {
+.selected-answer__desription, .gallery__selected-bird-desription {
   padding-right: 9px;
   flex-grow: 1;
 }
 
-.selected-answer__title {
+.selected-answer__title, .gallery__selected-bird-title {
   border-bottom: 1px solid #444444;
   padding: 0px 0px 10px;
   font-size: 22px;
 }
 
-.selected-answer__name {
+.selected-answer__name, .gallery__selected-bird-name {
   border-bottom: 1px solid #444444;
   padding: 10px 0px;
   font-size: 18px;
@@ -381,13 +381,13 @@
   margin-top: 10px;
 }
 
-.selected-answer__audio-controls {
+.selected-answer__audio-controls, .gallery__audio-controls {
   margin-top: 16px;
   display: flex;
   gap: 16px;
 }
 
-.selected-answer__audio-play-btn {
+.selected-answer__audio-play-btn, .gallery__audio-play-btn {
   width: 50px;
   height: 50px;
   cursor: pointer;
@@ -396,19 +396,19 @@
   background: url(../images/sound-play.png) center no-repeat;
 }
 
-.selected-answer__audio-play-btn_pause {
+.selected-answer__audio-play-btn_pause, .gallery__audio-play-btn_pause {
   background: url(../images/sound-pause.png) center no-repeat;
 }
 
-.selected-answer__audio-play-btn:hover {
+.selected-answer__audio-play-btn:hover, .gallery__audio-play-btn:hover {
   transform: scale(0.95);
 }
 
-.selected-answer__audio-seekbar-wrapper {
+.selected-answer__audio-seekbar-wrapper, .gallery__audio-seekbar-wrapper {
   width: 100%;
 }
 
-.selected-answer__audio-seekbar {
+.selected-answer__audio-seekbar, .gallery__audio-seekbar {
   width: 100%;
   height: 4px;
   cursor: pointer;
@@ -421,7 +421,8 @@
   background-repeat: no-repeat;
 }
 
-.selected-answer__audio-seekbar::-webkit-slider-thumb {
+.selected-answer__audio-seekbar::-webkit-slider-thumb,
+.gallery__audio-seekbar::-webkit-slider-thumb {
   -webkit-appearance: none;
   width: 13px;
   height: 13px;
@@ -432,12 +433,14 @@
   transition: 0.2s;
 }
 
-.selected-answer__audio-seekbar::-webkit-slider-thumb:hover {
+.selected-answer__audio-seekbar::-webkit-slider-thumb:hover,
+.gallery__audio-seekbar::-webkit-slider-thumb:hover {
   transform: scale(1.2);
   background-color: #00bc8c;
 }
 
-.selected-answer__audio-seekbar::-moz-range-thumb {
+.selected-answer__audio-seekbar::-moz-range-thumb,
+.gallery__audio-seekbar::-moz-range-thumb {
   width: 13px;
   height: 13px;
   border-radius: 50%;
@@ -447,18 +450,18 @@
   transition: 0.2s;
 }
 
-.selected-answer__audio-time {
+.selected-answer__audio-time, .gallery__audio-time {
   display: flex;
   justify-content: space-between;
   font-size: 14px;
 }
 
-.selected-answer__audio-volume-wrapper {
+.selected-answer__audio-volume-wrapper, .gallery__audio-volume-wrapper {
   display: flex;
   gap: 5px;
 }
 
-.selected-answer__audio-volume {
+.selected-answer__audio-volume, .gallery__audio-volume {
   height: 4px;
   cursor: pointer;
   margin-top: 12px;
@@ -469,7 +472,8 @@
   background-repeat: no-repeat;
 }
 
-.selected-answer__audio-volume::-webkit-slider-thumb {
+.selected-answer__audio-volume::-webkit-slider-thumb,
+.gallery__audio-volume::-webkit-slider-thumb {
   -webkit-appearance: none;
   width: 13px;
   height: 13px;
@@ -480,12 +484,14 @@
   transition: 0.2s;
 }
 
-.selected-answer__audio-volume::-webkit-slider-thumb:hover {
+.selected-answer__audio-volume::-webkit-slider-thumb:hover,
+.gallery__audio-volume::-webkit-slider-thumb:hover {
   transform: scale(1.2);
   background-color: #00bc8c;
 }
 
-.selected-answer__audio-volume::-moz-range-thumb {
+.selected-answer__audio-volume::-moz-range-thumb,
+.gallery__audio-volume::-moz-range-thumb {
   width: 13px;
   height: 13px;
   border-radius: 50%;
@@ -495,7 +501,7 @@
   transition: 0.2s;
 }
 
-.selected-answer__audio-volume-ico {
+.selected-answer__audio-volume-ico, .gallery__audio-volume-ico {
   width: 28px;
   height: 28px;
   background: url(../images/sound-volume.png) no-repeat;
@@ -504,13 +510,23 @@
   transition: 0.2s;
 }
 
-.selected-answer__audio-volume-ico:hover {
+.selected-answer__audio-volume-ico:hover,
+.gallery__audio-volume-ico:hover {
   transform: scale(0.95);
 }
 
-.selected-answer__audio-volume-ico_muted {
+.selected-answer__audio-volume-ico_muted,
+.gallery__audio-volume-ico_muted {
   background: url(../images/sound-muted.png) no-repeat;
   background-size: 100%;
+}
+
+.gallery__selected-bird-title {
+  font-size: 26px;
+}
+
+.gallery__info {
+  margin-top: 20px;
 }
 
 .game__next-btn {
@@ -576,6 +592,52 @@
   background-color: #00aa7f;
   border: 1px solid #555555;
   cursor: pointer;
+}
+
+.main__gallery {
+  margin-top: 25px;
+}
+
+.gallery__selector-wrapper {
+  display: flex;
+  gap: 25px;
+}
+
+.gallery__levels, .gallery__birds {
+  flex-grow: 1;
+  border-radius: 5px;
+  background-color: #303030;
+  border: 1px solid #444444;
+  overflow: hidden;
+}
+
+.gallery__level, .gallery__bird {
+  padding: 16px 16px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.gallery__level:not(:last-child), .gallery__bird:not(:last-child) {
+  border-bottom: 1px solid #444444;
+}
+
+.gallery__level:hover, .gallery__bird:hover {
+  background-color: #444444;
+}
+
+.gallery__level_selected, .gallery__bird_selected {
+  background-color: #008966;
+}
+
+.gallery__level_selected:hover, .gallery__bird_selected:hover {
+  background-color: #00aa7f;
+}
+
+.gallery__selected-bird {
+  margin-top: 25px;
+  padding: 32px 16px;
+  border-radius: 5px;
+  background-color: #303030;
 }
 
 .footer__nav-block {
@@ -670,5 +732,11 @@
   }
   .selected-answer__img {
     align-self: center;
+  }
+  .gallery__selector-wrapper {
+    flex-direction: column;
+  }
+  .gallery__selected-bird-wrapper {
+    flex-direction: column;
   }
 }/*# sourceMappingURL=style.css.map */
