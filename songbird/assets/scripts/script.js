@@ -313,6 +313,7 @@ function openGallery() {
   mainGameBlock.classList.add('disabled-block');
   headerScore.classList.add('hidden-block');
   mainWinBlock.classList.add('disabled-block');
+  updateTimeGallery();
   document.querySelector('.main__gallery').classList.remove('disabled-block');
 }
 

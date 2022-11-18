@@ -715,6 +715,9 @@
   }
 }
 @media screen and (max-width: 540px) {
+  .header__nav-block {
+    justify-content: space-around;
+  }
   .game__level {
     width: 40%;
   }
